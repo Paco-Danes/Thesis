@@ -1,0 +1,76 @@
+\begin{thebibliography}{10}
+
+\bibitem{gesture_recognition}
+Y.~Zhang, Y.~Zheng, K.~Qian, G.~Zhang, Y.~Liu, C.~Wu, and Z.~Yang, ``Widar3.0:
+  Zero-effort cross-domain gesture recognition with wi-fi,'' {\em IEEE
+  Transactions on Pattern Analysis and Machine Intelligence}, vol.~44, no.~11,
+  pp.~8671--8688, 2022.
+
+\bibitem{cnn_face_id}
+D.~Yi, Z.~Lei, S.~Liao, and S.~Z. Li, ``Learning face representation from
+  scratch,'' 2014.
+
+\bibitem{Recurrent_nn_reid}
+N.~McLaughlin, J.~Martinez~del Rincon, and P.~Miller, ``Recurrent convolutional
+  network for video-based person re-identification,'' in {\em 2016 IEEE
+  Conference on Computer Vision and Pattern Recognition (CVPR)},
+  pp.~1325--1334, 2016.
+
+\bibitem{Gait_cnn}
+P.~Nithyakani, A.~Shanthini, and G.~Ponsam, ``Human gait recognition using deep
+  convolutional neural network,'' in {\em 2019 3rd International Conference on
+  Computing and Communications Technologies (ICCCT)}, pp.~208--211, 2019.
+
+\bibitem{Transformers_reid}
+G.~Zhang, P.~Zhang, J.~Qi, and H.~Lu, ``Hat: Hierarchical aggregation
+  transformers for person re-identification,'' 2021.
+
+\bibitem{RSSI_indoorloc}
+S.~Sadowski and P.~Spachos, ``Rssi-based indoor localization with the internet
+  of things,'' {\em IEEE Access}, vol.~6, pp.~30149--30161, 2018.
+
+\bibitem{RSSI_indoorloc_new}
+B.~Yang, L.~Guo, R.~Guo, M.~Zhao, and T.~Zhao, ``A novel trilateration
+  algorithm for rssi-based indoor localization,'' {\em IEEE Sensors Journal},
+  vol.~20, no.~14, pp.~8164--8172, 2020.
+
+\bibitem{RSSI_reliability_indoorloc}
+Q.~Dong and W.~Dargie, ``Evaluation of the reliability of rssi for indoor
+  localization,'' in {\em 2012 International Conference on Wireless
+  Communications in Underground and Confined Areas}, pp.~1--6, 2012.
+
+\bibitem{CSI_RSSI}
+Z.~Yang, Z.~Zhou, and Y.~Liu, ``From rssi to csi: Indoor localization via
+  channel response,'' {\em ACM Comput. Surv.}, vol.~46, dec 2013.
+
+\bibitem{tissues_waves_interaction}
+D.~Miklavcic, N.~Pavselj, and F.~Hart, ``Electric properties of tissues,'' {\em
+  Wiley Encyclopedia of Biomedical Engineering}, vol.~6, 04 2006.
+
+\bibitem{OFDM_basics}
+Y.~Wu and W.~Zou, ``Orthogonal frequency division multiplexing: a multi-carrier
+  modulation scheme,'' {\em IEEE Transactions on Consumer Electronics},
+  vol.~41, no.~3, pp.~392--399, 1995.
+
+\bibitem{EdgeWiFiSensing2022}
+S.~M. Hernandez and E.~Bulut, ``{WiFi Sensing on the Edge: Signal Processing
+  Techniques and Challenges for Real-World Systems},'' {\em IEEE Communications
+  Surveys and Tutorials}, 2022.
+
+\bibitem{modulations}
+N.~Vlajic, ``Analog transmission of digital data: Ask, fsk, psk, qam.'' York
+  University CSE 3213, Fall 2010.
+
+\bibitem{QAM_explained}
+L.~E. Frenzel, ``Chapter 8 - cell phones: It is now possible to do anything
+  wirelessly: Talk, text, email, web browse, games, whatever,'' in {\em
+  Electronics Explained (Second Edition)} (L.~E. Frenzel, ed.), pp.~195--216,
+  Newnes, second edition~ed., 2018.
+
+\bibitem{ESP32_tool}
+S.~M. Hernandez and E.~Bulut, ``{Lightweight and Standalone {IoT} Based {WiFi}
+  Sensing for Active Repositioning and Mobility},'' in {\em 21st International
+  Symposium on {"}A World of Wireless, Mobile and Multimedia Networks{"}
+  (WoWMoM) (WoWMoM 2020)}, (Cork, Ireland), June 2020.
+
+\end{thebibliography}
