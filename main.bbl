@@ -78,4 +78,9 @@ L.~Davies and U.~Gather, ``The identification of multiple outliers,'' {\em
   Journal of the American Statistical Association}, vol.~88, no.~423,
   pp.~782--792, 1993.
 
+\bibitem{Gait_hampel_pca}
+R.~Ou, Y.~Chen, and Y.~Deng, ``Wiwalk: Gait-based dual-user identification
+  using wifi device,'' {\em IEEE Internet of Things Journal}, vol.~10, no.~6,
+  pp.~5321--5334, 2023.
+
 \end{thebibliography}

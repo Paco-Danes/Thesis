@@ -237,8 +237,8 @@ cleaning the CSI acquisitions, therefore making the system more robust and less 
 \section{Amplitude Sanitization}
 During wireless transmissions, signal amplitudes can experience outliers or anomalies due to various factors and causes. These outliers can adversely
 affect the quality of the received signal and the overall performance of the Wi-Fi system. Electrical spikes, equipment instability, external interference and
-sudden movements in the environment are some possible sources of noise. To mitigate the effect of spurious data, the Hampel Filter \cite{hampel_ID} is employed,
-that exploits the Median Absolute Deviation (MAD), a robust statistical measure of the variability of a dataset, defined as:
+sudden movements in the environment are some possible sources of noise. To mitigate the effect of spurious data, the Hampel Filter \cite{hampel_ID, Gait_hampel_pca} is employed,
+that exploits the Median Absolute Deviation (MAD), a robust statistical measure of the variability of a dataset defined as:
 $$ MAD_{w} = Median\{\;|\,x - median(X_{w})\,|\quad \forall x \in X_{w}\;\} $$
 where $X_{w}$ is a portion of the entire dataset defined by a sliding window $w$ of fixed length. Then, a point $x$ in the sliding window is considered an outlier if:
 $$|\,x - median(X_{w})\,|\; >\; \beta MAD_{w}$$
@@ -250,9 +250,15 @@ demonstrates the effect of the Hampel filtering procedure with a sliding window 
     \caption{Raw and filtered amplitudes of a single subcarrier over 10 seconds of acquisitions.}
     \label{fig:Hampel1}
 \end{figure}
+The detection procedure is performed independently on each subcarrier’s amplitude series, and every discovered outlier is substituted
+with the mean of the previous and next non-outlier data point, to preserve temporal information consistency. Moreover, the Hampel Identifier
+doesn't pose any assumption on the distribution of the data and works well even with non-normally distributed points. This is a clear distinction
+with respect to other outlier detection statistical methods such as the Z-Score, that uses the mean and the standard deviation to discern anomalies
+from the rest of the dataset. These measures assume that the data follows a symmetric Gaussian distribution, and they can be highly affected by skewness
+or extreme outliers in case of non-normally distributed data. On the other hand, using the Median ensures resistance to skewness and to outliers with large
+magnitude, and does not require any normality assumption.
 
 \section{Phase Sanitization}
-
 \bibliography{references}
 \bibliographystyle{ieeetr}
 
