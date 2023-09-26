@@ -77,10 +77,10 @@ highly dependent on biometric characteristics, such as body structure, weight, h
 The aim of this work is then to harness the biological-related radio signals fluctuations, captured by CSI, that occur in a WiFi-pervaded environment when a person is present, and extract
 important insights to enable the person Identification.
 
-\chapter{The wireless channel}
-This section introduces the theoretical concepts related to the wireless communication channel, that are necessary to grasp the foundational technology behind Wi-Fi sensing applications, such as Human Re-ID
+\chapter{The Wireless Channel}
+This section introduces the theoretical concepts related to the wireless communication channel, that are necessary to grasp the foundational technology behind Wi-Fi sensing applications, such as Human Identification
 
-\section{Electromagnetic waves}
+\section{Electromagnetic Waves}
 The fundamental characteristic of all wireless communications, including Wi-Fi transmission, is the use of Electromagnetic (EM) radiation to carry information,
 encapsulating data in the form of EM waves. In a vacuum, electromagnetic waves travel at the speed of light (around 299 792 km/s) denoted by the letter $c$.
 When passing through a material medium, they are slowed depending on the medium's permeability and permittivity but the air in the Earth's atmosphere is thin enough that EM waves
@@ -230,7 +230,29 @@ using a total of 64 subcarriers. Multiple CSI samples are collected over a time 
 where S is the total number of subcarriers. In our case, 64 are employed, of which 12 are guard (null) subcarriers, resulting in having a final set of 52
 usable informative subcarriers, at a rate of transmission of 100 packets (observations) per second.
 
-\chapter{Data preprocessing}
+\chapter{Signal Preprocessing}
+This chapter explains the various methods used for preprocessing the available data, an essential procedure applied for structuring the dataset and
+cleaning the CSI acquisitions, therefore making the system more robust and less susceptible to noise.
+
+\section{Amplitude Sanitization}
+During wireless transmissions, signal amplitudes can experience outliers or anomalies due to various factors and causes. These outliers can adversely
+affect the quality of the received signal and the overall performance of the Wi-Fi system. Electrical spikes, equipment instability, external interference and
+sudden movements in the environment are some possible sources of noise. To mitigate the effect of spurious data, the Hampel Filter \cite{hampel_ID} is employed,
+that exploits the Median Absolute Deviation (MAD), a robust statistical measure of the variability of a dataset, defined as:
+$$ MAD_{w} = Median\{\;|\,x - median(X_{w})\,|\quad \forall x \in X_{w}\;\} $$
+where $X_{w}$ is a portion of the entire dataset defined by a sliding window $w$ of fixed length. Then, a point $x$ in the sliding window is considered an outlier if:
+$$|\,x - median(X_{w})\,|\; >\; \beta MAD_{w}$$
+where $\beta$ is an application dependent hyperparameter: in our case $\beta = 3$, in alignment with the prevalent choice in the literature. Fig. \ref{fig:Hampel1} below
+demonstrates the effect of the Hampel filtering procedure with a sliding window of size 500, on the observed amplitudes of subcarrier 12th.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.98\textwidth]{images/Hampel1.png}
+    \caption{Raw and filtered amplitudes of a single subcarrier over 10 seconds of acquisitions.}
+    \label{fig:Hampel1}
+\end{figure}
+
+\section{Phase Sanitization}
+
 \bibliography{references}
 \bibliographystyle{ieeetr}
 

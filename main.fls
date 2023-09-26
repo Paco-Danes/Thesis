@@ -1,6 +1,6 @@
-PWD c:\Users\devin\Desktop\Università\Tesi\Document
+PWD c:\Users\devin\Desktop\Università\Tesi\Thesis
 INPUT C:\Users\devin\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\devin\Desktop\Università\Tesi\Document\main.tex
+INPUT c:\Users\devin\Desktop\Università\Tesi\Thesis\main.tex
 OUTPUT main.log
 INPUT C:\Program Files\MiKTeX\tex\latex\sapthesis\sapthesis.cls
 INPUT C:\Program Files\MiKTeX\tex\latex\sapthesis\sapthesis.cls
@@ -824,6 +824,13 @@ INPUT .\images\summationSinc.jpg
 INPUT .\images\summationSinc.jpg
 INPUT .\images\summationSinc.jpg
 INPUT .\images\summationSinc.jpg
+INPUT .\images\Hampel1.png
+INPUT .\images\Hampel1.png
+INPUT images\Hampel1.png
+INPUT .\images\Hampel1.png
+INPUT .\images\Hampel1.png
+INPUT .\images\Hampel1.png
+INPUT .\images\Hampel1.png
 INPUT .\main.bbl
 INPUT main.bbl
 INPUT .\main.bbl

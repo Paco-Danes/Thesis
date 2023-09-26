@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex main"] 1695742236 "main.aux" "main.bbl" "main" 1695742247
+["bibtex main"] 1695750794 "main.aux" "main.bbl" "main" 1695751700
   "C:/Program Files/MiKTeX/bibtex/bst/bibtex/ieeetr.bst" 1291867944 18361 1a00e58565e7f19bf2b3e1bfb82254ae ""
-  "main.aux" 1695742245 4230 a7f57394ee61ee732288a5c3085bb2db "pdflatex"
-  "references.bib" 1695723261 8036 fcd3a5b0d33b7d99993e1494dfcf06ff ""
+  "main.aux" 1695751699 4875 02857d0d53e0887d6781231a027c26b9 "pdflatex"
+  "references.bib" 1695750242 8581 d701d560c3bcabd1a07a0f98342abb94 ""
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1695742237 "c:/Users/devin/Desktop/Università/Tesi/Document/main.tex" "main.pdf" "main" 1695742247
+["pdflatex"] 1695751697 "c:/Users/devin/Desktop/Università/Tesi/Thesis/main.tex" "main.pdf" "main" 1695751700
   "C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256933040 2375 baa924870cfb487815765f9094cf3728 ""
   "C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc" 1256933040 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc" 1256933040 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -139,7 +139,8 @@
   "C:/Program Files/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "C:/Users/devin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1656867487 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/devin/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1656867490 10316885 bf6526c5608e614f1cf8746ea2a902ed ""
-  "c:/Users/devin/Desktop/Università/Tesi/Document/main.tex" 1695742219 19634 770375df9be39a4d0b0eef1da78605f1 ""
+  "c:/Users/devin/Desktop/Università/Tesi/Thesis/main.tex" 1695751696 21412 4c4edb6ea8ebb01289a83174d035c6ae ""
+  "images/Hampel1.png" 1695751260 71721 5d272c39797f63bdbcca7ee5c227ff1b ""
   "images/IQ_sampling.jpg" 1694082958 252699 9d501242d0fddf9cb13d150a3ddfea12 ""
   "images/Person_id.jpg" 1695718802 42642 92c50c82dc35420374ba04ddfc73c84c ""
   "images/Phase_shift2.png" 1694023332 169394 f1464e45d3618846249a13194ca7458b ""
@@ -147,11 +148,11 @@
   "images/sinc_func_alone.jpg" 1692804271 59613 fe1aa22107394fc4c9476fc12356162a ""
   "images/summationSinc.jpg" 1692894053 131097 d5a190ef251ac301150b9a22c898e498 ""
   "images/wave.jpg" 1693994127 54533 6390e7a8f56f8d59a0c88804ce38fb39 ""
-  "main.aux" 1695742245 4230 a7f57394ee61ee732288a5c3085bb2db "pdflatex"
-  "main.bbl" 1695742237 3347 c298ac9e6df5d0ad81cd410de0d658a5 "bibtex main"
-  "main.out" 1695742245 1122 3b43330bb7983e7b42b274b2e3181f25 "pdflatex"
-  "main.tex" 1695742219 19634 770375df9be39a4d0b0eef1da78605f1 ""
-  "main.toc" 1695742245 558 9b12b51399dc49f02f918ff1cdbf37cd "pdflatex"
+  "main.aux" 1695751699 4875 02857d0d53e0887d6781231a027c26b9 "pdflatex"
+  "main.bbl" 1695750795 3540 e37bece1e87a3f930752ce76fd2bc453 "bibtex main"
+  "main.out" 1695751699 1446 549abb409c520348cd2be08dded0bd34 "pdflatex"
+  "main.tex" 1695751696 21412 4c4edb6ea8ebb01289a83174d035c6ae ""
+  "main.toc" 1695751699 720 3b4eadab731021266053bd3c91555b9c "pdflatex"
   (generated)
   "main.aux"
   "main.log"

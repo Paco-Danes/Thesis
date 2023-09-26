@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.7.3)  26 SEP 2023 17:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.7.3)  26 SEP 2023 20:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/devin/Desktop/Università/Tesi/Document/main.tex
-(c:/Users/devin/Desktop/Università/Tesi/Document/main.tex
+**c:/Users/devin/Desktop/Università/Tesi/Thesis/main.tex
+(c:/Users/devin/Desktop/Università/Tesi/Thesis/main.tex
 LaTeX2e <2022-06-01> patch level 3
 L3 programming layer <2022-06-16> (C:\Program Files\MiKTeX\tex/latex/sapthesis\sapthesis.cls
 Document Class: sapthesis 2022/07/04 Sapienza University of Rome thesis class
@@ -509,7 +509,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<sapienzalogo.pdf, id=31, 288.07625pt x 89.33376pt>
+<sapienzalogo.pdf, id=39, 288.07625pt x 89.33376pt>
 File: sapienzalogo.pdf Graphic file (type pdf)
 <use sapienzalogo.pdf>
 Package pdftex.def Info: sapienzalogo.pdf  used on input line 23.
@@ -579,7 +579,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 ]
 Chapter 1.
-<images/Person_id.jpg, id=75, 1068.99374pt x 364.36125pt>
+<images/Person_id.jpg, id=85, 1068.99374pt x 364.36125pt>
 File: images/Person_id.jpg Graphic file (type jpg)
 <use images/Person_id.jpg>
 Package pdftex.def Info: images/Person_id.jpg  used on input line 51.
@@ -592,12 +592,12 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 ] [2 <./images/Person_id.jpg>]
 Chapter 2.
-<images/wave.jpg, id=101, 383.93437pt x 289.08pt>
+<images/wave.jpg, id=111, 383.93437pt x 289.08pt>
 File: images/wave.jpg Graphic file (type jpg)
 <use images/wave.jpg>
 Package pdftex.def Info: images/wave.jpg  used on input line 96.
 (pdftex.def)             Requested size: 190.07831pt x 143.1193pt.
-<images/Phase_shift2.png, id=102, 1927.2pt x 1344.52313pt>
+<images/Phase_shift2.png, id=112, 1927.2pt x 1344.52313pt>
 File: images/Phase_shift2.png Graphic file (type png)
 <use images/Phase_shift2.png>
 Package pdftex.def Info: images/Phase_shift2.png  used on input line 102.
@@ -608,49 +608,54 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [3
 
 ] [4 <./images/wave.jpg> <./images/Phase_shift2.png>]
-<images/IQ_sampling.jpg, id=121, 1077.27469pt x 383.18156pt>
+<images/IQ_sampling.jpg, id=131, 1077.27469pt x 383.18156pt>
 File: images/IQ_sampling.jpg Graphic file (type jpg)
 <use images/IQ_sampling.jpg>
 Package pdftex.def Info: images/IQ_sampling.jpg  used on input line 155.
 (pdftex.def)             Requested size: 380.16266pt x 135.22061pt.
  [5 <./images/IQ_sampling.jpg>]
-<images/sinc_func_alone.jpg, id=135, 589.4522pt x 331.2375pt>
+<images/sinc_func_alone.jpg, id=145, 589.4522pt x 331.2375pt>
 File: images/sinc_func_alone.jpg Graphic file (type jpg)
 <use images/sinc_func_alone.jpg>
 Package pdftex.def Info: images/sinc_func_alone.jpg  used on input line 182.
 (pdftex.def)             Requested size: 178.19879pt x 100.13521pt.
-<images/multiple_sinc.jpg, id=136, 922.94812pt x 508.90125pt>
+<images/multiple_sinc.jpg, id=146, 922.94812pt x 508.90125pt>
 File: images/multiple_sinc.jpg Graphic file (type jpg)
 <use images/multiple_sinc.jpg>
 Package pdftex.def Info: images/multiple_sinc.jpg  used on input line 188.
 (pdftex.def)             Requested size: 178.19879pt x 98.25304pt.
-<images/summationSinc.jpg, id=137, 658.71094pt x 382.42876pt>
+<images/summationSinc.jpg, id=147, 658.71094pt x 382.42876pt>
 File: images/summationSinc.jpg Graphic file (type jpg)
 <use images/summationSinc.jpg>
 Package pdftex.def Info: images/summationSinc.jpg  used on input line 194.
 (pdftex.def)             Requested size: 178.19879pt x 103.45554pt.
  [6 <./images/sinc_func_alone.jpg> <./images/multiple_sinc.jpg> <./images/summationSinc.jpg>] [7]
 Chapter 3.
+<images/Hampel1.png, id=169, 1175.39125pt x 271.0125pt>
+File: images/Hampel1.png Graphic file (type png)
+<use images/Hampel1.png>
+Package pdftex.def Info: images/Hampel1.png  used on input line 249.
+(pdftex.def)             Requested size: 388.07831pt x 89.47987pt.
 (main.bbl [8
 
-] [9
+ <./images/Hampel1.png>] [9] [10
 
-]) [10] (main.aux)
+]) [11] (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 3B43330BB7983E7B42B274B2E3181F25;1122.
+(rerunfilecheck)             Checksum: 549ABB409C520348CD2BE08DDED0BD34;1446.
  ) 
 Here is how much of TeX's memory you used:
- 14825 strings out of 478351
- 241264 string characters out of 2846868
- 585148 words of memory out of 3000000
- 32774 multiletter control sequences out of 15000+600000
- 547224 words of font info for 164 fonts, out of 8000000 for 9000
+ 14843 strings out of 478351
+ 241523 string characters out of 2846868
+ 585296 words of memory out of 3000000
+ 32784 multiletter control sequences out of 15000+600000
+ 547354 words of font info for 165 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,13n,131p,1050b,652s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 84i,13n,131p,1048b,652s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}<C:/Program Files/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmss17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy8.pfb>
-Output written on main.pdf (14 pages, 1265560 bytes).
+Output written on main.pdf (15 pages, 1346618 bytes).
 PDF statistics:
- 256 PDF objects out of 1000 (max. 8388607)
- 42 named destinations out of 1000 (max. 500000)
- 47201 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 277 PDF objects out of 1000 (max. 8388607)
+ 47 named destinations out of 1000 (max. 500000)
+ 47222 words of extra memory for PDF output out of 51595 (max. 10000000)
 

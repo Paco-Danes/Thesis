@@ -1,7 +1,9 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
-\contentsline {chapter}{\numberline {2}The wireless channel}{3}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Electromagnetic waves}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {2}The Wireless Channel}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Electromagnetic Waves}{3}{section.2.1}%
 \contentsline {section}{\numberline {2.2}I/Q sampling}{5}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Orthogonal Frequency-Division Multiplexing}{6}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Channel State Information}{7}{section.2.4}%
-\contentsline {chapter}{\numberline {3}Data preprocessing}{8}{chapter.3}%
+\contentsline {chapter}{\numberline {3}Signal Preprocessing}{8}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Amplitude Sanitization}{8}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Phase Sanitization}{9}{section.3.2}%

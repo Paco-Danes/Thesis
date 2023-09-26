@@ -60,12 +60,14 @@ def convert_to_bounded_angle(angles):
     return bounded_angles
 
 
-def hampel_filtering(df, window_size, thresh=3):
+def hampel_filtering(df, window_size=500, stride=None, thresh=3):
+    if stride == None:
+        stride = window_size
     # Create an empty DataFrame to store the cleaned data
     cleaned_df = df.copy()
     # Loop through each column (feature) in the DataFrame
     for column in df.columns:
-        for i in range(0, len(df), window_size):
+        for i in range(0, len(df) - window_size + 1, stride):
             # Select the current window
             window = df[column].iloc[i:i+window_size]
             # Calculate the median and MAD for the window
