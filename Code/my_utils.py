@@ -41,10 +41,8 @@ def phase_sanitization_inRange(row):
     ''' Use: YourDataFrame.apply(phase_sanitization, axis=1)'''
     a = (row[-1] - row[0]) / 52
     b = row.mean()
-    half_1 = np.arange(7, 33)
-    half_2 = np.arange(34, 60)
-    mi_values = np.concatenate((half_1, half_2))
-    row = row - a * (mi_values - 33) - b #stop here if you want no bounds
+    mi_values = np.concatenate((np.arange(-26, 0),np.arange(1,27)))
+    row = row - (a * mi_values) - b #stop here if you want no bounds
     # Use modulo to wrap angles into the [0, 2π) range
     bounded_angles = row % (2 * np.pi)
     # Ensure the result is positive
@@ -175,7 +173,12 @@ def hampel_filtering(df, window_size, thresh=3, smoothing_factor=0.9):
     
     # Calculate half window size (since the window is centered, it's half to the left and half to the right)
     half_window = (window_size - 1) // 2
-    
+    '''
+    first_part = cleaned_df.loc[:half_window-1,:].to_numpy()
+    first_median = np.median(first_part, axis=0)
+    first_mad = np.median(np.absolute(first_part - first_median), axis=0)
+    first_part[np.absolute(first_part - first_median) > thresh*first_mad]#WROOOOOOONG
+    '''
     # Loop through each column (feature) in the DataFrame
     for column in cleaned_df.columns:
         # Skip points that are within the initial half window size and final half window size

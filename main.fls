@@ -838,6 +838,13 @@ INPUT .\images\phaseTransform.png
 INPUT .\images\phaseTransform.png
 INPUT .\images\phaseTransform.png
 INPUT .\images\phaseTransform.png
+INPUT .\images\empy_person_heatmap.png
+INPUT .\images\empy_person_heatmap.png
+INPUT images\empy_person_heatmap.png
+INPUT .\images\empy_person_heatmap.png
+INPUT .\images\empy_person_heatmap.png
+INPUT .\images\empy_person_heatmap.png
+INPUT .\images\empy_person_heatmap.png
 INPUT .\main.bbl
 INPUT main.bbl
 INPUT .\main.bbl
@@ -847,8 +854,8 @@ INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out
 INPUT C:\Program Files\MiKTeX\fonts\enc\dvips\lm\lm-ec.enc
-INPUT C:\Program Files\MiKTeX\fonts\enc\dvips\lm\lm-mathsy.enc
 INPUT C:\Program Files\MiKTeX\fonts\enc\dvips\lm\lm-mathit.enc
+INPUT C:\Program Files\MiKTeX\fonts\enc\dvips\lm\lm-mathsy.enc
 INPUT C:\Program Files\MiKTeX\fonts\enc\dvips\lm\lm-mathex.enc
 INPUT C:\Program Files\MiKTeX\fonts\enc\dvips\lm\lm-rm.enc
 INPUT C:\Program Files\MiKTeX\fonts\enc\dvips\lm\lm-ts1.enc
@@ -862,6 +869,8 @@ INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmmi10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmmi10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmmi6.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmmi6.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmmi7.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmmi7.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmmi8.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmmi8.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmr10.pfb
