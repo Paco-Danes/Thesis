@@ -60,7 +60,7 @@ def convert_to_bounded_angle(angles):
     return bounded_angles
 
 
-def hampel_filtering(df, window_size=500, stride=None, thresh=3):
+def MAD_filter(df, window_size=500, stride=None, thresh=3):
     if stride == None:
         stride = window_size
     # Create an empty DataFrame to store the cleaned data
@@ -165,4 +165,45 @@ def replace_outliers_iqr(df):
                 # Replace the outlier with the mean of the previous and next non-outlier values
                 if prev_non_outlier >= 0 and next_non_outlier < len(df):
                     cleaned_df.at[i, column] = (df.at[prev_non_outlier, column] + df.at[next_non_outlier, column]) / 2
+    return cleaned_df
+
+import numpy as np
+
+def hampel_filtering(df, window_size, thresh=3, smoothing_factor=0.9):
+    # Create an empty DataFrame to store the cleaned data
+    cleaned_df = df.copy()
+    
+    # Calculate half window size (since the window is centered, it's half to the left and half to the right)
+    half_window = (window_size - 1) // 2
+    
+    # Loop through each column (feature) in the DataFrame
+    for column in cleaned_df.columns:
+        # Skip points that are within the initial half window size and final half window size
+        for i in range(half_window, len(cleaned_df) - half_window): # [1,2,3,4,5,6]
+            # Determine the window indices considering edges
+            start_index = i - half_window
+            end_index = i + half_window + 1
+            
+            # Select the current window
+            window = cleaned_df[column].iloc[start_index:end_index]
+            
+            # Calculate the median and MAD for the window
+            median = window.median()
+            mad = np.median(np.abs(window - median))
+            
+            # Define a threshold for outlier detection (e.g., 3 times MAD)
+            threshold = thresh * mad
+            
+            # Identify if the current point is an outlier based on the MAD method
+            is_outlier = np.abs(cleaned_df[column].iloc[i] - median) > threshold
+            
+            # If it's an outlier, replace it with an estimate based on exponential smoothing
+            if is_outlier:
+                # Initialize smoothed value with the first point in the window
+                smoothed_value = cleaned_df[column].iloc[start_index]
+                for j in range(start_index, i):
+                    # Compute exponential smoothing
+                    smoothed_value = smoothing_factor * cleaned_df[column].iloc[j] + (1 - smoothing_factor) * smoothed_value
+                cleaned_df.at[i, column] = smoothed_value
+    
     return cleaned_df

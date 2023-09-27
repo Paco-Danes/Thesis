@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.7.3)  26 SEP 2023 22:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.7.3)  27 SEP 2023 13:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -631,31 +631,41 @@ Package pdftex.def Info: images/summationSinc.jpg  used on input line 194.
 (pdftex.def)             Requested size: 178.19879pt x 103.45554pt.
  [6 <./images/sinc_func_alone.jpg> <./images/multiple_sinc.jpg> <./images/summationSinc.jpg>] [7]
 Chapter 3.
-<images/Hampel1.png, id=170, 1175.39125pt x 271.0125pt>
-File: images/Hampel1.png Graphic file (type png)
-<use images/Hampel1.png>
-Package pdftex.def Info: images/Hampel1.png  used on input line 249.
+<images/Hampel2.png, id=167, 1175.39125pt x 271.0125pt>
+File: images/Hampel2.png Graphic file (type png)
+<use images/Hampel2.png>
+Package pdftex.def Info: images/Hampel2.png  used on input line 240.
 (pdftex.def)             Requested size: 388.07831pt x 89.47987pt.
 [8
 
- <./images/Hampel1.png>] (main.bbl [9] [10
+ <./images/Hampel2.png>]
+<images/phaseTransform.png, id=183, 564.1075pt x 276.03125pt>
+File: images/phaseTransform.png Graphic file (type png)
+<use images/phaseTransform.png>
+Package pdftex.def Info: images/phaseTransform.png  used on input line 280.
+(pdftex.def)             Requested size: 356.39758pt x 174.3976pt.
+ (main.bbl
 
-]) [11] (main.aux)
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[9] [10 <./images/phaseTransform.png>] [11
+
+]) [12] (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 549ABB409C520348CD2BE08DDED0BD34;1446.
  ) 
 Here is how much of TeX's memory you used:
- 14849 strings out of 478351
- 241606 string characters out of 2846868
- 585334 words of memory out of 3000000
- 32785 multiletter control sequences out of 15000+600000
- 547567 words of font info for 167 fonts, out of 8000000 for 9000
+ 14871 strings out of 478351
+ 241994 string characters out of 2846868
+ 585543 words of memory out of 3000000
+ 32795 multiletter control sequences out of 15000+600000
+ 547957 words of font info for 170 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,13n,131p,1048b,652s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}<C:/Program Files/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmss17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy8.pfb>
-Output written on main.pdf (15 pages, 1348065 bytes).
+Output written on main.pdf (16 pages, 1390481 bytes).
 PDF statistics:
- 279 PDF objects out of 1000 (max. 8388607)
- 48 named destinations out of 1000 (max. 500000)
- 47222 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 294 PDF objects out of 1000 (max. 8388607)
+ 53 named destinations out of 1000 (max. 500000)
+ 47227 words of extra memory for PDF output out of 51595 (max. 10000000)
 

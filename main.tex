@@ -235,30 +235,52 @@ This chapter explains the various methods used for preprocessing the available d
 cleaning the CSI acquisitions, therefore making the system more robust and less susceptible to noise.
 
 \section{Amplitude Sanitization}
-During wireless transmissions, signal amplitudes can experience outliers or anomalies due to various factors and causes. These outliers can adversely
-affect the quality of the received signal and the overall performance of the Wi-Fi system. Electrical spikes, equipment instability, external interference and
-sudden movements in the environment are some possible sources of noise. To mitigate the effect of spurious data, the Hampel Filter \cite{hampel_ID, Gait_hampel_pca} is employed,
-that exploits the Median Absolute Deviation (MAD), a robust statistical measure of the variability of a dataset defined as:
-$$ MAD_{w} = Median\{\;|\,x - median(X_{w})\,|\quad \forall x \in X_{w}\;\} $$
-where $X_{w}$ is a portion of the entire dataset defined by a sliding window $w$ of fixed length. Then, a point $x$ in the sliding window is considered an outlier if:
-$$|\,x - median(X_{w})\,|\; >\; \beta MAD_{w}$$
-where $\beta$ is an application dependent hyperparameter: in our case $\beta = 3$, in alignment with the prevalent choice in the literature. Fig. \ref{fig:Hampel1} below
-demonstrates the effect of the Hampel filtering procedure with a sliding window of size 500, on the observed amplitudes of subcarrier 12th.
-\begin{figure}[h]
+\begin{figure}[b]
     \centering
-    \includegraphics[width=0.98\textwidth]{images/Hampel1.png}
+    \includegraphics[width=0.98\textwidth]{images/Hampel2.png}
     \caption{Raw and filtered amplitudes of a single subcarrier over 10 seconds of acquisitions.}
     \label{fig:Hampel1}
 \end{figure}
+During wireless transmissions, signal amplitudes can experience outliers or anomalies due to various factors and causes. These outliers can adversely
+affect the quality of the received signal and the overall performance of the Wi-Fi system. Electrical spikes, equipment instability, external interference and
+sudden movements in the environment are some possible sources of noise. To mitigate the effect of spurious data, the Hampel Filter \cite{hampel_ID, Gait_hampel_pca} is employed,
+that exploits a sliding window and compares its central value with the Median Absolute Deviation (MAD), a robust statistical measure of the variability of a dataset defined as:
+$$ MAD_{w} = Median\{\;|\,x - median(X_{w})\,|\quad \forall x \in X_{w}\;\} $$
+where $X_{w}$ is a portion of the entire dataset defined by a sliding window $w$ of fixed length, where the length is an odd number. Then, the central point $x_{w/2}$ in the sliding window
+is considered an outlier if:
+$$|\,x_{w/2} - median(X_{w})\,|\; >\; \beta MAD_{w}$$
+where $\beta$ is an application dependent hyperparameter: in our case $\beta = 3$, in alignment with the prevalent choice in the literature. Fig. \ref{fig:Hampel1} below
+demonstrates the effect of the Hampel Filtering procedure with a sliding window of size 51, on the observed amplitudes of subcarrier 12th.
 The detection procedure is performed independently on each subcarrier’s amplitude series, and every discovered outlier is substituted
-with the mean of the previous and next non-outlier data point, to preserve temporal information consistency. Moreover, the Hampel Identifier
-doesn't pose any assumption on the distribution of the data and works well even with non-normally distributed points. This is a clear distinction
+with a prediction made by the Exponential Smoothing of the previous values in the window, to preserve temporal information consistency, formalized by:
+$$ s_i = \alpha x_i + (1-\alpha)s_{i-1}$$
+Where $i$ indexes the samples in the first half of the window, $s_i$ is the smoothed value and $x_i$ is the observation.
+Moreover, the Hampel Identifier doesn't pose any strong assumption on the distribution of the data and works well even with non-normally distributed points. This is a clear distinction
 with respect to other outlier detection statistical methods such as the Z-Score, that uses the mean and the standard deviation to discern anomalies
 from the rest of the dataset. These measures assume that the data follows a symmetric Gaussian distribution, and they can be highly affected by skewness
 or extreme outliers in case of non-normally distributed data. On the other hand, using the Median ensures resistance to skewness and to outliers with large
 magnitude, and does not require any normality assumption.
 
 \section{Phase Sanitization}
+Due to random noise and unsynchronized time clock between transmitter and receiver, raw phase information behaves extremely random, making it almost inapplicable for any task.
+The key observation is that significant component of random phase offsets can be removed by employing a linear transformation \cite{Phase_cal1,Phase_cal2,Phase_cal3} on the raw phase readings.
+Indeed, the measured phase $\hat{\phi}_i$ for the $i^{th}$ subcarrier can be expressed as:
+$$\hat{\phi}_i = {\phi}_i - 2\pi\frac{k_i}{N}\delta + \beta +\eta$$
+where $\phi_i$ is the true phase, $\delta$ is the timing offset at the receiver that leads to the error expressed as the second term, $\beta$ is an unknown phase offset and $\eta$ is some measurement noise.
+$k_i$ is the subcarrier index, ranging from -26 to +26 and N is a parameter found in the IEEE 802.11 specifications.
+To mitigate the impact of random noises, linear transformation on the raw phases is performed. The key idea is to eliminate $\delta$ and $\beta$ by considering the phase across the entire frequency band. Firstly, we define two terms
+$a$ and $b$ as follows:
+$$ a = \frac{\hat{\phi}_n - \hat{\phi}_1}{k_n - k_1} \qquad \qquad b = \frac{1}{n}\sum_{j=1}^{n}\hat{\phi}_j$$
+Subtracting the linear term $ak_i + b$ from the raw phase $\hat{\phi}_i$, we obtain a linear combination of true phases, denoted as $\Phi_i$, from which the random phase offsets have been removed (omitting the small measurement noise Z):
+$$\Phi_i = \hat{\phi}_i - ak_i - b $$
+Fig. \ref{fig:phase_cal} illustrates an example of the phases after transformation, which distributes relatively stable as expected compared to the original random version. Although it cannot be claimed
+the sanitized information is just the true phase, a usable and effective feature of the true phases is derived.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.90\textwidth]{images/phaseTransform.png}
+    \caption{Raw and sanitized phases of a single subcarrier over 100 consecutive pakets.}
+    \label{fig:phase_cal}
+\end{figure}
 \bibliography{references}
 \bibliographystyle{ieeetr}
 
