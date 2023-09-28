@@ -168,17 +168,34 @@ def replace_outliers_iqr(df):
 import numpy as np
 
 def hampel_filtering(df, window_size, thresh=3, smoothing_factor=0.9):
+    if window_size % 2 == 0:
+        raise ValueError('Window_size must be an odd number, but value provided is {}'.format(window_size))
     # Create an empty DataFrame to store the cleaned data
     cleaned_df = df.copy()
     
     # Calculate half window size (since the window is centered, it's half to the left and half to the right)
     half_window = (window_size - 1) // 2
-    '''
+
     first_part = cleaned_df.loc[:half_window-1,:].to_numpy()
-    first_median = np.median(first_part, axis=0)
-    first_mad = np.median(np.absolute(first_part - first_median), axis=0)
-    first_part[np.absolute(first_part - first_median) > thresh*first_mad]#WROOOOOOONG
-    '''
+    latent_median = np.median(first_part, axis=0)
+    latent_mad = np.median(np.absolute(first_part - latent_median), axis=0)
+    mask = np.absolute(first_part - latent_median) > thresh*latent_mad
+
+    for c in range(first_part.shape[1]):
+        first_part[mask[:,c],c] = latent_median[c]
+
+    cleaned_df.loc[:half_window-1,:] = first_part
+
+    last_part = cleaned_df.loc[len(cleaned_df)-half_window:,:].to_numpy()
+    latent_median = np.median(last_part, axis=0)
+    latent_mad = np.median(np.absolute(last_part - latent_median), axis=0)
+    mask = np.absolute(last_part - latent_median) > thresh*latent_mad
+
+    for c in range(last_part.shape[1]):
+        last_part[mask[:,c],c] = latent_median[c]
+    
+    cleaned_df.loc[len(cleaned_df)-half_window:,:] = last_part
+
     # Loop through each column (feature) in the DataFrame
     for column in cleaned_df.columns:
         # Skip points that are within the initial half window size and final half window size

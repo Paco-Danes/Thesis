@@ -253,8 +253,13 @@ where $\beta$ is an application dependent hyperparameter: in our case $\beta = 3
 demonstrates the effect of the Hampel Filtering procedure with a sliding window of size 51, on the observed amplitudes of subcarrier 12th.
 The detection procedure is performed independently on each subcarrier’s amplitude series, and every discovered outlier is substituted
 with a prediction made by the Exponential Smoothing of the previous values in the window, to preserve temporal information consistency, formalized by:
-$$ s_i = \alpha x_i + (1-\alpha)s_{i-1}$$
+$$s_0 = x_0$$
+$$ s_{i+1} = \alpha x_i + (1-\alpha)s_i \quad \; \forall i \in [0,w/2)$$
 Where $i$ indexes the samples in the first half of the window, $s_i$ is the smoothed value, $x_i$ is the observation and $\alpha$ is the smoothing factor.
+A lower value of alpha gives more weight to past observations and produces a smoother forecast, while a higher value of alpha gives more weight to current observations and responds faster to changes.
+In this work the value is set to $\alpha = 0.9$, but further testing and tuning could be required. For what regards the initial and last values of the dataset,
+those that have a number of observations to their left or their right less than half of the window size, a static MAD filter is applied over the corresponding slices of size = $w/2 - 1$, and the outliers are substituted with the median.
+
 As an extra relevant characteristic, the Hampel Identifier doesn't pose any strong assumption on the distribution of the data and works well even with non-normally distributed points. This is a clear distinction
 with respect to other outlier detection statistical methods such as the Z-Score, that uses the mean and the standard deviation to discern anomalies
 from the rest of the dataset. These measures assume that the data follows a symmetric Gaussian distribution, and they can be highly affected by skewness
@@ -262,14 +267,8 @@ or extreme outliers in case of non-normally distributed data. On the other hand,
 magnitude, and does not require any normality assumption.
 
 \section{Phase Sanitization}
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.70\textwidth]{images/phaseTransform.png}
-    \caption{Raw and sanitized phases of subcarrier $9^{th}$ of 500 consecutive packets.}
-    \label{fig:phase_cal}
-\end{figure}
 Due to random noise and unsynchronized time clock between transmitter and receiver, raw phase information behaves extremely random, making it almost inapplicable for any task.
-The key observation is that significant component of random phase offsets can be removed by employing a linear transformation \cite{Phase_cal1,Phase_cal2,Phase_cal3} on the raw phase readings.
+The key observation is that significant component of random phase offsets can be removed by employing a linear transformation \cite{Phase_cal1,Phase_cal3} on the raw phase readings.
 Indeed, the measured phase $\hat{\phi}_i$ for the $i^{th}$ subcarrier can be expressed as:
 $$\hat{\phi}_i = {\phi}_i - 2\pi\frac{k_i}{N}\delta + \beta +\eta$$
 where $\phi_i$ is the true phase, $\delta$ is the timing offset at the receiver that leads to the error expressed as the second term, $\beta$ is an unknown phase offset and $\eta$ is some measurement noise.
@@ -280,7 +279,13 @@ $$ a = \frac{\hat{\phi}_n - \hat{\phi}_1}{k_n - k_1} \qquad \qquad b = \frac{1}{
 Subtracting the linear term $ak_i + b$ from the raw phase $\hat{\phi}_i$, we obtain a linear combination of true phases, denoted as $\Phi_i$, from which the random phase offsets have been removed (omitting the small measurement noise $\eta$):
 $$\Phi_i = \hat{\phi}_i - ak_i - b $$
 Fig. \ref{fig:phase_cal} illustrates an example of the phases after transformation, which distributes relatively stable as expected compared to the original random version. Although it cannot be claimed
-the sanitized information is just the true phase, a usable and effective feature of the true phases is derived.
+the sanitized information is just the true phase, a usable and effective feature of the true phases is derived \cite{Phase_cal2}.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.70\textwidth]{images/phaseTransform.png}
+    \caption{Raw and sanitized phases of subcarrier $9^{th}$ of 500 consecutive packets.}
+    \label{fig:phase_cal}
+\end{figure}
 \section{Data exploration}
 \begin{figure}[h]
     \centering
