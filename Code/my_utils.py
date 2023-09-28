@@ -49,15 +49,6 @@ def phase_sanitization_inRange(row):
     bounded_angles[bounded_angles < 0] += 2 * np.pi
     return bounded_angles
 
-def convert_to_bounded_angle(angles):
-    ''' Use: YourDataFrame.apply(convert_to_bounded_angle, axis=1)'''
-    # Use modulo to wrap angles into the [0, 2π) range
-    bounded_angles = angles % (2 * np.pi)
-    # Ensure the result is positive
-    bounded_angles[bounded_angles < 0] += 2 * np.pi
-    return bounded_angles
-
-
 def MAD_filter(df, window_size=500, stride=None, thresh=3):
     if stride == None:
         stride = window_size
@@ -227,3 +218,40 @@ def hampel_filtering(df, window_size, thresh=3, smoothing_factor=0.9):
                 cleaned_df.at[i, column] = smoothed_value
     
     return cleaned_df
+
+from scipy.signal import butter, lfilter, lfilter_zi
+
+def butterworth_filter_dataframe(df, order, cutoff_frequency, sampling_rate):
+    """
+    Apply a Butterworth filter to each column of a DataFrame.
+
+    Parameters:
+        df (pandas.DataFrame): Input DataFrame with time series data.
+        order (int): Filter order.
+        cutoff_frequency (float): Cutoff frequency (in Hertz).
+        sampling_rate (float): Sampling rate (in Hertz).
+
+    Returns:
+        pandas.DataFrame: Filtered DataFrame with the same column names.
+    """
+    # Calculate Nyquist frequency
+    nyquist_frequency = sampling_rate / 2
+    
+    # Create an empty DataFrame to store the filtered data
+    filtered_data = pd.DataFrame()
+    
+    # Loop through each column and apply the filter
+    for column in df.columns:
+        # Get the column data
+        column_data = df[column].values
+        
+        # Design the Butterworth filter
+        b, a = butter(order, cutoff_frequency / nyquist_frequency, btype='low')
+        initial_correction = lfilter_zi(b, a)
+        # Apply the filter to the column data
+        filtered_column_data = lfilter(b, a, column_data, zi = initial_correction*column_data[0])[0]
+        
+        # Store the filtered data in the new DataFrame with the same column name
+        filtered_data[column] = filtered_column_data
+    
+    return filtered_data
