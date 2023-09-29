@@ -257,7 +257,7 @@ $$s_0 = x_0$$
 $$ s_{i+1} = \alpha x_i + (1-\alpha)s_i \quad \; \forall i \in [0,w/2)$$
 Where $i$ indexes the samples in the first half of the window, $s_i$ is the smoothed value, $x_i$ is the observation and $\alpha$ is the smoothing factor.
 A lower value of alpha gives more weight to past observations and produces a smoother forecast, while a higher value of alpha gives more weight to current observations and responds faster to changes.
-In this work the value is set to $\alpha = 0.9$, but further testing and tuning could be required. For what regards the initial and last values of the dataset,
+In this work the value is set to $\alpha = 0.8$, but further testing and tuning could be required. For what regards the initial and last values of the dataset,
 those that have a number of observations to their left or their right less than half of the window size, a static MAD filter is applied over the corresponding slices of size = $w/2 - 1$, and the outliers are substituted with the median.
 
 As an extra relevant characteristic, the Hampel Identifier doesn't pose any strong assumption on the distribution of the data and works well even with non-normally distributed points. This is a clear distinction

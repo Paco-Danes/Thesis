@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex main"] 1695984717 "main.aux" "main.bbl" "main" 1695984737
+["bibtex main"] 1695984717 "main.aux" "main.bbl" "main" 1695990738
   "C:/Program Files/MiKTeX/bibtex/bst/bibtex/ieeetr.bst" 1291867944 18361 1a00e58565e7f19bf2b3e1bfb82254ae ""
-  "main.aux" 1695984736 5929 bee3f356b9ee43dc20d5af4fece3c985 "pdflatex"
+  "main.aux" 1695990738 5929 bee3f356b9ee43dc20d5af4fece3c985 "pdflatex"
   "references.bib" 1695984717 11406 7d5b77590f91da64a829121c2f0c85e7 ""
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1695984734 "c:/Users/devin/Desktop/Università/Tesi/Thesis/main.tex" "main.pdf" "main" 1695984737
+["pdflatex"] 1695990735 "c:/Users/devin/Desktop/Università/Tesi/Thesis/main.tex" "main.pdf" "main" 1695990738
   "C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256933040 2375 baa924870cfb487815765f9094cf3728 ""
   "C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc" 1256933040 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc" 1256933040 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -140,7 +140,7 @@
   "C:/Program Files/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "C:/Users/devin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1656867487 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/devin/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1656867490 10316885 bf6526c5608e614f1cf8746ea2a902ed ""
-  "c:/Users/devin/Desktop/Università/Tesi/Thesis/main.tex" 1695984733 25801 265f87106b877f6661178f3bd9c9b020 ""
+  "c:/Users/devin/Desktop/Università/Tesi/Thesis/main.tex" 1695990734 25801 ad458fdf714711aae782b57b6b80206f ""
   "images/Hampel2.png" 1695806985 70378 dd254bbca7134acab76a7ad4874d22f5 ""
   "images/IQ_sampling.jpg" 1694082958 252699 9d501242d0fddf9cb13d150a3ddfea12 ""
   "images/Person_id.jpg" 1695718802 42642 92c50c82dc35420374ba04ddfc73c84c ""
@@ -151,11 +151,11 @@
   "images/sinc_func_alone.jpg" 1692804271 59613 fe1aa22107394fc4c9476fc12356162a ""
   "images/summationSinc.jpg" 1692894053 131097 d5a190ef251ac301150b9a22c898e498 ""
   "images/wave.jpg" 1693994127 54533 6390e7a8f56f8d59a0c88804ce38fb39 ""
-  "main.aux" 1695984736 5929 bee3f356b9ee43dc20d5af4fece3c985 "pdflatex"
+  "main.aux" 1695990738 5929 bee3f356b9ee43dc20d5af4fece3c985 "pdflatex"
   "main.bbl" 1695984718 4630 a22ffb30181cc55bc5795b0e35288607 "bibtex main"
-  "main.out" 1695984736 1584 050d7b30b89db2b9e7682dbafdd3a768 "pdflatex"
-  "main.tex" 1695984733 25801 265f87106b877f6661178f3bd9c9b020 ""
-  "main.toc" 1695984736 797 ceb3eecf33853b2b80083d3879f42ce8 "pdflatex"
+  "main.out" 1695990738 1584 050d7b30b89db2b9e7682dbafdd3a768 "pdflatex"
+  "main.tex" 1695990734 25801 ad458fdf714711aae782b57b6b80206f ""
+  "main.toc" 1695990738 797 ceb3eecf33853b2b80083d3879f42ce8 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
