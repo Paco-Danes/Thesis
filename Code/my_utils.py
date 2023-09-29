@@ -221,7 +221,7 @@ def hampel_filtering(df, window_size, thresh=3, smoothing_factor=0.9):
 
 from scipy.signal import butter, lfilter, lfilter_zi
 
-def butterworth_filter_dataframe(df, order, cutoff_frequency, sampling_rate):
+def butterworth_filter(df, order, cutoff_frequency, sampling_rate):
     """
     Apply a Butterworth filter to each column of a DataFrame.
 
