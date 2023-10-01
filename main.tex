@@ -287,6 +287,19 @@ the sanitized information is just the true phase, a usable and effective feature
     \label{fig:phase_cal}
 \end{figure}
 \section{Data exploration}
+The main idea behind this work is that the presence of a human being in an area where a wireless communication is occurring,
+distorts the EM waves in a unique manner, resulting in a person-specific CSI acquisition. Body characteristics such as shape, weight, mass distribution,
+height, tissues and cellular composition have different levels of radiation absorption and reflection, affecting the phase and amplitude of the arriving signals.
+This effect is of a particular magnitude if the distortion element, an object or a person, is located in the Line-Of-Sight (LOS) path between the communicating antennas.
+This is because during a wireless transmission, the final signal is the result of a multipath propagation of the initial signal that is altered by the room structure and furniture,
+but the LOS part of the wave usually overwhelms the other components coming from the multipath since it hasn't been altered by any object. Moreover, the transmission distance is the shortest
+when considering the LOS with respect to other paths, leading to less signal fading and attenuation.
+
+Fig. \ref{fig:heatmap} represents the amplitude of each subcarrier over time as a heatmap plot,
+where the scale goes incrementally from lighter to darker color. The x-axis values are the different subcarriers, ranging from index -26 to +26, while the y-axis represent the time steps for a total
+of 200 observations (2 seconds).
+
+
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.9\textwidth]{images/heatmap_3.png}
