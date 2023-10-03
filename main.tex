@@ -235,9 +235,10 @@ This chapter explains the various methods used for preprocessing the available d
 cleaning the CSI acquisitions, therefore making the system more robust and less susceptible to noise.
 
 \section{Amplitude Sanitization}
+\label{sec:amp_san}
 \begin{figure}[b]
     \centering
-    \includegraphics[width=0.98\textwidth]{images/Hampel2.png}
+    \includegraphics[width=0.98\textwidth]{images/hampel_DWT.png}
     \caption{Raw and filtered amplitudes of a single subcarrier over 10 seconds of acquisitions.}
     \label{fig:Hampel1}
 \end{figure}
@@ -267,8 +268,11 @@ or extreme outliers in case of non-normally distributed data. On the other hand,
 magnitude, and does not require any normality assumption.
 
 \section{Phase Sanitization}
+\label{sec:cal}
 Due to random noise and unsynchronized time clock between transmitter and receiver, raw phase information behaves extremely random, making it almost inapplicable for any task.
-The key observation is that significant component of random phase offsets can be removed by employing a linear transformation \cite{Phase_cal1,Phase_cal3} on the raw phase readings.
+The issue is that phase data is affected by the carrier frequency offset (CFO) and sampling frequency offset (SFO) \cite{phase_noise}. The CFO arises when the transmitter and
+receiver do not precisely synchronize their timing and phases before transmitting a packet, while the SFO is caused by analogue to digital converter, and it also varies by subcarrier, so each of them has a different
+error in the end. The key observation is that significant component of random phase offsets can be removed by employing a linear transformation \cite{Phase_cal1,Phase_cal3} on the raw phase readings.
 Indeed, the measured phase $\hat{\phi}_i$ for the $i^{th}$ subcarrier can be expressed as:
 $$\hat{\phi}_i = {\phi}_i - 2\pi\frac{k_i}{N}\delta + \beta +\eta$$
 where $\phi_i$ is the true phase, $\delta$ is the timing offset at the receiver that leads to the error expressed as the second term, $\beta$ is an unknown phase offset and $\eta$ is some measurement noise.
@@ -282,7 +286,7 @@ Fig. \ref{fig:phase_cal} illustrates an example of the phases after transformati
 the sanitized information is just the true phase, a usable and effective feature of the true phases is derived \cite{Phase_cal2}.
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.70\textwidth]{images/phaseTransform.png}
+    \includegraphics[width=0.90\textwidth]{images/phaseTransform.png}
     \caption{Raw and sanitized phases of subcarrier $9^{th}$ of 500 consecutive packets.}
     \label{fig:phase_cal}
 \end{figure}
@@ -292,20 +296,25 @@ distorts the EM waves in a unique manner, resulting in a person-specific CSI acq
 height, tissues and cellular composition have different levels of radiation absorption and reflection, affecting the phase and amplitude of the arriving signals.
 This effect is of a particular magnitude if the distortion element, an object or a person, is located in the Line-Of-Sight (LOS) path between the communicating antennas.
 This is because during a wireless transmission, the final signal is the result of a multipath propagation of the initial signal that is altered by the room structure and furniture,
-but the LOS part of the wave usually overwhelms the other components coming from the multipath since it hasn't been altered by any object. Moreover, the transmission distance is the shortest
+but the LOS part of the wave usually overwhelms the other components coming from the multipath since it hasn't been affected by any object. Moreover, the transmission distance is the shortest
 when considering the LOS with respect to other paths, leading to less signal fading and attenuation.
 
-Fig. \ref{fig:heatmap} represents the amplitude of each subcarrier over time as a heatmap plot,
-where the scale goes incrementally from lighter to darker color. The x-axis values are the different subcarriers, ranging from index -26 to +26, while the y-axis represent the time steps for a total
-of 200 observations (2 seconds).
-
+Fig. \ref{fig:heatmap} represents the amplitude of each subcarrier over time as a heatmap plot, where the scale goes incrementally from darker to lighter color, after the outlier filtering procedure describe in Section \ref{sec:amp_san}. The x-axis values are the different subcarriers,
+ranging from index -26 to +26, while the y-axis represent the time steps for a total of 200 observations (2 seconds). The first image is the acquisition of a room with no person in it, while the second and third
+images are the data of the same room but with a different person standing at the center of the LOS path. The empty room heatmap looks way more stable over time, with the amplitudes linearly decreasing
+from the lowest subcarrier index to the highest one. This structure is more or less maintained whatever time frame it is selected. A person between the antennas instead, introduces notable noise caused by overall amplitude modifications,
+with clear differences between two distinct people. Indeed, by analyzing the data points, it can be seen that the distribution of the amplitudes of each subcarrier for the empty room approximates quite well a Gaussian distribution, while on the other hand the distribution of the people-related data presents
+irregularities and some skewness.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.9\textwidth]{images/heatmap_3.png}
-    \caption{Heatmap of the amplitude of an empty room (left) and the same room with a person between the antenna.}
+    \includegraphics[width=0.95\textwidth]{images/heatmap_3.png}
+    \caption{Heatmaps of the amplitudes of an empty room vs the same room with 2 different people standing in the LOS path between the antennas.}
     \label{fig:heatmap}
 \end{figure}
+
+For what regards the signal phases, visualizing the differences between classes is harder due to the angle-nature of the data and the calibration procedure explained in Section \ref{sec:cal}, that tends to normalize and center the points around the mean.
+However, experimental results show a significant improvement in the classification task versus using the amplitude data alone, suggesting that also phases could be used to extract features that are important for mapping signal data to a specific person.
 \bibliography{references}
 \bibliographystyle{ieeetr}
 

@@ -83,6 +83,14 @@ R.~Ou, Y.~Chen, and Y.~Deng, ``Wiwalk: Gait-based dual-user identification
   using wifi device,'' {\em IEEE Internet of Things Journal}, vol.~10, no.~6,
   pp.~5321--5334, 2023.
 
+\bibitem{phase_noise}
+A.~Zhuravchak, O.~Kapshii, and E.~Pournaras, ``Human activity recognition based
+  on wi-fi csi data -a deep neural network approach,'' {\em Procedia Computer
+  Science}, vol.~198, pp.~59--66, 2022.
+\newblock 12th International Conference on Emerging Ubiquitous Systems and
+  Pervasive Networks / 11th International Conference on Current and Future
+  Trends of Information and Communication Technologies in Healthcare.
+
 \bibitem{Phase_cal1}
 S.~Sen, B.~Radunovic, R.~R. Choudhury, and T.~Minka, ``You are facing the mona
   lisa: Spot localization using phy layer information,'' in {\em Proceedings of
