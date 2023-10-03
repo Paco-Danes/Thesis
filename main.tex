@@ -236,12 +236,6 @@ cleaning the CSI acquisitions, therefore making the system more robust and less 
 
 \section{Amplitude Sanitization}
 \label{sec:amp_san}
-\begin{figure}[b]
-    \centering
-    \includegraphics[width=0.98\textwidth]{images/hampel_DWT.png}
-    \caption{Raw and filtered amplitudes of a single subcarrier over 10 seconds of acquisitions.}
-    \label{fig:Hampel1}
-\end{figure}
 During wireless transmissions, signal amplitudes can experience outliers or anomalies due to various factors and causes. These outliers can adversely
 affect the quality of the received signal and the overall performance of the Wi-Fi system. Electrical spikes, equipment instability, external interference and
 sudden movements in the environment are some possible sources of noise. To mitigate the effect of spurious data, the Hampel Filter \cite{hampel_ID, Gait_hampel_pca} is employed,
@@ -250,8 +244,7 @@ $$ MAD_{w} = Median\{\;|\,x - median(X_{w})\,|\quad \forall x \in X_{w}\;\} $$
 where $X_{w}$ is a portion of the entire dataset defined by a sliding window $w$ of fixed length, where the length is an odd number. Then, the central point $x_{w/2}$ in the sliding window
 is considered an outlier if:
 $$|\,x_{w/2} - median(X_{w})\,|\; >\; \beta MAD_{w}$$
-where $\beta$ is an application dependent hyperparameter: in our case $\beta = 3$, in alignment with the prevalent choice in the literature. Fig. \ref{fig:Hampel1} below
-demonstrates the effect of the Hampel Filtering procedure with a sliding window of size 51, on the observed amplitudes of subcarrier 12th.
+where $\beta$ is an application dependent hyperparameter: in our case $\beta = 3$, in alignment with the prevalent choice in the literature.
 The detection procedure is performed independently on each subcarrier’s amplitude series, and every discovered outlier is substituted
 with a prediction made by the Exponential Smoothing of the previous values in the window, to preserve temporal information consistency, formalized by:
 $$s_0 = x_0$$
@@ -260,12 +253,25 @@ Where $i$ indexes the samples in the first half of the window, $s_i$ is the smoo
 A lower value of alpha gives more weight to past observations and produces a smoother forecast, while a higher value of alpha gives more weight to current observations and responds faster to changes.
 In this work the value is set to $\alpha = 0.8$, but further testing and tuning could be required. For what regards the initial and last values of the dataset,
 those that have a number of observations to their left or their right less than half of the window size, a static MAD filter is applied over the corresponding slices of size = $w/2 - 1$, and the outliers are substituted with the median.
-
 As an extra relevant characteristic, the Hampel Identifier doesn't pose any strong assumption on the distribution of the data and works well even with non-normally distributed points. This is a clear distinction
 with respect to other outlier detection statistical methods such as the Z-Score, that uses the mean and the standard deviation to discern anomalies
 from the rest of the dataset. These measures assume that the data follows a symmetric Gaussian distribution, and they can be highly affected by skewness
 or extreme outliers in case of non-normally distributed data. On the other hand, using the Median ensures resistance to skewness and to outliers with large
 magnitude, and does not require any normality assumption.
+
+The effect of the outlier removal procedure just described is the substitution of the most relevant outliers, but the series still preserve overall impurities causing large variance and heteroscedasticity.
+To get rid of the noise, Discrete Wavelet Transforms (DWT) is employed, a common method for signal denoising. Other possible solutions include the application of a smoothing function, such as Weighted Moving Average and Exponential Smoothing,
+but using more complex frequency based methods like Fourier Transforms and DWT is usually preferred. Fig. \ref{fig:Hampel1} shows the effect of applying Hampel Filtering with window size set to 51 and smoothing factor of 0.8 followed by DWT
+to the amplitudes of subcarrier $12^{th}$. The DWT decomposes a signal into multiple scales using wavelet filters. High-frequency noise is concentrated in detail coefficients, while signal features are found in approximation coefficients.
+By applying a threshold to detail coefficients that modifies them and reconstructing the signal with the inverse DWT, this technique effectively removes noise while preserving essential signal information at different frequency scales,
+producing a smoothed version of the original data.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.98\textwidth]{images/hampel_DWT.png}
+    \caption{Raw and filtered amplitudes of a single subcarrier over 10 seconds of acquisitions.}
+    \label{fig:Hampel1}
+\end{figure}
 
 \section{Phase Sanitization}
 \label{sec:cal}
@@ -286,7 +292,7 @@ Fig. \ref{fig:phase_cal} illustrates an example of the phases after transformati
 the sanitized information is just the true phase, a usable and effective feature of the true phases is derived \cite{Phase_cal2}.
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.90\textwidth]{images/phaseTransform.png}
+    \includegraphics[width=0.9\textwidth]{images/phaseTransform.png}
     \caption{Raw and sanitized phases of subcarrier $9^{th}$ of 500 consecutive packets.}
     \label{fig:phase_cal}
 \end{figure}
@@ -305,14 +311,12 @@ images are the data of the same room but with a different person standing at the
 from the lowest subcarrier index to the highest one. This structure is more or less maintained whatever time frame it is selected. A person between the antennas instead, introduces notable noise caused by overall amplitude modifications,
 with clear differences between two distinct people. Indeed, by analyzing the data points, it can be seen that the distribution of the amplitudes of each subcarrier for the empty room approximates quite well a Gaussian distribution, while on the other hand the distribution of the people-related data presents
 irregularities and some skewness.
-
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.95\textwidth]{images/heatmap_3.png}
     \caption{Heatmaps of the amplitudes of an empty room vs the same room with 2 different people standing in the LOS path between the antennas.}
     \label{fig:heatmap}
 \end{figure}
-
 For what regards the signal phases, visualizing the differences between classes is harder due to the angle-nature of the data and the calibration procedure explained in Section \ref{sec:cal}, that tends to normalize and center the points around the mean.
 However, experimental results show a significant improvement in the classification task versus using the amplitude data alone, suggesting that also phases could be used to extract features that are important for mapping signal data to a specific person.
 \bibliography{references}
