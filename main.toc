@@ -7,4 +7,4 @@
 \contentsline {chapter}{\numberline {3}Signal Preprocessing}{8}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Amplitude Sanitization}{8}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Phase Sanitization}{9}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Data exploration}{11}{section.3.3}%
+\contentsline {section}{\numberline {3.3}Data exploration and structuring}{11}{section.3.3}%

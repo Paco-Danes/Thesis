@@ -263,7 +263,7 @@ The effect of the outlier removal procedure just described is the substitution o
 To get rid of the noise, Discrete Wavelet Transforms (DWT) is employed, a common method for signal denoising. Other possible solutions include the application of a smoothing function, such as Weighted Moving Average and Exponential Smoothing,
 but using more complex frequency based methods like Fourier Transforms and DWT is usually preferred. Fig. \ref{fig:Hampel1} shows the effect of applying Hampel Filtering with window size set to 51 and smoothing factor of 0.8 followed by DWT
 to the amplitudes of subcarrier $12^{th}$. The DWT decomposes a signal into multiple scales using wavelet filters. High-frequency noise is concentrated in detail coefficients, while signal features are found in approximation coefficients.
-By applying a threshold to detail coefficients that modifies them and reconstructing the signal with the inverse DWT, this technique effectively removes noise while preserving essential signal information at different frequency scales,
+By applying a threshold to detail coefficients that modifies them and reconstructing the signal with the inverse DWT, this technique effectively removes noise while preserving essential signal information \cite{DWT_review} at different frequency scales,
 producing a smoothed version of the original data.
 
 \begin{figure}[h]
@@ -296,7 +296,7 @@ the sanitized information is just the true phase, a usable and effective feature
     \caption{Raw and sanitized phases of subcarrier $9^{th}$ of 500 consecutive packets.}
     \label{fig:phase_cal}
 \end{figure}
-\section{Data exploration}
+\section{Data exploration and structuring}
 The main idea behind this work is that the presence of a human being in an area where a wireless communication is occurring,
 distorts the EM waves in a unique manner, resulting in a person-specific CSI acquisition. Body characteristics such as shape, weight, mass distribution,
 height, tissues and cellular composition have different levels of radiation absorption and reflection, affecting the phase and amplitude of the arriving signals.
@@ -318,7 +318,27 @@ irregularities and some skewness.
     \label{fig:heatmap}
 \end{figure}
 For what regards the signal phases, visualizing the differences between classes is harder due to the angle-nature of the data and the calibration procedure explained in Section \ref{sec:cal}, that tends to normalize and center the points around the mean.
-However, experimental results show a significant improvement in the classification task versus using the amplitude data alone, suggesting that also phases could be used to extract features that are important for mapping signal data to a specific person.
+However, experimental results show a significant improvement in the classification task when combining both amplitude and phase information versus using the amplitude data alone, suggesting that also phases could be used to extract features that are
+important for mapping signals to a specific person.
+
+One logical approach to merge amplitude and phase data into a single data point is to create 2 different channels by concatenating them along the depth dimension, obtaining a tensor with shape $( 2 \times T \times S)$, where $T$ are the considered
+time steps and $S$ the number of subcarriers, and passing it into a model ready to handle this kind of input shapes. Despite that, in this research an experimental method is tested, that consists into combining both measurements into a single
+bi-dimensional image, by alternating amplitude and phase of their respective subcarriers. Precisely, if we indicate with $A_{ts}$ and $\phi_{ts}$ the amplitude and phase of subcarrier $s$ at time $t$ the image is constructed as follows:
+\\
+\[
+    H = \begin{bmatrix}
+        A_{11} & \phi_{11} & A_{12} & \phi_{12} & \dots  & \dots  & A_{1s} & \phi_{1s} \\
+        A_{21} & \phi_{21} & \ddots & \ddots    & \ddots & \ddots & \vdots & \vdots    \\
+        \vdots & \vdots    & \ddots & \ddots    & \ddots & \ddots & \vdots & \vdots    \\
+        A_{t1} & \phi_{t1} & \dots  & \dots     & \dots  & \dots  & A_{ts} & \phi_{ts}
+    \end{bmatrix}
+\]
+\\
+getting a final image of shape $(T \times 2S)$. In this particular project, since 52 subcarriers are used and 200 time steps are observed, the shape of an input point is $(200 \times 104)$.
+Since the acquired data consists of thousands of observations, to extract the various portions from the whole sequence a sliding window of length 200 moves along the series making steps of 100 points each time
+and then the observations falling in the window are saved as a data point. This means that the entire series is not exactly divided in disjoint sections of length 200 each, rather in several portions where each one has the first half that overlaps with the
+second half of the previous portion and consequently the second half that overlaps with first half of the next portion. The purpose of this mechanism is to capture the temporal dependencies between consecutive segments of the dataset, since during testing and inference
+any point in time could be captured without control over it. Furthermore, a form of data augmentation is achieved as well, resulting into a larger training set.
 \bibliography{references}
 \bibliographystyle{ieeetr}
 

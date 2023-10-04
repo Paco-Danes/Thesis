@@ -3,7 +3,7 @@ import pandas as pd
 
 def extract_amp_phase(path, names = ('amp_no_name.csv', 'phase_no_name.csv')): 
     '''Returns and save 2 different datasets, 
-    1 for the amplitude 1 for the phase, both with 52 features.
+    1 for the amplitude 1 for the phase, both with 64 features.
     It combines the I/Q samples to produce the results.
     '''
     data_0 = pd.read_csv(path)
@@ -16,14 +16,14 @@ def extract_amp_phase(path, names = ('amp_no_name.csv', 'phase_no_name.csv')):
     def compute_atan2(arr):
         arr = np.array(arr)
         imaginary, real = arr[::2], arr[1::2] # imaginary = y = Q and real = x = I of I/Q-Sampling
-        return np.rad2deg(np.arctan2(imaginary, real)) # argument order is (y,x) NOT (x,y)
+        return np.arctan2(imaginary, real) # argument order is (y,x) NOT (x,y), returns Radians
 
     amp_data = data_0.apply(compute_amplitude)
     phase_data = data_0.apply(compute_atan2)
-    amp_data = pd.DataFrame(amp_data.tolist(), columns=[f'subc{i+1}' for i in range(64)]).iloc[:,6:59].drop('subc33',axis=1)  # remove guard subcarriers
-    phase_data = pd.DataFrame(phase_data.tolist(), columns=[f'subc{i+1}' for i in range(64)]).iloc[:,6:59].drop('subc33', axis=1)  # remove guard subcarriers
-    amp_data.to_csv('..\Data\\' + names[0], index=False)
-    phase_data.to_csv('..\Data\\' + names[1], index=False)
+    amp_data = pd.DataFrame(amp_data.tolist(), columns=[f'subc{i-32}' for i in range(64)]).iloc[:,6:59].drop('subc0',axis=1)  # remove guard subcarriers
+    phase_data = pd.DataFrame(phase_data.tolist(), columns=[f'subc{i-32}' for i in range(64)]).iloc[:,6:59].drop('subc0', axis=1)  # remove guard subcarriers
+    amp_data.to_csv('..\Data\DataClean\\' + names[0], index=False)
+    phase_data.to_csv('..\Data\DataClean\\' + names[1], index=False)
     return amp_data, phase_data
 
 def make_alternating(amp,pha):
@@ -38,7 +38,7 @@ def make_alternating(amp,pha):
     return data
 
 def phase_sanitization_inRange(row):
-    ''' Use: YourDataFrame.apply(phase_sanitization, axis=1)'''
+    ''' Use: YourDataFrame.apply(phase_sanitization_inRange, axis=1)'''
     a = (row[-1] - row[0]) / 52
     b = row.mean()
     mi_values = np.concatenate((np.arange(-26, 0),np.arange(1,27)))
@@ -109,6 +109,22 @@ def hampel_filtering(df, window_size, thresh=3, smoothing_factor=0.9):
                 cleaned_df.at[i, column] = smoothed_value
     
     return cleaned_df
+
+import pywt
+import pywt.data
+def DWT_denoising(df, wavelet = 'haar', level = 5, threshold = 0.7):
+
+    def soft_threshold(value, threshold):
+        return np.where(value > threshold, value - threshold, np.where(value < -threshold, value + threshold, 0.0))
+    
+    coeffs = pywt.wavedec(df, wavelet, level=level, axis=0)
+    denoised_coeffs = [soft_threshold(coeff, threshold) for coeff in coeffs]
+    df_denoised = pywt.waverec(denoised_coeffs, wavelet, axis=0)
+    #this is done because if the original data has an even number of rows, the DWT add an extra row at the end, don't ask me precisely why :)
+    if (df.shape[0] % 2) == 1:
+        df_denoised = df_denoised[:-1]
+
+    return pd.DataFrame(df_denoised, columns=df.columns)
 
 from scipy.stats import skew
 def add_statistics(input_df):
