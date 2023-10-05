@@ -337,8 +337,9 @@ bi-dimensional image, by alternating amplitude and phase of their respective sub
 getting a final image of shape $(T \times 2S)$. In this particular project, since 52 subcarriers are used and 200 time steps are observed, the shape of an input point is $(200 \times 104)$.
 Since the acquired data consists of thousands of observations, to extract the various portions from the whole sequence a sliding window of length 200 moves along the series making steps of 100 points each time
 and then the observations falling in the window are saved as a data point. This means that the entire series is not exactly divided in disjoint sections of length 200 each, rather in several portions where each one has the first half that overlaps with the
-second half of the previous portion and consequently the second half that overlaps with first half of the next portion. The purpose of this mechanism is to capture the temporal dependencies between consecutive segments of the dataset, since during testing and inference
-any point in time could be captured without control over it. Furthermore, a form of data augmentation is achieved as well, resulting into a larger training set.
+second half of the previous portion and consequently the second half that overlaps with first half of the next portion. To clarify, the extracted matrices are from row 0 to 200, 100 to 300, 200 to 400 and so on until the last row of the whole sequence.
+The purpose of this mechanism is to capture the temporal dependencies between consecutive segments of the dataset, since during testing and inference any point in time could be captured without control over it. Furthermore, a form of data augmentation
+is achieved as well, resulting into a larger training set.
 \bibliography{references}
 \bibliographystyle{ieeetr}
 
