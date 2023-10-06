@@ -8,3 +8,6 @@
 \contentsline {section}{\numberline {3.1}Amplitude Sanitization}{8}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Phase Sanitization}{9}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Data exploration and structuring}{11}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Proposed method}{13}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Dataset acquisition}{13}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Convolutional Neural Network}{14}{section.4.2}%

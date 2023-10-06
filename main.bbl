@@ -113,4 +113,20 @@ K.~Qian, C.~Wu, Z.~Yang, Y.~Liu, and Z.~Zhou, ``Pads: Passive detection of
   20th IEEE International Conference on Parallel and Distributed Systems
   (ICPADS)}, pp.~1--8, 2014.
 
+\bibitem{WiWho_gait_decisionTree}
+Y.~Zeng, P.~H. Pathak, and P.~Mohapatra, ``Wiwho: Wifi-based person
+  identification in smart spaces,'' in {\em 2016 15th ACM/IEEE International
+  Conference on Information Processing in Sensor Networks (IPSN)}, pp.~1--12,
+  2016.
+
+\bibitem{LeCun_CNN}
+Y.~LeCun, B.~Boser, J.~S. Denker, D.~Henderson, R.~E. Howard, W.~Hubbard, and
+  L.~D. Jackel, ``Backpropagation applied to handwritten zip code
+  recognition,'' {\em Neural Computation}, vol.~1, no.~4, pp.~541--551, 1989.
+
+\bibitem{Goodfellow_DL}
+I.~Goodfellow, Y.~Bengio, and A.~Courville, {\em Deep Learning}.
+\newblock MIT Press, 2016.
+\newblock \url{http://www.deeplearningbook.org}.
+
 \end{thebibliography}

@@ -231,6 +231,7 @@ where S is the total number of subcarriers. In our case, 64 are employed, of whi
 usable informative subcarriers, at a rate of transmission of 100 packets (observations) per second.
 
 \chapter{Signal Preprocessing}
+\label{chap:preprocess}
 This chapter explains the various methods used for preprocessing the available data, an essential procedure applied for structuring the dataset and
 cleaning the CSI acquisitions, therefore making the system more robust and less susceptible to noise.
 
@@ -297,6 +298,7 @@ the sanitized information is just the true phase, a usable and effective feature
     \label{fig:phase_cal}
 \end{figure}
 \section{Data exploration and structuring}
+\label{Sec:structuring}
 The main idea behind this work is that the presence of a human being in an area where a wireless communication is occurring,
 distorts the EM waves in a unique manner, resulting in a person-specific CSI acquisition. Body characteristics such as shape, weight, mass distribution,
 height, tissues and cellular composition have different levels of radiation absorption and reflection, affecting the phase and amplitude of the arriving signals.
@@ -340,6 +342,58 @@ and then the observations falling in the window are saved as a data point. This 
 second half of the previous portion and consequently the second half that overlaps with first half of the next portion. To clarify, the extracted matrices are from row 0 to 200, 100 to 300, 200 to 400 and so on until the last row of the whole sequence.
 The purpose of this mechanism is to capture the temporal dependencies between consecutive segments of the dataset, since during testing and inference any point in time could be captured without control over it. Furthermore, a form of data augmentation
 is achieved as well, resulting into a larger training set.
+\chapter{Proposed method}
+This chapter explains the protocol followed for gathering the CSI data along with the architecture of the model employed for the classification task. A brief recap on CNNs is given, together with the description of the training settings and the dataset specifications, in order to build the complete working pipeline for the assigned task.
+\section{Dataset acquisition}
+The complete lack of public available CSI data designed for person Identification, brought the need of creating a brand-new original dataset. Some previous work \cite{WiWho_gait_decisionTree} tried to exploit the gait of the people to extrapolate their distinct features, hence the signal acquisitions
+were done while the individual was roaming back and forth between the transmitting antenna (TX) and the receiving one (RX), walking at their custom pace. As opposite, the goal of this research is to identify people that are simply standing without requiring any specific movement pattern.
+The CSI acquisition was done through the use of two ESP32 microboards, one set up for working as TX, the other as the RX. A total of 6 volunteers (regretting their choice) were involved, that have posed in all in the same room at different times. The room environment was kept exactly the same within the
+whole dataset creation, without any change or displacement of furniture, objects or electronic devices. Each person was deprived of their phone that was kept in a different room, to prevent any chance of possible electromagnetic interference that would lead to twisted biometric data.
+This was done to avoid spurious training and feature extraction: if the signal of a person was shaped by any foreign factor present only during the acquisition of that specific person, the model could learn to identify that class-unique factor rather than the person's biometrics.
+The antennas were positioned at a distance of 3 meters one from the other, each connected to a laptop. The RX was programmed to collect the sampled data and save them directly into a file on its wired computer. Each person was asked to stand in the Line-Of-Sight of the antennas, precisely in the middle
+point at 1.5 meters apart from the sides, facing a total of 6 different directions. In this way a variety of signal data corresponding to different body positions were gathered and analyzed with the goal of modelling dissimilar views of a person.
+In Fig. \ref{fig:room} a view from above and a 3D render of the room setting is depicted, with the person facing the Transmitting device. The other 5 positions were the result of a 45$^\circ$, 135$^\circ$, 180$^\circ$, 225$^\circ$ and 315$^\circ$ rotation starting from the orientation shown in the image.
+Each time, the subject was asked to remain still and breath normally, talking and minor movements were allowed, for a duration of 2 minute and 30 seconds. After the collection phase was terminated, the raw data were preprocessed and sanitized with the methods described in Chapter \ref{chap:preprocess}.
+Since the packet rate was 100 pk/s and the overall duration considering all orientations was 15 minutes, a total amount of 90'000 observations per person were collected.
+With the procedure explained in Section \ref{Sec:structuring} the final result is a dataset consisting in $\frac{90000 - 200}{100} + 1 = 899$ images for each class. The group of the 6 subjects was formed by 2 women with an average height, weight and age of 177cm, 66kg and 57 years, while the remaining 4 men were characterized by an average of
+185cm, 84kg and 30 years of the respective statistics. In addition to the individuals, a CSI acquisition of the empty room with no people in it was acquired for study purposes.
+
+\begin{figure}[t]
+    \centering
+    \begin{subfigure}{0.50\textwidth}
+        \includegraphics[width=\textwidth]{images/3D_room.jpg}
+        \label{fig:3D_room}
+    \end{subfigure}
+    \quad
+    \begin{subfigure}{0.40\textwidth}
+        \includegraphics[width=\textwidth]{images/room2.png}
+        \label{fig:2D_room}
+    \end{subfigure}
+    \caption{The room environment in which the data were taken (rendering).}
+    \label{fig:room}
+\end{figure}
+
+\section{Convolutional Neural Network}
+One of the major breakthrough made in the deep learning history was the design of the Convolutional Neural Network (CNN) \cite{LeCun_CNN}, a specialized kind of neural network for
+processing data that has a known grid-lie topology. Examples include time-series data, a 1-D grid taking samples at regular time intervals, and image data, a 2-D grid of pixels.
+CNN have been tremendously successful in a large pool of applications, becoming the Go-To architecture for a lot of common challenges. The characteristic operation of a CNN is the
+Convolution, that adapted to grid-data structures consists into sliding a smaller matrix called Kernel on the input matrix and performing the sum of their element-wise products.
+In many machine learning libraries the implementation, sometimes called "cross-correlation", can be mathematically formalized by:
+$$S(i,j) = (K \ast I)(i,j) = \sum_{m}\sum_{n}I(i + m,j + n)K(m,n)$$
+where $I$ is the input image, K is the kernel of size $m \times n$ and $s$ the output often referred as the "feature map". The latter has a size that is slightly smaller than the input,
+since the operation shrinks the dimensions at the boundaries. A great property of convolutional layers is "translation equivariance" \cite{Goodfellow_DL}. Specifically,
+a function $f(x)$ is equivariant to a function $g$ if $f(g(x)) = g(f(x))$. In case of image processing, that means the layer should be able to identify particular patterns,
+such as edges, curves or more complex shapes in deeper levels of the net, wherever they are in the picture, even if shifted of some pixels.
+This creates a 2-D map of where certain pattern are located in the original image. Similarly, when processing time-series data, this means that convolution produces a sort
+of timeline that shows when different features appear in the temporal input. Since the nature of our data can be interpreted both as an image and as a time-series (see Sec. \ref{Sec:structuring}),
+a CNN is the proposed candidate for the job.
+Another essential property of a CNN is the possession of sparse interactions (sometimes called sparse connectivity), as opposite to dense connectivity where each output is linked to every input features. This derives from the fact that the kernel is smaller than the input, for
+instance within an image of millions of pixels it is possible to detect small meaningful features with kernels that occupy only tens of pixels. This reduces enormously the memory requirements,
+since fewer parameter need to be stored, also boosting inference efficiency. If there are $m$ inputs and $n$ outputs, the matrix multiplication requires $m \times n$ parameters and the algorithm commonly used have $O(m \times n)$ running time.
+Limiting the number of connection each output may have to $k$, then the sparsely connected methodology requires $k \times n$ paramters and $O(m \times n)$ runtime. The units of the input that are affected by the kernel to produce a single output point are known as
+the Receptive Field of that point, accordingly to the same terminology used in optical science to describe region of the retina of the human eye activated by some visual stimulus. This make sense since several Artificial Intelligence algorithms originally take inspiration
+from biology and the natural world, even though they end up to be completely different to biological systems.
+
 \bibliography{references}
 \bibliographystyle{ieeetr}
 
