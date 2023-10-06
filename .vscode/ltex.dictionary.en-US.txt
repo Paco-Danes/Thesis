@@ -10,3 +10,5 @@ LSTMs
 Trilateration
 Hampel
 microboards
+downsamples
+strided

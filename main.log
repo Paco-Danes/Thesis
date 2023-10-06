@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.7.3)  6 OCT 2023 14:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.7.3)  6 OCT 2023 17:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -509,7 +509,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<sapienzalogo.pdf, id=55, 288.07625pt x 89.33376pt>
+<sapienzalogo.pdf, id=59, 288.07625pt x 89.33376pt>
 File: sapienzalogo.pdf Graphic file (type pdf)
 <use sapienzalogo.pdf>
 Package pdftex.def Info: sapienzalogo.pdf  used on input line 23.
@@ -579,7 +579,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 ]
 Chapter 1.
-<images/Person_id.jpg, id=105, 1068.99374pt x 364.36125pt>
+<images/Person_id.jpg, id=110, 1068.99374pt x 364.36125pt>
 File: images/Person_id.jpg Graphic file (type jpg)
 <use images/Person_id.jpg>
 Package pdftex.def Info: images/Person_id.jpg  used on input line 51.
@@ -592,12 +592,12 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 ] [2 <./images/Person_id.jpg>]
 Chapter 2.
-<images/wave.jpg, id=131, 383.93437pt x 289.08pt>
+<images/wave.jpg, id=136, 383.93437pt x 289.08pt>
 File: images/wave.jpg Graphic file (type jpg)
 <use images/wave.jpg>
 Package pdftex.def Info: images/wave.jpg  used on input line 96.
 (pdftex.def)             Requested size: 190.07831pt x 143.1193pt.
-<images/Phase_shift2.png, id=132, 1927.2pt x 1344.52313pt>
+<images/Phase_shift2.png, id=137, 1927.2pt x 1344.52313pt>
 File: images/Phase_shift2.png Graphic file (type png)
 <use images/Phase_shift2.png>
 Package pdftex.def Info: images/Phase_shift2.png  used on input line 102.
@@ -608,23 +608,23 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [3
 
 ] [4 <./images/wave.jpg> <./images/Phase_shift2.png>]
-<images/IQ_sampling.jpg, id=151, 1077.27469pt x 383.18156pt>
+<images/IQ_sampling.jpg, id=156, 1077.27469pt x 383.18156pt>
 File: images/IQ_sampling.jpg Graphic file (type jpg)
 <use images/IQ_sampling.jpg>
 Package pdftex.def Info: images/IQ_sampling.jpg  used on input line 155.
 (pdftex.def)             Requested size: 380.16266pt x 135.22061pt.
  [5 <./images/IQ_sampling.jpg>]
-<images/sinc_func_alone.jpg, id=165, 589.4522pt x 331.2375pt>
+<images/sinc_func_alone.jpg, id=170, 589.4522pt x 331.2375pt>
 File: images/sinc_func_alone.jpg Graphic file (type jpg)
 <use images/sinc_func_alone.jpg>
 Package pdftex.def Info: images/sinc_func_alone.jpg  used on input line 182.
 (pdftex.def)             Requested size: 178.19879pt x 100.13521pt.
-<images/multiple_sinc.jpg, id=166, 922.94812pt x 508.90125pt>
+<images/multiple_sinc.jpg, id=171, 922.94812pt x 508.90125pt>
 File: images/multiple_sinc.jpg Graphic file (type jpg)
 <use images/multiple_sinc.jpg>
 Package pdftex.def Info: images/multiple_sinc.jpg  used on input line 188.
 (pdftex.def)             Requested size: 178.19879pt x 98.25304pt.
-<images/summationSinc.jpg, id=167, 658.71094pt x 382.42876pt>
+<images/summationSinc.jpg, id=172, 658.71094pt x 382.42876pt>
 File: images/summationSinc.jpg Graphic file (type jpg)
 <use images/summationSinc.jpg>
 Package pdftex.def Info: images/summationSinc.jpg  used on input line 194.
@@ -634,19 +634,19 @@ Chapter 3.
 [8
 
 ]
-<images/hampel_DWT.png, id=197, 1175.39125pt x 271.0125pt>
+<images/hampel_DWT.png, id=202, 1175.39125pt x 271.0125pt>
 File: images/hampel_DWT.png Graphic file (type png)
 <use images/hampel_DWT.png>
 Package pdftex.def Info: images/hampel_DWT.png  used on input line 272.
 (pdftex.def)             Requested size: 388.07831pt x 89.47987pt.
  [9 <./images/hampel_DWT.png>]
-<images/phaseTransform.png, id=211, 564.1075pt x 261.97874pt>
+<images/phaseTransform.png, id=216, 564.1075pt x 261.97874pt>
 File: images/phaseTransform.png Graphic file (type png)
 <use images/phaseTransform.png>
 Package pdftex.def Info: images/phaseTransform.png  used on input line 296.
 (pdftex.def)             Requested size: 356.39758pt x 165.51918pt.
  [10 <./images/phaseTransform.png>]
-<images/heatmap_3.png, id=225, 1292.83pt x 425.59pt>
+<images/heatmap_3.png, id=230, 1292.83pt x 425.59pt>
 File: images/heatmap_3.png Graphic file (type png)
 <use images/heatmap_3.png>
 Package pdftex.def Info: images/heatmap_3.png  used on input line 318.
@@ -661,17 +661,23 @@ Chapter 4.
 [13
 
 ]
-<images/3D_room.jpg, id=247, 770.12718pt x 433.62pt>
+<images/3D_room.jpg, id=252, 770.12718pt x 433.62pt>
 File: images/3D_room.jpg Graphic file (type jpg)
 <use images/3D_room.jpg>
 Package pdftex.def Info: images/3D_room.jpg  used on input line 364.
 (pdftex.def)             Requested size: 198.0pt x 111.4814pt.
-<images/room2.png, id=248, 414.04688pt x 379.4175pt>
+<images/room2.png, id=253, 414.04688pt x 379.4175pt>
 File: images/room2.png Graphic file (type png)
 <use images/room2.png>
 Package pdftex.def Info: images/room2.png  used on input line 369.
 (pdftex.def)             Requested size: 158.39758pt x 145.15277pt.
- [14 <./images/3D_room.jpg> <./images/room2.png>] (main.bbl [15] [16
+ [14 <./images/3D_room.jpg> <./images/room2.png>]
+<images/convfield3.png, id=264, 724.7075pt x 402.50375pt>
+File: images/convfield3.png Graphic file (type png)
+<use images/convfield3.png>
+Package pdftex.def Info: images/convfield3.png  used on input line 399.
+(pdftex.def)             Requested size: 316.80121pt x 175.95369pt.
+ [15 <./images/convfield3.png>] (main.bbl [16] [17
 
 ]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 130.
@@ -682,22 +688,22 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [17]) [18] (main.aux)
+ [18]) [19] (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A22E9168FFAA4C63659BE54718A6AE8D;2146.
+(rerunfilecheck)             Checksum: 0A8B116C97CE33BD54BE8CE57BDD77FC;2309.
  ) 
 Here is how much of TeX's memory you used:
- 14985 strings out of 478351
- 243785 string characters out of 2846868
- 586445 words of memory out of 3000000
- 32874 multiletter control sequences out of 15000+600000
- 548832 words of font info for 176 fonts, out of 8000000 for 9000
+ 15023 strings out of 478351
+ 244351 string characters out of 2846868
+ 586931 words of memory out of 3000000
+ 32888 multiletter control sequences out of 15000+600000
+ 555714 words of font info for 187 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,13n,131p,1048b,652s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}<C:/Program Files/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmss17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (22 pages, 2972008 bytes).
+Output written on main.pdf (23 pages, 3027009 bytes).
 PDF statistics:
- 377 PDF objects out of 1000 (max. 8388607)
- 70 named destinations out of 1000 (max. 500000)
- 47786 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 397 PDF objects out of 1000 (max. 8388607)
+ 75 named destinations out of 1000 (max. 500000)
+ 51895 words of extra memory for PDF output out of 61914 (max. 10000000)
 

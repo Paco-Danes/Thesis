@@ -129,4 +129,16 @@ I.~Goodfellow, Y.~Bengio, and A.~Courville, {\em Deep Learning}.
 \newblock MIT Press, 2016.
 \newblock \url{http://www.deeplearningbook.org}.
 
+\bibitem{rec_field}
+R.~Gabbasov and R.~Paringer, ``Influence of the receptive field size on
+  accuracy and performance of a convolutional neural network,'' in {\em 2020
+  International Conference on Information Technology and Nanotechnology
+  (ITNT)}, pp.~1--4, 2020.
+
+\bibitem{pooling}
+B.~Sabri, ``A comparison between average and max-pooling in convolutional
+  neural network for scoliosis classification,'' {\em International Journal of
+  Advanced Trends in Computer Science and Engineering}, vol.~9, pp.~689--696,
+  09 2020.
+
 \end{thebibliography}

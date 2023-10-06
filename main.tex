@@ -385,14 +385,45 @@ since the operation shrinks the dimensions at the boundaries. A great property o
 a function $f(x)$ is equivariant to a function $g$ if $f(g(x)) = g(f(x))$. In case of image processing, that means the layer should be able to identify particular patterns,
 such as edges, curves or more complex shapes in deeper levels of the net, wherever they are in the picture, even if shifted of some pixels.
 This creates a 2-D map of where certain pattern are located in the original image. Similarly, when processing time-series data, this means that convolution produces a sort
-of timeline that shows when different features appear in the temporal input. Since the nature of our data can be interpreted both as an image and as a time-series (see Sec. \ref{Sec:structuring}),
+of timeline that shows when different features appear in the temporal input. Since the nature of our data can be interpreted both as an image and a time-series (see Sec. \ref{Sec:structuring}),
 a CNN is the proposed candidate for the job.
 Another essential property of a CNN is the possession of sparse interactions (sometimes called sparse connectivity), as opposite to dense connectivity where each output is linked to every input features. This derives from the fact that the kernel is smaller than the input, for
 instance within an image of millions of pixels it is possible to detect small meaningful features with kernels that occupy only tens of pixels. This reduces enormously the memory requirements,
 since fewer parameter need to be stored, also boosting inference efficiency. If there are $m$ inputs and $n$ outputs, the matrix multiplication requires $m \times n$ parameters and the algorithm commonly used have $O(m \times n)$ running time.
-Limiting the number of connection each output may have to $k$, then the sparsely connected methodology requires $k \times n$ paramters and $O(m \times n)$ runtime. The units of the input that are affected by the kernel to produce a single output point are known as
-the Receptive Field of that point, accordingly to the same terminology used in optical science to describe region of the retina of the human eye activated by some visual stimulus. This make sense since several Artificial Intelligence algorithms originally take inspiration
+Limiting the number of connection each output may have to $k$, then the sparsely connected methodology requires $k \times n$ parameters and $O(k \times n)$ runtime. The units of the input that are affected by the kernel to produce a single output point are known as
+the Receptive Field of the point, enhanced in Fig. \ref{fig:rec_field}, accordingly to the same terminology used in optical science to describe region of the retina of the human eye activated by some visual stimulus. This make sense since several Artificial Intelligence algorithms originally take inspiration
 from biology and the natural world, even though they end up to be completely different to biological systems.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/convfield3.png}
+    \caption{The receptive fields of the units in the deeper layers of a convolutional network is larger than the one of the units in the shallow layers.
+        This effect increases with architectural features like pooling or strided convolutions. This means that even though direct connections are very sparse,
+        units in the deeper layers \cite{rec_field} can be indirectly connected to most of the input tensor.}
+    \label{fig:rec_field}
+\end{figure}
+
+\subsection{Pooling and padding}
+An ordinary convolutional block within a CNN comprises three phases. In the initial phase, the network conducts multiple parallel convolutions to generate a collection of linear activations.
+Subsequently, each linear activation undergoes a non-linear activation operation, such as the rectified linear activation function or the sigmoid, in what is sometimes referred to as the detector stage.
+Finally, in the third phase, a pooling operation is employed to further alter the layer's output.
+A pooling function replaces the output of the net in a certain location with a summary statistic of nearby outputs \cite{pooling}. For example, the Max Pooling operation reports the maximum value within an input neighborhood.
+It can be thought as a sliding kernel that returns the statistic instead of performing the convolution inner operation. Another popular pooling function is Average Pooling, that as the name says,
+outputs the mean of the points falling in the window. In all cases, pooling helps to make the mapped representation nearly invariant to small translations of the original image, since the summary statistic should not change.
+Because pooling summarizes the responses over a whole neighborhood, it is possible to use fewer pooling units than detector units, by reporting summary statistics for pooling regions spaced $k$ entries apart rather than 1 entry apart.
+This improves the computational efficiency of the network because the next layer has roughly $s$ times fewer inputs to process. The number $s$ is called Stride, that is basically the step size of the sliding motion.
+A common stride for the pooling layers is 2, that downsamples the input in roughly half of the initial dimensions. Precisely, the calculations for the dimensional transformation along a single axis go as follows:
+$$out = \frac{in - k + 2p}{s} + 1$$
+where $out$ and $in$ are the width or height of the output and input respectively, $k$ is the kernel width or height, $p$ is the padding and $s$ is the stride. The same formula holds for strided convolutions, since the shifting style is the same
+of the pooling kernel, with just the operation that changes, and it is critical for constructing layers during design phase, when you must know how the feature maps' shapes vary.
+
+The above mentioned Padding is a technique used to control the spatial dimensions of the output feature maps after applying convolutional operations. It consists into adding extra rows and columns (or other axis) of zeros around the input data before applying the operation in the next layer.
+Padding helps maintain the spatial dimensions of the input feature map as it passes through convolutional layers. Without padding, as you apply convolution operations, the spatial dimensions of the feature map tend to shrink with each layer, which may lead to a reduction
+in the amount of information preserved. Padding prevents this reduction and can help preserve information at the edges of the input, even more useful if the dimensions of the input force the following pooling layer to ignore edge values
+(for instance if the pooling stride is even but the input size is odd).
+
+
+
 
 \bibliography{references}
 \bibliographystyle{ieeetr}

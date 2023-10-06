@@ -11,3 +11,4 @@
 \contentsline {chapter}{\numberline {4}Proposed method}{13}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Dataset acquisition}{13}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Convolutional Neural Network}{14}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Pooling and padding}{16}{subsection.4.2.1}%

@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex main"] 1696595120 "main.aux" "main.bbl" "main" 1696595130
+["bibtex main"] 1696606248 "main.aux" "main.bbl" "main" 1696607200
   "C:/Program Files/MiKTeX/bibtex/bst/bibtex/ieeetr.bst" 1291867944 18361 1a00e58565e7f19bf2b3e1bfb82254ae ""
-  "main.aux" 1696595129 7708 b76c4ae5ed1b852abdb1ad7d2b79135b "pdflatex"
-  "references.bib" 1696589597 14184 cf880a3a78a719bcbed706bced898b8d ""
+  "main.aux" 1696607199 8931 5337879379b744c3b7a53a297af160d6 "pdflatex"
+  "references.bib" 1696603115 15015 f36ff715a663b9579d82a80d86f706b5 ""
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1696595125 "c:/Users/devin/Desktop/Università/Tesi/Thesis/main.tex" "main.pdf" "main" 1696595130
+["pdflatex"] 1696607197 "c:/Users/devin/Desktop/Università/Tesi/Thesis/main.tex" "main.pdf" "main" 1696607200
   "C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256933040 2375 baa924870cfb487815765f9094cf3728 ""
   "C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc" 1256933040 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc" 1256933040 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -143,11 +143,12 @@
   "C:/Program Files/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "C:/Users/devin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1656867487 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/devin/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1656867490 10316885 bf6526c5608e614f1cf8746ea2a902ed ""
-  "c:/Users/devin/Desktop/Università/Tesi/Thesis/main.tex" 1696595123 40357 c4f03595fd1a8d39cff15ffdbe11a49f ""
+  "c:/Users/devin/Desktop/Università/Tesi/Thesis/main.tex" 1696607196 44161 225312e20d801050a762deef29d31915 ""
   "images/3D_room.jpg" 1696581794 207539 35b131cbdddadbed3283ce9ed1e48d03 ""
   "images/IQ_sampling.jpg" 1694082958 252699 9d501242d0fddf9cb13d150a3ddfea12 ""
   "images/Person_id.jpg" 1695718802 42642 92c50c82dc35420374ba04ddfc73c84c ""
   "images/Phase_shift2.png" 1694023332 169394 f1464e45d3618846249a13194ca7458b ""
+  "images/convfield3.png" 1696601517 96369 30a23786743af0adf3a3e58aa7e8ba4d ""
   "images/hampel_DWT.png" 1696342698 61675 759e0de77f3f850452e5db15cdac158a ""
   "images/heatmap_3.png" 1696327254 118987 fee95d0ba06297508a7c13cf22192bbd ""
   "images/multiple_sinc.jpg" 1692805874 235993 7228a7086111cd78678108491a302fbf ""
@@ -156,11 +157,11 @@
   "images/sinc_func_alone.jpg" 1692804271 59613 fe1aa22107394fc4c9476fc12356162a ""
   "images/summationSinc.jpg" 1692894053 131097 d5a190ef251ac301150b9a22c898e498 ""
   "images/wave.jpg" 1693994127 54533 6390e7a8f56f8d59a0c88804ce38fb39 ""
-  "main.aux" 1696595129 7708 b76c4ae5ed1b852abdb1ad7d2b79135b "pdflatex"
-  "main.bbl" 1696595121 5925 d85d79a55e54e98100fad6f265a7ecc5 "bibtex main"
-  "main.out" 1696595129 2146 a22e9168ffaa4c63659be54718a6ae8d "pdflatex"
-  "main.tex" 1696595123 40357 c4f03595fd1a8d39cff15ffdbe11a49f ""
-  "main.toc" 1696595129 1054 5d69c75a75af4d07fbfb6fd6ad612b5a "pdflatex"
+  "main.aux" 1696607199 8931 5337879379b744c3b7a53a297af160d6 "pdflatex"
+  "main.bbl" 1696606248 6467 439e4bddbf9653a1f28ab8366cd324a8 "bibtex main"
+  "main.out" 1696607199 2309 0a8b116c97ce33bd54be8ce57bdd77fc "pdflatex"
+  "main.tex" 1696607196 44161 225312e20d801050a762deef29d31915 ""
+  "main.toc" 1696607199 1144 26aecd950c7d0dd1d7869d343bb6f194 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
