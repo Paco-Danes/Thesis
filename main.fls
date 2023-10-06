@@ -695,8 +695,18 @@ INPUT C:\Program Files\MiKTeX\tex\latex\microtype\mt-cmr.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\microtype\mt-cmr.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\microtype\mt-cmr.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\microtype\mt-cmr.cfg
-OUTPUT main.out
+INPUT .\main.out
+INPUT main.out
+INPUT .\main.out
+INPUT main.out
+INPUT .\main.out
+INPUT main.out
+INPUT .\main.out
+INPUT main.out
 OUTPUT main.pdf
+INPUT .\main.out
+INPUT .\main.out
+OUTPUT main.out
 INPUT C:\Program Files\MiKTeX\tex\latex\lm\t1lmss.fd
 INPUT C:\Program Files\MiKTeX\tex\latex\lm\t1lmss.fd
 INPUT C:\Program Files\MiKTeX\tex\latex\lm\t1lmss.fd
@@ -748,17 +758,10 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\ec-lmr12.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\ec-lmbx12.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\ec-lmr17.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\ec-lmbx12.tfm
-OUTPUT main.toc
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\ec-lmr17.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\ec-lmbx12.tfm
+INPUT .\main.toc
+INPUT main.toc
+INPUT main.toc
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\ec-lmbx10.tfm
-INPUT .\images\Person_id.jpg
-INPUT .\images\Person_id.jpg
-INPUT images\Person_id.jpg
-INPUT .\images\Person_id.jpg
-INPUT .\images\Person_id.jpg
-INPUT .\images\Person_id.jpg
-INPUT .\images\Person_id.jpg
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\rm-lmr10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\rm-lmr8.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\rm-lmr6.tfm
@@ -768,6 +771,16 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\lmmi6.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\lmsy10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\lmsy8.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\lmsy6.tfm
+OUTPUT main.toc
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\ec-lmr17.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\ec-lmbx12.tfm
+INPUT .\images\Person_id.jpg
+INPUT .\images\Person_id.jpg
+INPUT images\Person_id.jpg
+INPUT .\images\Person_id.jpg
+INPUT .\images\Person_id.jpg
+INPUT .\images\Person_id.jpg
+INPUT .\images\Person_id.jpg
 INPUT .\images\wave.jpg
 INPUT .\images\wave.jpg
 INPUT images\wave.jpg
