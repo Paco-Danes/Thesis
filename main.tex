@@ -460,8 +460,12 @@ It works by randomly deactivating, or zeroing-out, a fraction of neurons during 
 of being temporarily deactivated, by multiplying by 0 the output of its activation function. The value of $p$ is a hyperparameter that determines the dropout rate or the fraction
 of neurons to deactivate. During the backward pass, the gradients for the dropped-out neurons become effectively zero, a process that ensures that the network's weights are updated
 based on the information from the active neurons only (a subset that changes at every step), thus preventing any single neuron from becoming too specialized to the training data.
-This regularization method can be interpreted as an approximation of performing bagging over an ensemble of great number of large neural networks, even though it is actually performed
+Fig. \ref{fig:dropout} is an abstract representation of how a small network changes during a single step.
+This regularization method can be interpreted as an approximation of performing \emph{bagging} over an ensemble of a great number of large neural networks, even though it is actually performed
 on the same single network. Specifically, dropout trains the ensemble consisting of all subnetworks whose structure is obtained by removing the turned-off units from the underlying base architecture.
+With bagging (short for bootstrap aggregating) $k$ different models are defined and $k$ different dataset are constructed by sampling from the training set with replacement (non-parametric bootstrap), and then finally
+model $i$ is trained on dataset $i$. The predictions are consequently made by picking the most predicted class among the models, the so-called "consensus", or the average of the predictions for regression tasks.
+Dropout aims to imitate this process but with an exponentially large number of neural networks.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{images/dropout.png}
