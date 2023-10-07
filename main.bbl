@@ -170,4 +170,9 @@ V.~Dumoulin and F.~Visin, ``A guide to convolution arithmetic for deep
 S.~Salman and X.~Liu, ``Overfitting mechanism and avoidance in deep neural
   networks,'' 2019.
 
+\bibitem{dropoput}
+N.~Srivastava, G.~Hinton, A.~Krizhevsky, I.~Sutskever, and R.~Salakhutdinov,
+  ``Dropout: A simple way to prevent neural networks from overfitting,'' {\em
+  Journal of Machine Learning Research}, vol.~15, pp.~1929--1958, 06 2014.
+
 \end{thebibliography}

@@ -876,6 +876,13 @@ INPUT .\images\poolingMax.png
 INPUT .\images\poolingMax.png
 INPUT .\images\poolingMax.png
 INPUT .\images\poolingMax.png
+INPUT .\images\dropout.png
+INPUT .\images\dropout.png
+INPUT images\dropout.png
+INPUT .\images\dropout.png
+INPUT .\images\dropout.png
+INPUT .\images\dropout.png
+INPUT .\images\dropout.png
 INPUT .\main.bbl
 INPUT main.bbl
 INPUT .\main.bbl

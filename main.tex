@@ -436,7 +436,39 @@ The last method, referred as \emph{full} convolution, tries to avoid this effect
 \subsection{Dropout and Regularization}
 The remarkable capacity of deep neural networks to model intricate relationships in data also makes them susceptible to overfitting, a phenomenon where the model learns to memorize the training data rather than shaping the real data generating distribution. The general objective in machine learning is to find a bias-variance trade-off, a delicate balance between two sources of errors that affect a model's ability to generalize well to unseen data. Unfortunately,
 very large and complex models such as Neural Networks tends to reduce the training bias up to a point where the accuracy on train set reaches 100\%, at the expense of variance that ends up being too large. This derives from the Universal Approximation Theorem, that explains how a shallow neural network has the capacity of approximating any continuous function up to any arbitrarily degree of precision, causing it to perfectly modelling the noise in the training set \cite{overfitting}.
-Regularization for deep learning refers to a set of techniques and strategies designed to mitigate overfitting and improve the generalization capabilities.
+Regularization for deep learning refers to a set of techniques and strategies designed to mitigate overfitting and improve the generalization capabilities. These strategies have been effectively used for decades prior to the advent of deep learning, with linear models like linear regression and logistic regression. Many regularization approaches are based on limiting the capacity of the models by adding a norm penalty $\Omega(\theta)$ to the loss function $J$, obtaining a regularized
+loss function $\tilde{J}$:
+$$\tilde{J}(\theta; X, y) = J(\theta; X, y) + \alpha\Omega(\theta)$$
+where $\alpha \in [0, \infty)$ is a hyperparameter that weights the contribution of the norm penalty term $\Omega$ with respect to the standard loss function $J$. Larger values of $\alpha$ means more regularization, while $\alpha = 0$ results in no regularization at all.
+During the training phase, minimizing $\tilde{J}$ will decrease both the original loss $J$ and some measure (the norm) of the size of the parameters $\theta$, or a subset of them if regularization is not applied globally but just on some layers.
+A very popular penalty term is the $L^2$ norm, where $\Omega(\theta) = \frac{1}{2}||\theta||^{2}_{2} = \frac{1}{2}\theta^\top\theta$, commonly known as \emph{Weight Decay} regularization. This type of regularization drags the weights closer to the origin, since the $L^2$ vector norm can be intended as the Euclidean distance of a point from the origin.
+Using the mentioned norm, the loss function obtained is:
+$$\tilde{J}(\theta; X, y) = \frac{\alpha}{2}\theta^\top\theta + J(\theta; X, y)$$
+It follows the corresponding gradient with respect to the parameters:
+$$\nabla_\theta\tilde{J}(\theta; X, y) = \alpha\theta + \nabla_\theta J(\theta; X, y)$$
+By denoting the learning rate as $\lambda$, the gradient descent update rule for a single step then become:
+$$\theta \leftarrow \theta - \lambda(\alpha\theta + \nabla_\theta J(\theta; X, y))$$
+that after a simple algebraic manipulation results in:
+$$\theta \leftarrow (1 - \lambda\alpha)\theta - \lambda\nabla_\theta J(\theta; X, y)$$
+This shows how the addition of the weight decay term has modified the learning procedure to shrink the weight vector by a constant factor on each optimization step.
+By reducing the magnitude of weights, $L^2$ regularization promotes a simpler model. A simpler model is more likely to generalize well to unseen data because it captures
+the essential patterns in the data rather than fitting to the noise in the training dataset. Even more, this can make models less sensitive to outliers because it discourages
+the parameters from assigning excessive importance to any single training point, leading to more robust model predictions.
+
+Similarly, \emph{Dropout} \cite{dropoput} provides a powerful regularization method without actually modifying the general formulas for the computations of the backward pass.
+It works by randomly deactivating, or zeroing-out, a fraction of neurons during each training iteration. Each neuron in the layer has a probability, typically denoted as $p$,
+of being temporarily deactivated, by multiplying by 0 the output of its activation function. The value of $p$ is a hyperparameter that determines the dropout rate or the fraction
+of neurons to deactivate. During the backward pass, the gradients for the dropped-out neurons become effectively zero, a process that ensures that the network's weights are updated
+based on the information from the active neurons only (a subset that changes at every step), thus preventing any single neuron from becoming too specialized to the training data.
+This regularization method can be interpreted as an approximation of performing bagging over an ensemble of great number of large neural networks, even though it is actually performed
+on the same single network. Specifically, dropout trains the ensemble consisting of all subnetworks whose structure is obtained by removing the turned-off units from the underlying base architecture.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/dropout.png}
+    \caption{Bob is the best as always}
+    \label{fig:dropout}
+\end{figure}
+
 
 
 \bibliography{references}
