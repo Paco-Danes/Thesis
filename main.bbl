@@ -124,6 +124,27 @@ Y.~LeCun, B.~Boser, J.~S. Denker, D.~Henderson, R.~E. Howard, W.~Hubbard, and
   L.~D. Jackel, ``Backpropagation applied to handwritten zip code
   recognition,'' {\em Neural Computation}, vol.~1, no.~4, pp.~541--551, 1989.
 
+\bibitem{time_conv}
+B.~Zhao, H.~Lu, S.~Chen, J.~Liu, and D.~Wu, ``Convolutional neural networks for
+  time series classification,'' {\em Journal of Systems Engineering and
+  Electronics}, vol.~28, no.~1, pp.~162--169, 2017.
+
+\bibitem{EEG_conv}
+M.~Alnaanah, M.~Wahdow, and M.~Alrashdan, ``Cnn models for eeg motor imagery
+  signal classification,'' {\em Signal, Image and Video Processing}, vol.~17,
+  07 2022.
+
+\bibitem{cnn_segment}
+B.~Kayalibay, G.~Jensen, and P.~van~der Smagt, ``Cnn-based segmentation of
+  medical imaging data,'' 2017.
+
+\bibitem{class_cnn}
+N.~Sharma, V.~Jain, and A.~Mishra, ``An analysis of convolutional neural
+  networks for image classification,'' {\em Procedia Computer Science},
+  vol.~132, pp.~377--384, 2018.
+\newblock International Conference on Computational Intelligence and Data
+  Science.
+
 \bibitem{Goodfellow_DL}
 I.~Goodfellow, Y.~Bengio, and A.~Courville, {\em Deep Learning}.
 \newblock MIT Press, 2016.
@@ -140,5 +161,13 @@ B.~Sabri, ``A comparison between average and max-pooling in convolutional
   neural network for scoliosis classification,'' {\em International Journal of
   Advanced Trends in Computer Science and Engineering}, vol.~9, pp.~689--696,
   09 2020.
+
+\bibitem{padding_Conv}
+V.~Dumoulin and F.~Visin, ``A guide to convolution arithmetic for deep
+  learning,'' 2018.
+
+\bibitem{overfitting}
+S.~Salman and X.~Liu, ``Overfitting mechanism and avoidance in deep neural
+  networks,'' 2019.
 
 \end{thebibliography}

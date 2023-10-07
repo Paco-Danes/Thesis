@@ -375,7 +375,7 @@ With the procedure explained in Section \ref{Sec:structuring} the final result i
 
 \section{Convolutional Neural Network}
 One of the major breakthrough made in the deep learning history was the design of the Convolutional Neural Network (CNN) \cite{LeCun_CNN}, a specialized kind of neural network for
-processing data that has a known grid-lie topology. Examples include time-series data, a 1-D grid taking samples at regular time intervals, and image data, a 2-D grid of pixels.
+processing data that has a known grid-lie topology. Examples include time-series data \cite{time_conv,EEG_conv}, a 1-D grid taking samples at regular time intervals, and image data, a 2-D grid of pixels \cite{cnn_segment,class_cnn}.
 CNN have been tremendously successful in a large pool of applications, becoming the Go-To architecture for a lot of common challenges. The characteristic operation of a CNN is the
 Convolution, that adapted to grid-data structures consists into sliding a smaller matrix called Kernel on the input matrix and performing the sum of their element-wise products.
 In many machine learning libraries the implementation, sometimes called "cross-correlation", can be mathematically formalized by:
@@ -417,12 +417,26 @@ $$out = \frac{in - k + 2p}{s} + 1$$
 where $out$ and $in$ are the width or height of the output and input respectively, $k$ is the kernel width or height, $p$ is the padding and $s$ is the stride. The same formula holds for strided convolutions, since the shifting style is the same
 of the pooling kernel, with just the operation that changes, and it is critical for constructing layers during design phase, when you must know how the feature maps' shapes vary.
 
-The above mentioned Padding is a technique used to control the spatial dimensions of the output feature maps after applying convolutional operations. It consists into adding extra rows and columns (or other axis) of zeros around the input data before applying the operation in the next layer.
+The above-mentioned Padding is a technique used to control the spatial dimensions of the output feature maps after applying convolutional operations. It consists into adding extra rows and columns (or other axis) of zeros around the input data before applying the operation in the next layer.
 Padding helps maintain the spatial dimensions of the input feature map as it passes through convolutional layers. Without padding, as you apply convolution operations, the spatial dimensions of the feature map tend to shrink with each layer, which may lead to a reduction
 in the amount of information preserved. Padding prevents this reduction and can help preserve information at the edges of the input, even more useful if the dimensions of the input force the following pooling layer to ignore edge values
-(for instance if the pooling stride is even but the input size is odd).
+(for instance if the convolutional stride is even but the input size is odd). An example of the pooling operation with padded input can be visualized in Fig. \ref{fig:pooling}. There exist three particular cases of zero-padding setting that are worth mentioning \cite{padding_Conv}. One is the case in which no padding is used whatsoever, meaning that the kernel can visit
+only positions where it is contained entirely within the input image: this is called \emph{Valid} convolution. With this choice, all pixels in the output are a function of the same number of pixels in the input. However, this leads to a smaller output size, limiting the number of convolutional
+layers that can be included in the network, since the spatial dimension will eventually drop to $1 \times 1$. The second special case of zero padding is referred when enough zeros are added in such a way that the resulting feature map keeps the same size of the input matrix. This is usually called \emph{Same} convolution.
+It does not limit the architectural possibilities of the next layers, but the input entries near the border influence fewer output entries than the ones near the center. After several convolutions, the cascade effect results into losing the boundary information of the input image.
+The last method, referred as \emph{full} convolution, tries to avoid this effect by adding enough zeros for every pixel to be visited exactly $k$ times in each direction.
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/poolingMax.png}
+    \caption{A Max Pooling operation with a kernel of size 3 and stride between pools of 2. This reduces the representation size in a half, decreasing computational requirements while preserving the most important information. Note that the last pooling region on the right is zero padded, which can be just intended as a pooling kernel of smaller size, and must be included in order to not ignore border units.}
+    \label{fig:pooling}
+\end{figure}
 
+\subsection{Dropout and Regularization}
+The remarkable capacity of deep neural networks to model intricate relationships in data also makes them susceptible to overfitting, a phenomenon where the model learns to memorize the training data rather than shaping the real data generating distribution. The general objective in machine learning is to find a bias-variance trade-off, a delicate balance between two sources of errors that affect a model's ability to generalize well to unseen data. Unfortunately,
+very large and complex models such as Neural Networks tends to reduce the training bias up to a point where the accuracy on train set reaches 100\%, at the expense of variance that ends up being too large. This derives from the Universal Approximation Theorem, that explains how a shallow neural network has the capacity of approximating any continuous function up to any arbitrarily degree of precision, causing it to perfectly modelling the noise in the training set \cite{overfitting}.
+Regularization for deep learning refers to a set of techniques and strategies designed to mitigate overfitting and improve the generalization capabilities.
 
 
 \bibliography{references}
