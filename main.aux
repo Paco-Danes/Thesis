@@ -101,15 +101,18 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces The receptive fields of the units in the deeper layers of a convolutional network is larger than the one of the units in the shallow layers. This effect increases with architectural features like pooling or strided convolutions. This means that even though direct connections are very sparse, units in the deeper layers \cite  {rec_field} can be indirectly connected to most of the input tensor.\relax }}{15}{figure.caption.10}\protected@file@percent }
 \newlabel{fig:rec_field}{{4.2}{15}{The receptive fields of the units in the deeper layers of a convolutional network is larger than the one of the units in the shallow layers. This effect increases with architectural features like pooling or strided convolutions. This means that even though direct connections are very sparse, units in the deeper layers \cite {rec_field} can be indirectly connected to most of the input tensor.\relax }{figure.caption.10}{}}
 \citation{padding_Conv}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Pooling and padding}{16}{subsection.4.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Pooling and Padding}{16}{subsection.4.2.1}\protected@file@percent }
 \citation{overfitting}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces A Max Pooling operation with a kernel of size 3 and stride between pools of 2. This reduces the representation size in a half, decreasing computational requirements while preserving the most important information. Note that the last pooling region on the right is zero padded, which can be just intended as a pooling kernel of smaller size, and must be included in order to not ignore border units.\relax }}{17}{figure.caption.11}\protected@file@percent }
 \newlabel{fig:pooling}{{4.3}{17}{A Max Pooling operation with a kernel of size 3 and stride between pools of 2. This reduces the representation size in a half, decreasing computational requirements while preserving the most important information. Note that the last pooling region on the right is zero padded, which can be just intended as a pooling kernel of smaller size, and must be included in order to not ignore border units.\relax }{figure.caption.11}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Dropout and Regularization}{17}{subsection.4.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Dropout and Weight Decay}{17}{subsection.4.2.2}\protected@file@percent }
 \citation{dropoput}
+\citation{regular_comparison}
+\citation{regular_combining}
+\citation{survey_regular}
 \bibdata{references}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Bob is the best as always\relax }}{19}{figure.caption.12}\protected@file@percent }
-\newlabel{fig:dropout}{{4.4}{19}{Bob is the best as always\relax }{figure.caption.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces A multilayer perceptron with dropout incorporated. Some units stochastically deactivate with probability $p$, creating a subnetwork that will be affected by backpropagation. At each update step, the units to be deactivated are resampled, obtaining new subnetworks time after time. This ensures that the model will not rely on just some "strong" neurons, but on a more distributed inference.\relax }}{19}{figure.caption.12}\protected@file@percent }
+\newlabel{fig:dropout}{{4.4}{19}{A multilayer perceptron with dropout incorporated. Some units stochastically deactivate with probability $p$, creating a subnetwork that will be affected by backpropagation. At each update step, the units to be deactivated are resampled, obtaining new subnetworks time after time. This ensures that the model will not rely on just some "strong" neurons, but on a more distributed inference.\relax }{figure.caption.12}{}}
 \bibcite{gesture_recognition}{1}
 \bibcite{cnn_face_id}{2}
 \bibcite{Recurrent_nn_reid}{3}
@@ -144,5 +147,8 @@
 \bibcite{padding_Conv}{32}
 \bibcite{overfitting}{33}
 \bibcite{dropoput}{34}
+\bibcite{regular_comparison}{35}
+\bibcite{regular_combining}{36}
+\bibcite{survey_regular}{37}
 \bibstyle{ieeetr}
 \gdef \@abspage@last{26}

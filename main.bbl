@@ -175,4 +175,18 @@ N.~Srivastava, G.~Hinton, A.~Krizhevsky, I.~Sutskever, and R.~Salakhutdinov,
   ``Dropout: A simple way to prevent neural networks from overfitting,'' {\em
   Journal of Machine Learning Research}, vol.~15, pp.~1929--1958, 06 2014.
 
+\bibitem{regular_comparison}
+A.~Lydia and S.~Chandrasekar, ``A comparative study on regularization
+  techniques in convolutional neural networks,'' pp.~784--793, 07 2022.
+
+\bibitem{regular_combining}
+Z.~Farhadi, H.~Bevrani, and M.-R. Feizi-Derakhshi, ``Combining regularization
+  and dropout techniques for deep convolutional neural network,'' in {\em 2022
+  Global Energy Conference (GEC)}, pp.~335--339, 2022.
+
+\bibitem{survey_regular}
+R.~Moradi, R.~Berangi, and B.~Minaei, ``A survey of regularization strategies
+  for deep models,'' {\em Artif. Intell. Rev.}, vol.~53, p.~3947–3986, aug
+  2020.
+
 \end{thebibliography}

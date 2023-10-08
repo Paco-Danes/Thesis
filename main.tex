@@ -403,7 +403,7 @@ from biology and the natural world, even though they end up to be completely dif
     \label{fig:rec_field}
 \end{figure}
 
-\subsection{Pooling and padding}
+\subsection{Pooling and Padding}
 An ordinary convolutional block within a CNN comprises three phases. In the initial phase, the network conducts multiple parallel convolutions to generate a collection of linear activations.
 Subsequently, each linear activation undergoes a non-linear activation operation, such as the rectified linear activation function or the sigmoid, in what is sometimes referred to as the detector stage.
 Finally, in the third phase, a pooling operation is employed to further alter the layer's output.
@@ -428,12 +428,12 @@ The last method, referred as \emph{full} convolution, tries to avoid this effect
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/poolingMax.png}
+    \includegraphics[width=0.82\textwidth]{images/poolingMax.png}
     \caption{A Max Pooling operation with a kernel of size 3 and stride between pools of 2. This reduces the representation size in a half, decreasing computational requirements while preserving the most important information. Note that the last pooling region on the right is zero padded, which can be just intended as a pooling kernel of smaller size, and must be included in order to not ignore border units.}
     \label{fig:pooling}
 \end{figure}
 
-\subsection{Dropout and Regularization}
+\subsection{Dropout and Weight Decay}
 The remarkable capacity of deep neural networks to model intricate relationships in data also makes them susceptible to overfitting, a phenomenon where the model learns to memorize the training data rather than shaping the real data generating distribution. The general objective in machine learning is to find a bias-variance trade-off, a delicate balance between two sources of errors that affect a model's ability to generalize well to unseen data. Unfortunately,
 very large and complex models such as Neural Networks tends to reduce the training bias up to a point where the accuracy on train set reaches 100\%, at the expense of variance that ends up being too large. This derives from the Universal Approximation Theorem, that explains how a shallow neural network has the capacity of approximating any continuous function up to any arbitrarily degree of precision, causing it to perfectly modelling the noise in the training set \cite{overfitting}.
 Regularization for deep learning refers to a set of techniques and strategies designed to mitigate overfitting and improve the generalization capabilities. These strategies have been effectively used for decades prior to the advent of deep learning, with linear models like linear regression and logistic regression. Many regularization approaches are based on limiting the capacity of the models by adding a norm penalty $\Omega(\theta)$ to the loss function $J$, obtaining a regularized
@@ -469,11 +469,17 @@ Dropout aims to imitate this process but with an exponentially large number of n
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{images/dropout.png}
-    \caption{Bob is the best as always}
+    \caption{A multilayer perceptron with dropout incorporated. Some units stochastically deactivate with probability $p$, creating a subnetwork that will be affected by backpropagation.
+        At each update step, the units to be deactivated are resampled, obtaining new subnetworks time after time. This ensures that the model will not rely on just some "strong" neurons, but on a more
+        distributed inference.}
     \label{fig:dropout}
 \end{figure}
-
-
+Specifically, training with dropout consists into using a minibatch-based algorithm such as stochastic gradient descent, that recalls the input bootstrap procedure of standard bagging methods. At each iteration,
+a binary mask is applied to the hidden units (and, willingly, to the input too) that determines which units to deactivate. During testing phase, dropout is turned off, and the predictions are elaborated using
+the full network architecture. Given that the process is stochastic, there is a chance that setting to zero some particular units, all paths that lead to the outputs will be deleted. But with Neural Network models that rely on
+tens of layers and millions of units, the paths connecting the first and last layer are so many that this probability becomes insignificant. Many variants of Dropout have been proposed, such as \emph{Max Dropout} that sets the
+probability $p$ based on the magnitude of the activation or \emph{Drop Connect} that drops individual connections (weights) rather than the entire unit, but in general terms, Dropout stays as one of the most effective regularization
+technique \cite{regular_comparison}. It is finally observed that the best performances are often achieved by employing a combination of different regularization strategies \cite{regular_combining,survey_regular}, obtaining the greatest generalization ability.
 
 \bibliography{references}
 \bibliographystyle{ieeetr}

@@ -12,3 +12,5 @@ Hampel
 microboards
 downsamples
 strided
+backpropagation
+minibatch-based

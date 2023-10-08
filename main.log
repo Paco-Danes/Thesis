@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.7.3)  7 OCT 2023 18:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.7.3)  8 OCT 2023 12:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -682,7 +682,7 @@ Package pdftex.def Info: images/convfield3.png  used on input line 399.
 File: images/poolingMax.png Graphic file (type png)
 <use images/poolingMax.png>
 Package pdftex.def Info: images/poolingMax.png  used on input line 431.
-(pdftex.def)             Requested size: 316.80121pt x 80.12881pt.
+(pdftex.def)             Requested size: 324.7229pt x 82.13731pt.
  [17 <./images/poolingMax.png>]
 <images/dropout.png, id=310, 1151.30125pt x 956.57375pt>
 File: images/dropout.png Graphic file (type png)
@@ -702,20 +702,20 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 ) [22] (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 6B1F65D785C052993DC795D051AFD5F9;2507.
+(rerunfilecheck)             Checksum: FF5347CC10B907FD3C7FD6E56E19508D;2500.
  ) 
 Here is how much of TeX's memory you used:
- 15074 strings out of 478351
- 245124 string characters out of 2846868
- 587653 words of memory out of 3000000
- 32910 multiletter control sequences out of 15000+600000
- 556400 words of font info for 194 fonts, out of 8000000 for 9000
+ 15088 strings out of 478351
+ 245331 string characters out of 2846868
+ 589136 words of memory out of 3000000
+ 32913 multiletter control sequences out of 15000+600000
+ 556790 words of font info for 198 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,13n,131p,1048b,652s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}<C:/Program Files/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmss17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (26 pages, 3188895 bytes).
+Output written on main.pdf (26 pages, 3189222 bytes).
 PDF statistics:
- 439 PDF objects out of 1000 (max. 8388607)
- 88 named destinations out of 1000 (max. 500000)
+ 446 PDF objects out of 1000 (max. 8388607)
+ 91 named destinations out of 1000 (max. 500000)
  51913 words of extra memory for PDF output out of 61914 (max. 10000000)
 
