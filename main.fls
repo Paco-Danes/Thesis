@@ -876,6 +876,15 @@ INPUT .\images\poolingMax.png
 INPUT .\images\poolingMax.png
 INPUT .\images\poolingMax.png
 INPUT .\images\poolingMax.png
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\rm-lmbx10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\rm-lmbx8.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\rm-lmbx6.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\lmmib10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\lmmib10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\lmmib7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\lmbsy10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\lmbsy10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\lmbsy7.tfm
 INPUT .\images\dropout.png
 INPUT .\images\dropout.png
 INPUT images\dropout.png
@@ -883,6 +892,13 @@ INPUT .\images\dropout.png
 INPUT .\images\dropout.png
 INPUT .\images\dropout.png
 INPUT .\images\dropout.png
+INPUT .\images\cnn.png
+INPUT .\images\cnn.png
+INPUT images\cnn.png
+INPUT .\images\cnn.png
+INPUT .\images\cnn.png
+INPUT .\images\cnn.png
+INPUT .\images\cnn.png
 INPUT .\main.bbl
 INPUT main.bbl
 INPUT .\main.bbl
@@ -915,6 +931,8 @@ INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmmi7.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmmi7.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmmi8.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmmi8.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmmib10.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmmib10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmr10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmr10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmr7.pfb

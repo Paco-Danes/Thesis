@@ -438,23 +438,25 @@ The remarkable capacity of deep neural networks to model intricate relationships
 very large and complex models such as Neural Networks tends to reduce the training bias up to a point where the accuracy on train set reaches 100\%, at the expense of variance that ends up being too large. This derives from the Universal Approximation Theorem, that explains how a shallow neural network has the capacity of approximating any continuous function up to any arbitrarily degree of precision, causing it to perfectly modelling the noise in the training set \cite{overfitting}.
 Regularization for deep learning refers to a set of techniques and strategies designed to mitigate overfitting and improve the generalization capabilities. These strategies have been effectively used for decades prior to the advent of deep learning, with linear models like linear regression and logistic regression. Many regularization approaches are based on limiting the capacity of the models by adding a norm penalty $\Omega(\theta)$ to the loss function $J$, obtaining a regularized
 loss function $\tilde{J}$:
-$$\tilde{J}(\theta; X, y) = J(\theta; X, y) + \alpha\Omega(\theta)$$
+$$\tilde{J}(\boldsymbol{\theta}; X, \boldsymbol{y}) = J(\boldsymbol{\theta}; X, \boldsymbol{y}) + \alpha\Omega(\boldsymbol{\theta})$$
 where $\alpha \in [0, \infty)$ is a hyperparameter that weights the contribution of the norm penalty term $\Omega$ with respect to the standard loss function $J$. Larger values of $\alpha$ means more regularization, while $\alpha = 0$ results in no regularization at all.
 During the training phase, minimizing $\tilde{J}$ will decrease both the original loss $J$ and some measure (the norm) of the size of the parameters $\theta$, or a subset of them if regularization is not applied globally but just on some layers.
-A very popular penalty term is the $L^2$ norm, where $\Omega(\theta) = \frac{1}{2}||\theta||^{2}_{2} = \frac{1}{2}\theta^\top\theta$, commonly known as \emph{Weight Decay} regularization. This type of regularization drags the weights closer to the origin, since the $L^2$ vector norm can be intended as the Euclidean distance of a point from the origin.
+A very popular penalty term is the $L^2$ norm, where $\Omega(\boldsymbol{\theta}) = \frac{1}{2}||\boldsymbol{\theta}||^{2}_{2} = \frac{1}{2}\boldsymbol{\theta}^\top\boldsymbol{\theta}$, commonly known as \emph{Weight Decay} regularization. This type of regularization drags the weights closer to the origin, since the $L^2$ vector norm can be intended as the Euclidean distance of a point from the origin.
 Using the mentioned norm, the loss function obtained is:
-$$\tilde{J}(\theta; X, y) = \frac{\alpha}{2}\theta^\top\theta + J(\theta; X, y)$$
+$$\tilde{J}(\boldsymbol{\theta}; X, \boldsymbol{y}) = \frac{\alpha}{2}\boldsymbol{\theta}^\top\boldsymbol{\theta} + J(\boldsymbol{\theta}; X, \boldsymbol{y})$$
 It follows the corresponding gradient with respect to the parameters:
-$$\nabla_\theta\tilde{J}(\theta; X, y) = \alpha\theta + \nabla_\theta J(\theta; X, y)$$
+$$\nabla_\theta\tilde{J}(\boldsymbol{\theta}; X, \boldsymbol{y}) = \alpha\boldsymbol{\theta} + \nabla_\theta J(\boldsymbol{\theta}; X, \boldsymbol{y})$$
 By denoting the learning rate as $\lambda$, the gradient descent update rule for a single step then become:
-$$\theta \leftarrow \theta - \lambda(\alpha\theta + \nabla_\theta J(\theta; X, y))$$
+$$\boldsymbol{\theta} \leftarrow \boldsymbol{\theta} - \lambda(\alpha\boldsymbol{\theta} + \nabla_\theta J(\boldsymbol{\theta}; X, \boldsymbol{y}))$$
 that after a simple algebraic manipulation results in:
-$$\theta \leftarrow (1 - \lambda\alpha)\theta - \lambda\nabla_\theta J(\theta; X, y)$$
+$$\boldsymbol{\theta} \leftarrow (1 - \lambda\alpha)\boldsymbol{\theta} - \lambda\nabla_\theta J(\boldsymbol{\theta}; X, \boldsymbol{y})$$
 This shows how the addition of the weight decay term has modified the learning procedure to shrink the weight vector by a constant factor on each optimization step.
 By reducing the magnitude of weights, $L^2$ regularization promotes a simpler model. A simpler model is more likely to generalize well to unseen data because it captures
 the essential patterns in the data rather than fitting to the noise in the training dataset. Even more, this can make models less sensitive to outliers because it discourages
-the parameters from assigning excessive importance to any single training point, leading to more robust model predictions.
-
+the parameters from assigning excessive importance to any single training point, leading to more robust model predictions. Following the same concepts, $L^1$ regularization
+was designed, where the penalty term is indeed the $L^1$ norm: $\Omega(\boldsymbol{\theta}) = ||\boldsymbol{\theta}||_{1} = \sum_{i}|\theta_i|$, that is the sum of absolute value of
+the individual components of the parameter vector. As before, $L^1$ weight decay controls the strength of regularization by using a factor $\alpha$ that scales $\Omega$:
+$$\tilde{J}(\boldsymbol{\theta}; X, \boldsymbol{y}) = \alpha||\boldsymbol{\theta}||_1 + J(\boldsymbol{\theta}; X, \boldsymbol{y})$$
 Similarly, \emph{Dropout} \cite{dropoput} provides a powerful regularization method without actually modifying the general formulas for the computations of the backward pass.
 It works by randomly deactivating, or zeroing-out, a fraction of neurons during each training iteration. Each neuron in the layer has a probability, typically denoted as $p$,
 of being temporarily deactivated, by multiplying by 0 the output of its activation function. The value of $p$ is a hyperparameter that determines the dropout rate or the fraction
@@ -480,6 +482,16 @@ the full network architecture. Given that the process is stochastic, there is a 
 tens of layers and millions of units, the paths connecting the first and last layer are so many that this probability becomes insignificant. Many variants of Dropout have been proposed, such as \emph{Max Dropout} that sets the
 probability $p$ based on the magnitude of the activation or \emph{Drop Connect} that drops individual connections (weights) rather than the entire unit, but in general terms, Dropout stays as one of the most effective regularization
 technique \cite{regular_comparison}. It is finally observed that the best performances are often achieved by employing a combination of different regularization strategies \cite{regular_combining,survey_regular}, obtaining the greatest generalization ability.
+
+\section{Proposed Architecture}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{images/cnn.png}
+    \caption{The Convolutional Neural Network architecture designed for the CSI-based person Identification task.
+        The same model was employed for testing the performance with 2,3,4,5 and 6 classes by only adjusting the last fully connected output layer, while the rest
+        of the architecture was always kept intact.}
+    \label{fig:model}
+\end{figure}
 
 \bibliography{references}
 \bibliographystyle{ieeetr}

@@ -13,3 +13,4 @@
 \contentsline {section}{\numberline {4.2}Convolutional Neural Network}{14}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Pooling and Padding}{16}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Dropout and Weight Decay}{17}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Proposed Architecture}{20}{section.4.3}%
