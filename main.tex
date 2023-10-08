@@ -374,6 +374,7 @@ With the procedure explained in Section \ref{Sec:structuring} the final result i
 \end{figure}
 
 \section{Convolutional Neural Network}
+\label{sec:CNN}
 One of the major breakthrough made in the deep learning history was the design of the Convolutional Neural Network (CNN) \cite{LeCun_CNN}, a specialized kind of neural network for
 processing data that has a known grid-lie topology. Examples include time-series data \cite{time_conv,EEG_conv}, a 1-D grid taking samples at regular time intervals, and image data, a 2-D grid of pixels \cite{cnn_segment,class_cnn}.
 CNN have been tremendously successful in a large pool of applications, becoming the Go-To architecture for a lot of common challenges. The characteristic operation of a CNN is the
@@ -484,14 +485,36 @@ probability $p$ based on the magnitude of the activation or \emph{Drop Connect} 
 technique \cite{regular_comparison}. It is finally observed that the best performances are often achieved by employing a combination of different regularization strategies \cite{regular_combining,survey_regular}, obtaining the greatest generalization ability.
 
 \section{Proposed Architecture}
+As anticipated, a Convolutional Neural Network model was designed to address the person Identification from Wi-Fi signals, as presented in Fig. \ref{fig:model}. Several reasons justify this choice. First, the data points are nothing more than sampled pieces of a multidimensional time-series,
+structured as an image combining both amplitudes' heatmap and phase information and CNN are proved to be prodigious models when dealing with grid-like data. Moreover, as elucidated in Section. \ref{sec:CNN}, CNNs leverage shared weights and local receptive fields, allowing them to capture spatial
+hierarchies and be translation invariant. This means that they can recognize patterns regardless of their position in the input, a property extremely useful when dealing with time frames extracted at any possible point in time. As a matter of fact, convolutional nets were already employed by recent work
+regarding Human Activity Recognition \cite{cnn_csi_activity} and Indoor Localization \cite{cnn_csi_localization} using Wi-Fi derived CSI images, achieving remarkable results, suggesting that a CNN are worth to be tested also for CSI-based person ID.
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\textwidth]{images/cnn.png}
+    \includegraphics[width=\textwidth]{images/convNet.png}
     \caption{The Convolutional Neural Network architecture designed for the CSI-based person Identification task.
         The same model was employed for testing the performance with 2,3,4,5 and 6 classes by only adjusting the last fully connected output layer, while the rest
-        of the architecture was always kept intact.}
+        of the architecture was always kept intact. The shapes, written above each feature map, refer to the tensors before applying any padding operation.}
     \label{fig:model}
 \end{figure}
+
+Of a particular interest is the first convolutional layer, that transforms the image into 64 feature maps. The operation is done with a kernel of size $4 \times 4$ and a stride of 2 on the horizontal axis. The stride value was precisely selected due to the structure of the input image, defined in Section \ref{Sec:structuring}.
+The features are the amplitude and phase of each subcarrier positioned in an alternating style, in such a way that every couple of columns represents amplitude and phase of the same subcarrier. Using a stride equals 2 makes the filters jumping couple after couple, considering subcarrier after subcarrier.
+To be precise, given that the kernel shape is four by four, two subcarriers are considered on each filter multiplication, in a time range of 4 observations. This method brings two nice outcomes: primarily, the amplitude information of a subcarrier is never divided by its corresponding phase information, capturing the whole signal
+description; Secondly, each individual weight of the kernel is always multiplying the same nature of data, since it never slides making single steps, so that weights $w_{11}, w_{13}, w_{21}, w_{23}$ on the 4 by 4 filters constantly refer to amplitude numbers while weights $w_{12}, w_{14}, w_{22}, w_{24}$ always encounter phase data.
+Even though those properties could somewhat be obtained using the standard double-channel input image fabric, it would be academically engaging to see a performance comparison between the two ideas, but this was out of the scope of this research.
+After having discussed the architectural choices of the first convolution, the settings of each layer of the presented neural network are selected as follows:
+
+\begin{enumerate}
+    \item \textbf{Input}: $200 \times 104$ image combining signal data.
+    \item \textbf{Convolution + Dropout}: Kernel size = $4 \times 4$, stride = (1, 2), output channels = 64, dropout $p$ = 0.3, resulting dimensions = $64 \times 197 \times 51$.
+    \item \textbf{Padding + Max Pooling}: Padding = 1, Kernel size = $2 \times 2$, stride = 2, resulting dimensions = $64 \times 99 \times 26$.
+    \item \textbf{Convolution + Dropout}: Kernel size = $6 \times 6$, stride = (1,1), output channels = 32, dropout $p$ = 0.3, resulting dimensions = $32 \times 95 \times 22$.
+    \item \textbf{Padding + Max Pooling}: Same as before, resulting dimensions = $32 \times 48 \times 12$
+    \item \textbf{Convolution + Dropout}: Kernel size = $6 \times 6$, stride = (1,1), output channels = 32, dropout $p$ = 0.3, resulting dimensions = $32 \times 43 \times 7$.
+    \item \textbf{Padding + Max Pooling}: Same as before, resulting dimensions = $32 \times 22 \times 4$
+    \item \textbf{Flattening + Fully Connected}: Resulting dimension = 2816 to 32 to 6 output classes.
+\end{enumerate}
 
 \bibliography{references}
 \bibliographystyle{ieeetr}

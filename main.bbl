@@ -189,4 +189,15 @@ R.~Moradi, R.~Berangi, and B.~Minaei, ``A survey of regularization strategies
   for deep models,'' {\em Artif. Intell. Rev.}, vol.~53, p.~3947–3986, aug
   2020.
 
+\bibitem{cnn_csi_activity}
+P.~F. Moshiri, M.~Nabati, R.~Shahbazian, and S.~A. Ghorashi, ``Csi-based human
+  activity recognition using convolutional neural networks,'' in {\em 2021 11th
+  International Conference on Computer Engineering and Knowledge (ICCKE)},
+  pp.~7--12, 2021.
+
+\bibitem{cnn_csi_localization}
+X.~Wang, X.~Wang, and S.~Mao, ``Deep convolutional neural networks for indoor
+  localization with csi images,'' {\em IEEE Transactions on Network Science and
+  Engineering}, vol.~7, no.~1, pp.~316--327, 2020.
+
 \end{thebibliography}

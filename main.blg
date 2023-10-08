@@ -6,45 +6,45 @@ Reallocating 'name_of_file' (item size: 1) to 7 items.
 The style file: ieeetr.bst
 Database file #1: references.bib
 Warning--empty journal in regular_comparison
-You've used 37 entries,
+You've used 39 entries,
             1876 wiz_defined-function locations,
-            714 strings with 10763 characters,
-and the built_in function-call counts, 10309 in all, are:
-= -- 981
-> -- 414
+            725 strings with 11219 characters,
+and the built_in function-call counts, 10939 in all, are:
+= -- 1040
+> -- 439
 < -- 0
-+ -- 151
-- -- 114
-* -- 701
-:= -- 1412
-add.period$ -- 41
-call.type$ -- 37
-change.case$ -- 37
++ -- 160
+- -- 121
+* -- 747
+:= -- 1498
+add.period$ -- 43
+call.type$ -- 39
+change.case$ -- 39
 chr.to.int$ -- 0
-cite$ -- 38
-duplicate$ -- 547
-empty$ -- 1002
-format.name$ -- 114
-if$ -- 2585
+cite$ -- 40
+duplicate$ -- 581
+empty$ -- 1064
+format.name$ -- 121
+if$ -- 2744
 int.to.chr$ -- 0
-int.to.str$ -- 37
-missing$ -- 32
-newline$ -- 118
-num.names$ -- 39
-pop$ -- 150
+int.to.str$ -- 39
+missing$ -- 34
+newline$ -- 124
+num.names$ -- 41
+pop$ -- 158
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 417
+skip$ -- 440
 stack$ -- 0
-substring$ -- 627
-swap$ -- 238
+substring$ -- 670
+swap$ -- 252
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 84
-width$ -- 39
-write$ -- 352
+while$ -- 90
+width$ -- 41
+write$ -- 372
 (There was 1 warning)
