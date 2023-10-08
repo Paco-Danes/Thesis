@@ -14,3 +14,5 @@ downsamples
 strided
 backpropagation
 minibatch-based
+downsampled
+ReLU

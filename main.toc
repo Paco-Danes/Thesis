@@ -14,3 +14,4 @@
 \contentsline {subsection}{\numberline {4.2.1}Pooling and Padding}{16}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Dropout and Weight Decay}{17}{subsection.4.2.2}%
 \contentsline {section}{\numberline {4.3}Proposed Architecture}{20}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Results}{22}{chapter.5}%

@@ -435,6 +435,7 @@ The last method, referred as \emph{full} convolution, tries to avoid this effect
 \end{figure}
 
 \subsection{Dropout and Weight Decay}
+\label{sec:dropout}
 The remarkable capacity of deep neural networks to model intricate relationships in data also makes them susceptible to overfitting, a phenomenon where the model learns to memorize the training data rather than shaping the real data generating distribution. The general objective in machine learning is to find a bias-variance trade-off, a delicate balance between two sources of errors that affect a model's ability to generalize well to unseen data. Unfortunately,
 very large and complex models such as Neural Networks tends to reduce the training bias up to a point where the accuracy on train set reaches 100\%, at the expense of variance that ends up being too large. This derives from the Universal Approximation Theorem, that explains how a shallow neural network has the capacity of approximating any continuous function up to any arbitrarily degree of precision, causing it to perfectly modelling the noise in the training set \cite{overfitting}.
 Regularization for deep learning refers to a set of techniques and strategies designed to mitigate overfitting and improve the generalization capabilities. These strategies have been effectively used for decades prior to the advent of deep learning, with linear models like linear regression and logistic regression. Many regularization approaches are based on limiting the capacity of the models by adding a norm penalty $\Omega(\theta)$ to the loss function $J$, obtaining a regularized
@@ -502,7 +503,7 @@ Of a particular interest is the first convolutional layer, that transforms the i
 The features are the amplitude and phase of each subcarrier positioned in an alternating style, in such a way that every couple of columns represents amplitude and phase of the same subcarrier. Using a stride equals 2 makes the filters jumping couple after couple, considering subcarrier after subcarrier.
 To be precise, given that the kernel shape is four by four, two subcarriers are considered on each filter multiplication, in a time range of 4 observations. This method brings two nice outcomes: primarily, the amplitude information of a subcarrier is never divided by its corresponding phase information, capturing the whole signal
 description; Secondly, each individual weight of the kernel is always multiplying the same nature of data, since it never slides making single steps, so that weights $w_{11}, w_{13}, w_{21}, w_{23}$ on the 4 by 4 filters constantly refer to amplitude numbers while weights $w_{12}, w_{14}, w_{22}, w_{24}$ always encounter phase data.
-Even though those properties could somewhat be obtained using the standard double-channel input image fabric, it would be academically engaging to see a performance comparison between the two ideas, but this was out of the scope of this research.
+Even though those properties could somewhat be obtained using the standard double-channel input image fabric, it would be academically engaging to see a performance comparison between the two ideas, but it was out of the scope of this research.
 After having discussed the architectural choices of the first convolution, the settings of each layer of the presented neural network are selected as follows:
 
 \begin{enumerate}
@@ -515,6 +516,13 @@ After having discussed the architectural choices of the first convolution, the s
     \item \textbf{Padding + Max Pooling}: Same as before, resulting dimensions = $32 \times 22 \times 4$
     \item \textbf{Flattening + Fully Connected}: Resulting dimension = 2816 to 32 to 6 output classes.
 \end{enumerate}
+Dropout here refers to \emph{Spatial Dropout}, also called 2-D Dropout, that works by randomly deactivating not single units but an entire feature map (or channel).
+The choice of the Dropout probability rate (see subsection \ref{sec:dropout}) was dictated by trials and testing, after which 0.3 seemed to retain a good model in terms of validation accuracy.
+Max Pooling was harnessed to get downsampled feature maps, together with padding to ensure boundaries points were included. At the end, two fully connected layers are present to map the features
+extracted by the previous convolutions to an output class. The activation function used in all layers was the Rectified Linear Unit (ReLU), the most common choice nowadays, that boost convergence
+time and increase overall sparsity.
+
+\chapter{Results}
 
 \bibliography{references}
 \bibliographystyle{ieeetr}

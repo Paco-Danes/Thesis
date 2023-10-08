@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.7.3)  8 OCT 2023 19:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.7.3)  8 OCT 2023 20:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -509,7 +509,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<sapienzalogo.pdf, id=67, 288.07625pt x 89.33376pt>
+<sapienzalogo.pdf, id=71, 288.07625pt x 89.33376pt>
 File: sapienzalogo.pdf Graphic file (type pdf)
 <use sapienzalogo.pdf>
 Package pdftex.def Info: sapienzalogo.pdf  used on input line 23.
@@ -579,7 +579,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 ]
 Chapter 1.
-<images/Person_id.jpg, id=120, 1068.99374pt x 364.36125pt>
+<images/Person_id.jpg, id=125, 1068.99374pt x 364.36125pt>
 File: images/Person_id.jpg Graphic file (type jpg)
 <use images/Person_id.jpg>
 Package pdftex.def Info: images/Person_id.jpg  used on input line 51.
@@ -592,12 +592,12 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 ] [2 <./images/Person_id.jpg>]
 Chapter 2.
-<images/wave.jpg, id=146, 383.93437pt x 289.08pt>
+<images/wave.jpg, id=151, 383.93437pt x 289.08pt>
 File: images/wave.jpg Graphic file (type jpg)
 <use images/wave.jpg>
 Package pdftex.def Info: images/wave.jpg  used on input line 96.
 (pdftex.def)             Requested size: 190.07831pt x 143.1193pt.
-<images/Phase_shift2.png, id=147, 1927.2pt x 1344.52313pt>
+<images/Phase_shift2.png, id=152, 1927.2pt x 1344.52313pt>
 File: images/Phase_shift2.png Graphic file (type png)
 <use images/Phase_shift2.png>
 Package pdftex.def Info: images/Phase_shift2.png  used on input line 102.
@@ -608,23 +608,23 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [3
 
 ] [4 <./images/wave.jpg> <./images/Phase_shift2.png>]
-<images/IQ_sampling.jpg, id=166, 1077.27469pt x 383.18156pt>
+<images/IQ_sampling.jpg, id=171, 1077.27469pt x 383.18156pt>
 File: images/IQ_sampling.jpg Graphic file (type jpg)
 <use images/IQ_sampling.jpg>
 Package pdftex.def Info: images/IQ_sampling.jpg  used on input line 155.
 (pdftex.def)             Requested size: 380.16266pt x 135.22061pt.
  [5 <./images/IQ_sampling.jpg>]
-<images/sinc_func_alone.jpg, id=180, 589.4522pt x 331.2375pt>
+<images/sinc_func_alone.jpg, id=185, 589.4522pt x 331.2375pt>
 File: images/sinc_func_alone.jpg Graphic file (type jpg)
 <use images/sinc_func_alone.jpg>
 Package pdftex.def Info: images/sinc_func_alone.jpg  used on input line 182.
 (pdftex.def)             Requested size: 178.19879pt x 100.13521pt.
-<images/multiple_sinc.jpg, id=181, 922.94812pt x 508.90125pt>
+<images/multiple_sinc.jpg, id=186, 922.94812pt x 508.90125pt>
 File: images/multiple_sinc.jpg Graphic file (type jpg)
 <use images/multiple_sinc.jpg>
 Package pdftex.def Info: images/multiple_sinc.jpg  used on input line 188.
 (pdftex.def)             Requested size: 178.19879pt x 98.25304pt.
-<images/summationSinc.jpg, id=182, 658.71094pt x 382.42876pt>
+<images/summationSinc.jpg, id=187, 658.71094pt x 382.42876pt>
 File: images/summationSinc.jpg Graphic file (type jpg)
 <use images/summationSinc.jpg>
 Package pdftex.def Info: images/summationSinc.jpg  used on input line 194.
@@ -634,19 +634,19 @@ Chapter 3.
 [8
 
 ]
-<images/hampel_DWT.png, id=212, 1175.39125pt x 271.0125pt>
+<images/hampel_DWT.png, id=217, 1175.39125pt x 271.0125pt>
 File: images/hampel_DWT.png Graphic file (type png)
 <use images/hampel_DWT.png>
 Package pdftex.def Info: images/hampel_DWT.png  used on input line 272.
 (pdftex.def)             Requested size: 388.07831pt x 89.47987pt.
  [9 <./images/hampel_DWT.png>]
-<images/phaseTransform.png, id=226, 564.1075pt x 261.97874pt>
+<images/phaseTransform.png, id=231, 564.1075pt x 261.97874pt>
 File: images/phaseTransform.png Graphic file (type png)
 <use images/phaseTransform.png>
 Package pdftex.def Info: images/phaseTransform.png  used on input line 296.
 (pdftex.def)             Requested size: 356.39758pt x 165.51918pt.
  [10 <./images/phaseTransform.png>]
-<images/heatmap_3.png, id=240, 1292.83pt x 425.59pt>
+<images/heatmap_3.png, id=245, 1292.83pt x 425.59pt>
 File: images/heatmap_3.png Graphic file (type png)
 <use images/heatmap_3.png>
 Package pdftex.def Info: images/heatmap_3.png  used on input line 318.
@@ -661,43 +661,47 @@ Chapter 4.
 [13
 
 ]
-<images/3D_room.jpg, id=262, 770.12718pt x 433.62pt>
+<images/3D_room.jpg, id=267, 770.12718pt x 433.62pt>
 File: images/3D_room.jpg Graphic file (type jpg)
 <use images/3D_room.jpg>
 Package pdftex.def Info: images/3D_room.jpg  used on input line 364.
 (pdftex.def)             Requested size: 198.0pt x 111.4814pt.
-<images/room2.png, id=263, 414.04688pt x 379.4175pt>
+<images/room2.png, id=268, 414.04688pt x 379.4175pt>
 File: images/room2.png Graphic file (type png)
 <use images/room2.png>
 Package pdftex.def Info: images/room2.png  used on input line 369.
 (pdftex.def)             Requested size: 158.39758pt x 145.15277pt.
  [14 <./images/3D_room.jpg> <./images/room2.png>]
-<images/convfield3.png, id=282, 724.7075pt x 402.50375pt>
+<images/convfield3.png, id=287, 724.7075pt x 402.50375pt>
 File: images/convfield3.png Graphic file (type png)
 <use images/convfield3.png>
 Package pdftex.def Info: images/convfield3.png  used on input line 400.
 (pdftex.def)             Requested size: 316.80121pt x 175.95369pt.
  [15 <./images/convfield3.png>] [16]
-<images/poolingMax.png, id=305, 1956.30875pt x 494.84875pt>
+<images/poolingMax.png, id=310, 1956.30875pt x 494.84875pt>
 File: images/poolingMax.png Graphic file (type png)
 <use images/poolingMax.png>
 Package pdftex.def Info: images/poolingMax.png  used on input line 432.
 (pdftex.def)             Requested size: 324.7229pt x 82.13731pt.
  [17 <./images/poolingMax.png>]
-<images/dropout.png, id=316, 1151.30125pt x 956.57375pt>
+<images/dropout.png, id=321, 1151.30125pt x 956.57375pt>
 File: images/dropout.png Graphic file (type png)
 <use images/dropout.png>
-Package pdftex.def Info: images/dropout.png  used on input line 474.
+Package pdftex.def Info: images/dropout.png  used on input line 475.
 (pdftex.def)             Requested size: 198.0pt x 164.49828pt.
  [18]
-<images/convNet.png, id=330, 2179.14125pt x 584.1825pt>
+<images/convNet.png, id=335, 2179.14125pt x 584.1825pt>
 File: images/convNet.png Graphic file (type png)
 <use images/convNet.png>
-Package pdftex.def Info: images/convNet.png  used on input line 494.
+Package pdftex.def Info: images/convNet.png  used on input line 495.
 (pdftex.def)             Requested size: 396.0pt x 106.15558pt.
- [19 <./images/dropout.png>] [20 <./images/convNet.png>] (main.bbl [21] [22
+ [19 <./images/dropout.png>] [20 <./images/convNet.png>] [21]
+Chapter 5.
+(main.bbl [22
 
-] [23]
+] [23
+
+] [24]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 151.
  (C:\Program Files\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -706,22 +710,22 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [24]) [25] (main.aux)
+ [25]) [26] (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7878FE42190F3EC3AA8D0F524B06C836;2663.
+(rerunfilecheck)             Checksum: C2AE79ACD0E21CC0769DE050929373D6;2742.
  ) 
 Here is how much of TeX's memory you used:
- 15168 strings out of 478351
- 246441 string characters out of 2846868
- 592712 words of memory out of 3000000
- 32944 multiletter control sequences out of 15000+600000
+ 15172 strings out of 478351
+ 246481 string characters out of 2846868
+ 592771 words of memory out of 3000000
+ 32946 multiletter control sequences out of 15000+600000
  568806 words of font info for 220 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,13n,131p,1048b,652s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}<C:/Program Files/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmib10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmss17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (29 pages, 3290366 bytes).
+Output written on main.pdf (30 pages, 3293124 bytes).
 PDF statistics:
- 488 PDF objects out of 1000 (max. 8388607)
- 106 named destinations out of 1000 (max. 500000)
- 58070 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 498 PDF objects out of 1000 (max. 8388607)
+ 108 named destinations out of 1000 (max. 500000)
+ 58078 words of extra memory for PDF output out of 61914 (max. 10000000)
 
