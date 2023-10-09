@@ -175,6 +175,10 @@ N.~Srivastava, G.~Hinton, A.~Krizhevsky, I.~Sutskever, and R.~Salakhutdinov,
   ``Dropout: A simple way to prevent neural networks from overfitting,'' {\em
   Journal of Machine Learning Research}, vol.~15, pp.~1929--1958, 06 2014.
 
+\bibitem{dropout_variants}
+S.~Cai, Y.~Shu, G.~Chen, B.~C. Ooi, W.~Wang, and M.~Zhang, ``Effective and
+  efficient dropout for deep convolutional neural networks,'' 2020.
+
 \bibitem{regular_comparison}
 A.~Lydia and S.~Chandrasekar, ``A comparative study on regularization
   techniques in convolutional neural networks,'' pp.~784--793, 07 2022.
@@ -199,5 +203,10 @@ P.~F. Moshiri, M.~Nabati, R.~Shahbazian, and S.~A. Ghorashi, ``Csi-based human
 X.~Wang, X.~Wang, and S.~Mao, ``Deep convolutional neural networks for indoor
   localization with csi images,'' {\em IEEE Transactions on Network Science and
   Engineering}, vol.~7, no.~1, pp.~316--327, 2020.
+
+\bibitem{spatial_dropout}
+J.~Tompson, R.~Goroshin, A.~Jain, Y.~LeCun, and C.~Bregler, ``Efficient object
+  localization using convolutional networks,'' in {\em 2015 IEEE Conference on
+  Computer Vision and Pattern Recognition (CVPR)}, pp.~648--656, 2015.
 
 \end{thebibliography}

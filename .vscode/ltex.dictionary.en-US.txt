@@ -16,3 +16,4 @@ backpropagation
 minibatch-based
 downsampled
 ReLU
+Numpy

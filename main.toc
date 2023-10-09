@@ -15,3 +15,6 @@
 \contentsline {subsection}{\numberline {4.2.2}Dropout and Weight Decay}{17}{subsection.4.2.2}%
 \contentsline {section}{\numberline {4.3}Proposed Architecture}{20}{section.4.3}%
 \contentsline {chapter}{\numberline {5}Results}{22}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Working Pipeline}{22}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Training}{23}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Validation results}{24}{section.5.3}%

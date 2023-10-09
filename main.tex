@@ -481,7 +481,7 @@ Dropout aims to imitate this process but with an exponentially large number of n
 Specifically, training with dropout consists into using a minibatch-based algorithm such as stochastic gradient descent, that recalls the input bootstrap procedure of standard bagging methods. At each iteration,
 a binary mask is applied to the hidden units (and, willingly, to the input too) that determines which units to deactivate. During testing phase, dropout is turned off, and the predictions are elaborated using
 the full network architecture. Given that the process is stochastic, there is a chance that setting to zero some particular units, all paths that lead to the outputs will be deleted. But with Neural Network models that rely on
-tens of layers and millions of units, the paths connecting the first and last layer are so many that this probability becomes insignificant. Many variants of Dropout have been proposed, such as \emph{Max Dropout} that sets the
+tens of layers and millions of units, the paths connecting the first and last layer are so many that this probability becomes insignificant. Many variants of Dropout have been proposed \cite{dropout_variants}, such as \emph{Max Dropout} that sets the
 probability $p$ based on the magnitude of the activation or \emph{Drop Connect} that drops individual connections (weights) rather than the entire unit, but in general terms, Dropout stays as one of the most effective regularization
 technique \cite{regular_comparison}. It is finally observed that the best performances are often achieved by employing a combination of different regularization strategies \cite{regular_combining,survey_regular}, obtaining the greatest generalization ability.
 
@@ -516,13 +516,44 @@ After having discussed the architectural choices of the first convolution, the s
     \item \textbf{Padding + Max Pooling}: Same as before, resulting dimensions = $32 \times 22 \times 4$
     \item \textbf{Flattening + Fully Connected}: Resulting dimension = 2816 to 32 to 6 output classes.
 \end{enumerate}
-Dropout here refers to \emph{Spatial Dropout}, also called 2-D Dropout, that works by randomly deactivating not single units but an entire feature map (or channel).
+Dropout here refers to \emph{Spatial Dropout} \cite{spatial_dropout}, also called 2-D Dropout, that works by randomly deactivating not single units but an entire feature map (or channel).
 The choice of the Dropout probability rate (see subsection \ref{sec:dropout}) was dictated by trials and testing, after which 0.3 seemed to retain a good model in terms of validation accuracy.
 Max Pooling was harnessed to get downsampled feature maps, together with padding to ensure boundaries points were included. At the end, two fully connected layers are present to map the features
 extracted by the previous convolutions to an output class. The activation function used in all layers was the Rectified Linear Unit (ReLU), the most common choice nowadays, that boost convergence
 time and increase overall sparsity.
 
 \chapter{Results}
+This chapter summarizes the complete workflow for addressing person ID through Wi-Fi signals, then explains how the proposed model was trained, and finally the results achieved during validation phase.
+\section{Working Pipeline}
+The complete working pipeline for solving CSI-based person Identification task starts with the acquisition of CSI data, as seen in Fig. \ref{fig:pipeline}. The subject is required to stand between two Wi-Fi antennas that are communicating by exchanging ping packets continuously, using OFDM technology.
+A two seconds window is retrieved, from which amplitude and phase information are extracted using the formulas defined in Section \ref{sec:IQ}, for each of the 52 available subcarriers. The source data is then preprocessed following the procedure of Chapter \ref{chap:preprocess}: The raw amplitude data is then filtered using the Hampel Identifier, to remove outliers, and
+the series is consequently smoothed out exploiting the Discrete Wavelet Transform (DWT), to increase the Signal-To-Noise ratio; the phases are instead calibrated to remove measurements errors by the use of a linear transformation, obtaining informative features of the phases.
+The two types of data are combined into a single image as seen in Section \ref{Sec:structuring}, ready to be fed to the Convolutional Neural Network model.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{images/pipeline.png}
+    \caption{The complete workflow for person ID through Wi-Fi signals.}
+    \label{fig:pipeline}
+\end{figure}
+Lastly, the CNN presented in Section \ref{sec:CNN} elaborates the combined image, analyzing the sanitized data of 200 packets, and finally returns the appropriate person identity between all the possible choices.
+\section{Training}
+The whole system was designed with PYTHON 3.9.7 utilizing the Numpy and Pandas libraries, specialized in multidimensional data operations, for signal preprocessing and structuring.
+The various tested Neural Network architectures were built upon the PyTorch package, and were trained and validated on a single NVIDIA Tesla T4 GPU in cloud computing, with 15 GB of VRAM.
+The final model was asked to classify an incremental number of labels, starting from binary classification with just 2 people up to 6 people. When working with a number of classes less than 6,
+the model was trained and tested not only once, but on a subset of size 3 of all the possible permutations of people. For instance, when dealing with 3 output classes, one could choose up to $\binom{6}{3} = 20$
+different combination of people. From that set 3 triplets were sampled, and the model worked on the data of each triplet for a total of 3 independent trainings. At the end, their respective results were averaged to get a better estimation of the model capabilities.
+Likewise, The same methodology was applied for all the other number of classes. In this way, the possibility of a performance biased by the choice of the people to compare is reduced. Furthermore, the results of each combination was the outcome of a Five-Fold Cross-Validation performed with those selected classes, with the aim to obtain a score less dependent on the validation set choice.
+Each training procedure was executed with the use of the Stochastic Gradient Descent (SGD) with Momentum optimizer, for a total of 180 epochs, a momentum of 0.9 and an initial learning rate \emph{lr} set to 0.001,
+Additionally, a scheduler was implemented to divide the \emph{lr} by 2 at epoch 140, in order to retain a more stable and fine-grained loss exploration due to a decreased gradient update speed, over the course of the last 40 epochs.
+
+SGD with Momentum is an improvement of the standard SGD algorithm, used to dampen oscillations in the loss function, accelerate convergence and hopefully skip local minima. It helps the optimization algorithm to gain speed in directions where the gradient consistently points, increasing stability during the parameter space navigation.
+Mathematically, momentum is introduced by maintaining a moving average of past gradients. The momentum term, denoted as $\beta$ (usually a value close to 0.9), is a hyperparameter that controls the influence of past gradients. A high $\beta$ value gives more weight to past gradients, while a low value allows for more responsiveness to current gradients. An update step is in fact described by:
+$$\boldsymbol{V}_t = \beta\boldsymbol{V}_{t-1} + (1 - \beta)\nabla_\theta J(\boldsymbol{\theta}, X, \boldsymbol{y})$$
+$$\boldsymbol{\theta} \leftarrow \boldsymbol{\theta} - \lambda  \boldsymbol{V}_t$$
+Where $\boldsymbol{V}_t$ holds the momentum vector at time t, $\boldsymbol{\theta}$ are the parameters to update, $\lambda$ is the learning rate and $J$ the loss function. Specifically, the function used for training was the Cross-Entropy loss with the addition to class weights to compensate a slight samples imbalance, where each weight was just the number of samples for class $i$ divided by the total number of samples.
+As usual, the Soft Max function was applied to the output activations, to transform them into a probability distribution right before computing the loss.
+\section{Validation results}
+
 
 \bibliography{references}
 \bibliographystyle{ieeetr}

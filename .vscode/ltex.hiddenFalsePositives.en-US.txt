@@ -1,2 +1,4 @@
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe CSI acquisition was done through the use of two ESP32 microboards,\\E$"}
 {"rule":"CHANCE_CHANGE","sentence":"^\\QGiven that the process is stochastic, there is a chance that setting to zero some specific units, all paths the lead to the outputs will be deleted.\\E$"}
+{"rule":"UNIT_SPACE","sentence":"^\\QThe various tested Neural Network architectures were built upon PyTorch package, and they were trained and validated on a single NVIDIA Tesla T4 GPU in cloud computing with 15GB of VRAM.\\E$"}
+{"rule":"UNIT_SPACE","sentence":"^\\QThe various tested Neural Network architectures were built upon PyTorch package, and they were trained and validated on a single NVIDIA Tesla T4 GPU in cloud computing, with 15GB of VRAM.\\E$"}
