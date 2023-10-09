@@ -17,3 +17,4 @@ minibatch-based
 downsampled
 ReLU
 Numpy
+multiclass

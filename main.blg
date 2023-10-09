@@ -6,36 +6,36 @@ Reallocating 'name_of_file' (item size: 1) to 7 items.
 The style file: ieeetr.bst
 Database file #1: references.bib
 Warning--empty journal in regular_comparison
-You've used 41 entries,
+You've used 42 entries,
             1876 wiz_defined-function locations,
-            733 strings with 11632 characters,
-and the built_in function-call counts, 11505 in all, are:
-= -- 1084
-> -- 476
+            737 strings with 11806 characters,
+and the built_in function-call counts, 11696 in all, are:
+= -- 1095
+> -- 496
 < -- 0
-+ -- 173
-- -- 132
-* -- 788
-:= -- 1579
-add.period$ -- 45
-call.type$ -- 41
-change.case$ -- 41
++ -- 180
+- -- 138
+* -- 803
+:= -- 1611
+add.period$ -- 46
+call.type$ -- 42
+change.case$ -- 42
 chr.to.int$ -- 0
-cite$ -- 42
-duplicate$ -- 606
-empty$ -- 1119
-format.name$ -- 132
-if$ -- 2881
+cite$ -- 43
+duplicate$ -- 610
+empty$ -- 1137
+format.name$ -- 138
+if$ -- 2924
 int.to.chr$ -- 0
-int.to.str$ -- 41
+int.to.str$ -- 42
 missing$ -- 35
-newline$ -- 130
-num.names$ -- 43
-pop$ -- 172
+newline$ -- 133
+num.names$ -- 44
+pop$ -- 179
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 459
+skip$ -- 463
 stack$ -- 0
 substring$ -- 698
 swap$ -- 261
@@ -44,7 +44,7 @@ text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 94
-width$ -- 43
-write$ -- 388
+while$ -- 95
+width$ -- 44
+write$ -- 395
 (There was 1 warning)

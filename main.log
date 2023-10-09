@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.7.3)  9 OCT 2023 16:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.7.3)  9 OCT 2023 21:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -381,14 +381,107 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \enit@inbox=\box54
 \enit@count@id=\count303
 \enitdp@description=\count304
-)
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 20.
- (C:\Program Files\MiKTeX\tex/latex/lm\t1lmr.fd
-File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) (C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+) (C:\Program Files\MiKTeX\tex/latex/tabularray\tabularray.sty (C:\Program Files\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2022-06-16 L3 programming layer (loader) 
+ (C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-04-20 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count305
 \l__pdf_internal_box=\box55
+))
+Package: tabularray 2023-03-01 v2023A Typeset tabulars and arrays with LaTeX3
+\l__tblr_a_int=\count306
+\l__tblr_c_int=\count307
+\l__tblr_r_int=\count308
+\l__tblr_d_dim=\dimen185
+\l__tblr_h_dim=\dimen186
+\l__tblr_o_dim=\dimen187
+\l__tblr_p_dim=\dimen188
+\l__tblr_q_dim=\dimen189
+\l__tblr_r_dim=\dimen190
+\l__tblr_s_dim=\dimen191
+\l__tblr_t_dim=\dimen192
+\l__tblr_v_dim=\dimen193
+\l__tblr_w_dim=\dimen194
+\l__tblr_a_box=\box56
+\l__tblr_b_box=\box57
+\l__tblr_c_box=\box58
+\l__tblr_d_box=\box59
+\g__tblr_table_count_int=\count309
+\c@rownum=\count310
+\c@colnum=\count311
+\c@rowcount=\count312
+\c@colcount=\count313
+\abovesep=\dimen195
+\belowsep=\dimen196
+\leftsep=\dimen197
+\rightsep=\dimen198
+\g_tblr_level_int=\count314
+\g__tblr_data_row_key_count_int=\count315
+\g__tblr_data_column_key_count_int=\count316
+\g__tblr_data_cell_key_count_int=\count317
+\g__tblr_array_int=\count318
+\l__tblr_key_count_int=\count319
+\l__tblr_key_quotient_int=\count320
+\l__tblr_key_quotient_two_int=\count321
+\l__tblr_key_remainder_int=\count322
+\g__tblr_data_str_value_count_int=\count323
+\rulewidth=\dimen199
+\l__tblr_strut_dp_dim=\dimen256
+\l__tblr_strut_ht_dim=\dimen257
+\g__tblr_cell_wd_dim=\dimen258
+\g__tblr_cell_ht_dim=\dimen259
+\g__tblr_cell_head_dim=\dimen260
+\g__tblr_cell_foot_dim=\dimen261
+\l__column_target_dim=\dimen262
+\l__tblr_caption_box=\box60
+\l__tblr_caption_left_box=\box61
+\l__tblr_row_head_box=\box62
+\l__tblr_row_foot_box=\box63
+\l__tblr_row_head_foot_dim=\dimen263
+\tablewidth=\dimen264
+\l__tblr_table_firsthead_box=\box64
+\l__tblr_table_middlehead_box=\box65
+\l__tblr_table_lasthead_box=\box66
+\l__tblr_table_firstfoot_box=\box67
+\l__tblr_table_middlefoot_box=\box68
+\l__tblr_table_lastfoot_box=\box69
+\l__tblr_remain_height_dim=\dimen265
+\l__tblr_long_from_int=\count324
+\l__tblr_long_to_int=\count325
+\l__tblr_curr_i_int=\count326
+\l__tblr_prev_i_int=\count327
+\l__tblr_table_page_int=\count328
+\l__tblr_table_head_box=\box70
+\l__tblr_table_foot_box=\box71
+\l__tblr_table_head_foot_dim=\dimen266
+\l__tblr_table_head_body_foot_dim=\dimen267
+\l__tblr_table_box=\box72
+\l__tblr_table_hlines_box=\box73
+\l__tblr_hline_box=\box74
+\l__tblr_row_box=\box75
+\l__tblr_col_o_wd_dim=\dimen268
+\l__tblr_col_b_wd_dim=\dimen269
+\l__tblr_hline_leftskip_dim=\dimen270
+\l__tblr_hline_rightskip_dim=\dimen271
+\l__tblr_row_ht_dim=\dimen272
+\l__tblr_row_dp_dim=\dimen273
+\l__tblr_row_abovesep_dim=\dimen274
+\l__tblr_row_belowsep_dim=\dimen275
+\l__tblr_row_vlines_box=\box76
+\l__tblr_vline_box=\box77
+\l__tblr_cell_box=\box78
+\l__row_upper_dim=\dimen276
+\l__row_lower_dim=\dimen277
+\l__row_vpace_dim=\dimen278
+\l__tblr_vline_aboveskip_dim=\dimen279
+\l__tblr_vline_belowskip_dim=\dimen280
+\l__tblr_cell_wd_dim=\dimen281
+\l__tblr_cell_ht_dim=\dimen282
+\l__tblr_diag_box=\box79
+)
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 24.
+ (C:\Program Files\MiKTeX\tex/latex/lm\t1lmr.fd
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
 LaTeX Warning: Unused global option(s):
@@ -397,24 +490,24 @@ LaTeX Warning: Unused global option(s):
 (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -457,16 +550,16 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count306
-\scratchdimen=\dimen185
-\scratchbox=\box56
-\nofMPsegments=\count307
-\nofMParguments=\count308
+\scratchcounter=\count329
+\scratchdimen=\dimen283
+\scratchbox=\box80
+\nofMPsegments=\count330
+\nofMParguments=\count331
 \everyMPshowfont=\toks33
-\MPscratchCnt=\count309
-\MPscratchDim=\dimen186
-\MPnumerator=\count310
-\makeMPintoPDFobject=\count311
+\MPscratchCnt=\count332
+\MPscratchDim=\dimen284
+\MPnumerator=\count333
+\makeMPintoPDFobject=\count334
 \everyMPtoPDFconversion=\toks34
 ) (C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -474,34 +567,34 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (C:\Program Files\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Info: Redefining \textsubscript on input line 20.
-LaTeX Info: Redefining \microtypecontext on input line 20.
-Package microtype Info: Applying patch `item' on input line 20.
-Package microtype Info: Applying patch `toc' on input line 20.
-Package microtype Info: Applying patch `eqnum' on input line 20.
-Package microtype Info: Applying patch `footnote' on input line 20.
-Package microtype Info: Applying patch `verbatim' on input line 20.
+LaTeX Info: Redefining \textsubscript on input line 24.
+LaTeX Info: Redefining \microtypecontext on input line 24.
+Package microtype Info: Applying patch `item' on input line 24.
+Package microtype Info: Applying patch `toc' on input line 24.
+Package microtype Info: Applying patch `eqnum' on input line 24.
+Package microtype Info: Applying patch `footnote' on input line 24.
+Package microtype Info: Applying patch `verbatim' on input line 24.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 20.
+LaTeX Info: Redefining \showhyphens on input line 24.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
  (C:\Program Files\MiKTeX\tex/latex/microtype\mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
-Package hyperref Info: Link coloring OFF on input line 20.
+Package hyperref Info: Link coloring OFF on input line 24.
  (main.out) (main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
 \SAP@parboxindent=\skip65
 \SAP@parboxwidth=\skip66
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 23.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 27.
  (C:\Program Files\MiKTeX\tex/latex/lm\t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -512,45 +605,45 @@ Package microtype Info: Loading generic protrusion settings for font family
 <sapienzalogo.pdf, id=83, 288.07625pt x 89.33376pt>
 File: sapienzalogo.pdf Graphic file (type pdf)
 <use sapienzalogo.pdf>
-Package pdftex.def Info: sapienzalogo.pdf  used on input line 23.
+Package pdftex.def Info: sapienzalogo.pdf  used on input line 27.
 (pdftex.def)             Requested size: 142.26378pt x 44.11742pt.
  [1
 
 
 
 {C:/Users/devin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <C:/Program Files/MiKTeX/tex/latex/sapthesis/sapienzalogo.pdf>]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 23.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 27.
  (C:\Program Files\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 23--23
+Underfull \hbox (badness 10000) in paragraph at lines 27--27
 
  []
 
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 23.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 27.
 (C:\Program Files\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 23.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 27.
  (C:\Program Files\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 23.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 27.
  (C:\Program Files\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 23.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 27.
  (C:\Program Files\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 23.
+(Font)              <10> on input line 27.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 23.
+(Font)              <7> on input line 27.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 23.
+(Font)              <5> on input line 27.
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--23
+Underfull \hbox (badness 10000) in paragraph at lines 27--27
 
  []
 
@@ -558,7 +651,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--23
 pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.23 
+l.27 
       [1
 
 ] [2
@@ -582,7 +675,7 @@ Chapter 1.
 <images/Person_id.jpg, id=140, 1068.99374pt x 364.36125pt>
 File: images/Person_id.jpg Graphic file (type jpg)
 <use images/Person_id.jpg>
-Package pdftex.def Info: images/Person_id.jpg  used on input line 51.
+Package pdftex.def Info: images/Person_id.jpg  used on input line 55.
 (pdftex.def)             Requested size: 320.70059pt x 109.3092pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -595,12 +688,12 @@ Chapter 2.
 <images/wave.jpg, id=166, 383.93437pt x 289.08pt>
 File: images/wave.jpg Graphic file (type jpg)
 <use images/wave.jpg>
-Package pdftex.def Info: images/wave.jpg  used on input line 96.
+Package pdftex.def Info: images/wave.jpg  used on input line 100.
 (pdftex.def)             Requested size: 190.07831pt x 143.1193pt.
 <images/Phase_shift2.png, id=167, 1927.2pt x 1344.52313pt>
 File: images/Phase_shift2.png Graphic file (type png)
 <use images/Phase_shift2.png>
-Package pdftex.def Info: images/Phase_shift2.png  used on input line 102.
+Package pdftex.def Info: images/Phase_shift2.png  used on input line 106.
 (pdftex.def)             Requested size: 190.07831pt x 132.59325pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -611,23 +704,23 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <images/IQ_sampling.jpg, id=186, 1077.27469pt x 383.18156pt>
 File: images/IQ_sampling.jpg Graphic file (type jpg)
 <use images/IQ_sampling.jpg>
-Package pdftex.def Info: images/IQ_sampling.jpg  used on input line 155.
+Package pdftex.def Info: images/IQ_sampling.jpg  used on input line 159.
 (pdftex.def)             Requested size: 380.16266pt x 135.22061pt.
  [5 <./images/IQ_sampling.jpg>]
 <images/sinc_func_alone.jpg, id=200, 589.4522pt x 331.2375pt>
 File: images/sinc_func_alone.jpg Graphic file (type jpg)
 <use images/sinc_func_alone.jpg>
-Package pdftex.def Info: images/sinc_func_alone.jpg  used on input line 182.
+Package pdftex.def Info: images/sinc_func_alone.jpg  used on input line 186.
 (pdftex.def)             Requested size: 178.19879pt x 100.13521pt.
 <images/multiple_sinc.jpg, id=201, 922.94812pt x 508.90125pt>
 File: images/multiple_sinc.jpg Graphic file (type jpg)
 <use images/multiple_sinc.jpg>
-Package pdftex.def Info: images/multiple_sinc.jpg  used on input line 188.
+Package pdftex.def Info: images/multiple_sinc.jpg  used on input line 192.
 (pdftex.def)             Requested size: 178.19879pt x 98.25304pt.
 <images/summationSinc.jpg, id=202, 658.71094pt x 382.42876pt>
 File: images/summationSinc.jpg Graphic file (type jpg)
 <use images/summationSinc.jpg>
-Package pdftex.def Info: images/summationSinc.jpg  used on input line 194.
+Package pdftex.def Info: images/summationSinc.jpg  used on input line 198.
 (pdftex.def)             Requested size: 178.19879pt x 103.45554pt.
  [6 <./images/sinc_func_alone.jpg> <./images/multiple_sinc.jpg> <./images/summationSinc.jpg>] [7]
 Chapter 3.
@@ -637,22 +730,22 @@ Chapter 3.
 <images/hampel_DWT.png, id=232, 1175.39125pt x 271.0125pt>
 File: images/hampel_DWT.png Graphic file (type png)
 <use images/hampel_DWT.png>
-Package pdftex.def Info: images/hampel_DWT.png  used on input line 272.
+Package pdftex.def Info: images/hampel_DWT.png  used on input line 276.
 (pdftex.def)             Requested size: 388.07831pt x 89.47987pt.
  [9 <./images/hampel_DWT.png>]
 <images/phaseTransform.png, id=246, 564.1075pt x 261.97874pt>
 File: images/phaseTransform.png Graphic file (type png)
 <use images/phaseTransform.png>
-Package pdftex.def Info: images/phaseTransform.png  used on input line 296.
+Package pdftex.def Info: images/phaseTransform.png  used on input line 300.
 (pdftex.def)             Requested size: 356.39758pt x 165.51918pt.
  [10 <./images/phaseTransform.png>]
 <images/heatmap_3.png, id=260, 1292.83pt x 425.59pt>
 File: images/heatmap_3.png Graphic file (type png)
 <use images/heatmap_3.png>
-Package pdftex.def Info: images/heatmap_3.png  used on input line 318.
+Package pdftex.def Info: images/heatmap_3.png  used on input line 322.
 (pdftex.def)             Requested size: 376.19879pt x 123.84004pt.
  [11 <./images/heatmap_3.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 326--330
+Underfull \hbox (badness 10000) in paragraph at lines 330--334
 
  []
 
@@ -664,49 +757,65 @@ Chapter 4.
 <images/3D_room.jpg, id=282, 770.12718pt x 433.62pt>
 File: images/3D_room.jpg Graphic file (type jpg)
 <use images/3D_room.jpg>
-Package pdftex.def Info: images/3D_room.jpg  used on input line 364.
+Package pdftex.def Info: images/3D_room.jpg  used on input line 368.
 (pdftex.def)             Requested size: 198.0pt x 111.4814pt.
 <images/room2.png, id=283, 414.04688pt x 379.4175pt>
 File: images/room2.png Graphic file (type png)
 <use images/room2.png>
-Package pdftex.def Info: images/room2.png  used on input line 369.
+Package pdftex.def Info: images/room2.png  used on input line 373.
 (pdftex.def)             Requested size: 158.39758pt x 145.15277pt.
  [14 <./images/3D_room.jpg> <./images/room2.png>]
 <images/convfield3.png, id=302, 724.7075pt x 402.50375pt>
 File: images/convfield3.png Graphic file (type png)
 <use images/convfield3.png>
-Package pdftex.def Info: images/convfield3.png  used on input line 400.
+Package pdftex.def Info: images/convfield3.png  used on input line 404.
 (pdftex.def)             Requested size: 316.80121pt x 175.95369pt.
  [15 <./images/convfield3.png>] [16]
 <images/poolingMax.png, id=325, 1956.30875pt x 494.84875pt>
 File: images/poolingMax.png Graphic file (type png)
 <use images/poolingMax.png>
-Package pdftex.def Info: images/poolingMax.png  used on input line 432.
+Package pdftex.def Info: images/poolingMax.png  used on input line 436.
 (pdftex.def)             Requested size: 324.7229pt x 82.13731pt.
  [17 <./images/poolingMax.png>]
 <images/dropout.png, id=336, 1151.30125pt x 956.57375pt>
 File: images/dropout.png Graphic file (type png)
 <use images/dropout.png>
-Package pdftex.def Info: images/dropout.png  used on input line 475.
+Package pdftex.def Info: images/dropout.png  used on input line 479.
 (pdftex.def)             Requested size: 198.0pt x 164.49828pt.
  [18]
 <images/convNet.png, id=351, 2179.14125pt x 584.1825pt>
 File: images/convNet.png Graphic file (type png)
 <use images/convNet.png>
-Package pdftex.def Info: images/convNet.png  used on input line 495.
+Package pdftex.def Info: images/convNet.png  used on input line 499.
 (pdftex.def)             Requested size: 396.0pt x 106.15558pt.
  [19 <./images/dropout.png>] [20 <./images/convNet.png>] [21]
 Chapter 5.
-<images/pipeline.png, id=390, 1753.55125pt x 419.5675pt>
+<images/pipeline.png, id=390, 1753.55125pt x 420.57124pt>
 File: images/pipeline.png Graphic file (type png)
 <use images/pipeline.png>
-Package pdftex.def Info: images/pipeline.png  used on input line 534.
-(pdftex.def)             Requested size: 396.0pt x 94.74432pt.
+Package pdftex.def Info: images/pipeline.png  used on input line 538.
+(pdftex.def)             Requested size: 396.0pt x 94.97098pt.
 [22
 
- <./images/pipeline.png>] (main.bbl [23] [24] [25
+ <./images/pipeline.png>] [23]
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+<images/train_val_loss.png, id=405, 395.3169pt x 298.4751pt>
+File: images/train_val_loss.png Graphic file (type png)
+<use images/train_val_loss.png>
+Package pdftex.def Info: images/train_val_loss.png  used on input line 587.
+(pdftex.def)             Requested size: 198.0pt x 149.49222pt.
+ [24 <./images/train_val_loss.png>] (main.bbl [25
 
-] [26]
+] [26
+
+] [27]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 151.
  (C:\Program Files\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -715,22 +824,22 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [27]) [28] (main.aux)
+ [28]) [29] (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 62C94AD80561870ACA26D27BAE8F9A90;3123.
  ) 
 Here is how much of TeX's memory you used:
- 15193 strings out of 478351
- 246833 string characters out of 2846868
- 592941 words of memory out of 3000000
- 32958 multiletter control sequences out of 15000+600000
- 568806 words of font info for 220 fonts, out of 8000000 for 9000
+ 17243 strings out of 478351
+ 301422 string characters out of 2846868
+ 644000 words of memory out of 3000000
+ 34996 multiletter control sequences out of 15000+600000
+ 570095 words of font info for 223 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,13n,131p,1048b,652s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 84i,13n,131p,1048b,677s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}<C:/Program Files/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmib10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmss17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (32 pages, 3421733 bytes).
+Output written on main.pdf (33 pages, 3451350 bytes).
 PDF statistics:
- 537 PDF objects out of 1000 (max. 8388607)
- 116 named destinations out of 1000 (max. 500000)
- 58107 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 550 PDF objects out of 1000 (max. 8388607)
+ 121 named destinations out of 1000 (max. 500000)
+ 58112 words of extra memory for PDF output out of 61914 (max. 10000000)
 

@@ -209,4 +209,8 @@ J.~Tompson, R.~Goroshin, A.~Jain, Y.~LeCun, and C.~Bregler, ``Efficient object
   localization using convolutional networks,'' in {\em 2015 IEEE Conference on
   Computer Vision and Pattern Recognition (CVPR)}, pp.~648--656, 2015.
 
+\bibitem{sgd_Momentum}
+J.~Fu, B.~Wang, H.~Zhang, Z.~Zhang, W.~Chen, and N.~Zheng, ``When and why
+  momentum accelerates sgd:an empirical study,'' 2023.
+
 \end{thebibliography}
