@@ -61,7 +61,7 @@ Wi-Fi technology has revolutionized the way we connect and communicate in the di
 utilizing radio signals transmitted by access points (APs). The signals can be influenced by various factors, such as objects and people,
 leading to signal variations along their path. These variations, essential for understanding the wireless environment,
 are captured through measurements like the Received Signal Strength Indicator (RSSI) and Channel State Information (CSI),
-which play a pivotal role in implementing wireless sensing applications. The RSSI serves as a measure of the reduction in the strength of radio signals
+which plays a pivotal role in implementing wireless sensing applications. The RSSI serves as a measure of the reduction in the strength of radio signals
 as they travel through space, capturing the way signals diminish over distance. Even though this metric has found widespread utilization within numerous
 indoor localization systems \cite{RSSI_indoorloc,RSSI_indoorloc_new}, which goal is to find where a certain target is in an enclosed location with meter-precision,
 it experiences unsustainable performance drops in complex situations, due to several limitations. The problems associated with RSSI stem from its simplicity and
@@ -523,8 +523,8 @@ After having discussed the architectural choices of the first convolution, the s
 Dropout here refers to \emph{Spatial Dropout} \cite{spatial_dropout}, also called 2-D Dropout, that works by randomly deactivating not single units but an entire feature map (or channel).
 The choice of the Dropout probability rate (see subsection \ref{sec:dropout}) was dictated by trials and testing, after which 0.3 seemed to retain a good model in terms of validation accuracy.
 Max Pooling was harnessed to get downsampled feature maps, together with padding to ensure boundaries points were included. At the end, two fully connected layers are present to map the features
-extracted by the previous convolutions to an output class. The activation function used in all layers was the Rectified Linear Unit (ReLU), the most common choice nowadays, that boost convergence
-time and increase overall sparsity.
+extracted by the previous convolutions to an output class. The activation function used in all layers was the Rectified Linear Unit (ReLU), the most common choice nowadays, that boosts convergence
+time and increases overall sparsity.
 
 \chapter{Results}
 This chapter summarizes the complete workflow for addressing person ID through Wi-Fi signals, then explains how the proposed model was trained, and finally the results achieved during validation phase.
@@ -590,8 +590,8 @@ Fig. \ref{fig:loss} shows how the average training loss changes epochs after epo
 \end{figure}
 \chapter*{Conclusion}
 The presented work serves as a foundational stepping stone for venturing into the fascinating realm of Wi-Fi sensing for person identification. The landscape of publicly available literature on this subject is, at present, close to desert, emphasizing the significance of the proposed method
-as an essential reference point for tackling this complex problem. A great number of hyperparameters could be tested, starting from the preprocessing phase of the data up to model's layers, regularization and training. The dataset collected is brand new, and future endeavors could significantly
-enhance this dataset by incorporating a more extensive range of subjects, capturing diverse body poses and orientations, a wider variety of clothing and personal accessories, and even introducing variations in background environments, such as different rooms, furnishings, open spaces, and outdoor scenarios.
+as an essential reference point for tackling this complex problem. A great number of hyperparameters could be tested, starting from the preprocessing phase of the data up to model's layers, regularization and training. The assembled dataset is brand new, and future endeavors could significantly
+enhance this collection by incorporating a more extensive range of subjects, capturing diverse body poses and orientations, a wider variety of clothing and personal accessories, and even introducing variations in background environments, such as different rooms, furnishings, open spaces, and outdoor scenarios.
 Even the hardware setting could be improved adding multiple antennas to surround the subject, in a MIMO (Multiple Input Multiple Output) scenario, retrieving a larger amount of signals coming from different directions that have been subjected to unique modifications.
 Despite this, the performance of the designed working pipeline is great, solving the classification task with high accuracy, demonstrating how the proposed system could be thought as a baseline model for addressing such a task; The continuous evolution of Deep Learning approaches and the advancements in
 radio communication technology will likely open the future of Wi-Fi sensing to new horizons, with new challenges and amazing solutions waiting to be discovered.
