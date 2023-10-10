@@ -2,9 +2,11 @@ import numpy as np
 import pandas as pd
 
 def extract_amp_phase(path, names = ('amp_no_name.csv', 'phase_no_name.csv')): 
-    '''Returns and save 2 different datasets, 
-    1 for the amplitude 1 for the phase, both with 64 features.
-    It combines the I/Q samples to produce the results.
+    '''Returns and save 2 different datasets, 1 for the amplitude 1 for the phase, both with 52 features.
+       It combines the I/Q samples to produce the results, ignoring empty subcarriers.
+       Parameters:
+       path: the path of .csv file with csi data
+       names: how to save the amp and phase files, the path will be starting from "..\Data\DataClean\\"
     '''
     data_0 = pd.read_csv(path)
     data_0 = data_0['CSI_DATA'].str.strip('[]').apply(lambda x: [int(num) for num in x.split()])
@@ -28,8 +30,8 @@ def extract_amp_phase(path, names = ('amp_no_name.csv', 'phase_no_name.csv')):
 
 def make_alternating(amp,pha):
     ''' Combine amplitude and phase in an alternating way like: 
-    [a1,p1, a2,p2, ..., a64,p64] where aN and pN are
-    amplitude and phase of subcarrier N
+        [a1,p1, a2,p2, ..., a64,p64] where aN and pN are
+        amplitude and phase of subcarrier N
     '''
     ampNP = amp.to_numpy()[:, :, np.newaxis]
     phaNP = pha.to_numpy()[:, :, np.newaxis]
@@ -38,7 +40,10 @@ def make_alternating(amp,pha):
     return data
 
 def phase_sanitization_inRange(row):
-    ''' Use: YourDataFrame.apply(phase_sanitization_inRange, axis=1)'''
+    ''' Use: YourDataFrame.apply(phase_sanitization_inRange, axis=1)
+        It applies the calibration procedure to the phase dataframe
+        and map the angles into [0, 2pi) range
+    '''
     a = (row[-1] - row[0]) / 52
     b = row.mean()
     mi_values = np.concatenate((np.arange(-26, 0),np.arange(1,27)))
@@ -50,6 +55,10 @@ def phase_sanitization_inRange(row):
     return bounded_angles
 
 def hampel_filtering(df, window_size, thresh=3, smoothing_factor=0.9):
+    ''' Performs hampel filtering with a sliding window and substitutes the outliers
+        with the exponential smoothing of previous values in the window. The boundaries
+        are statically filtered with MAD.
+    '''
     if window_size % 2 == 0:
         raise ValueError('Window_size must be an odd number, but value provided is {}'.format(window_size))
     # Create an empty DataFrame to store the cleaned data
@@ -113,6 +122,9 @@ def hampel_filtering(df, window_size, thresh=3, smoothing_factor=0.9):
 import pywt
 import pywt.data
 def DWT_denoising(df, wavelet = 'haar', level = 5, threshold = 0.7):
+    ''' Performs Discrete Wavelet Transform the an dataframe where eache column is a series
+        to smooth out noise and preserve signal information
+    '''
 
     def soft_threshold(value, threshold):
         return np.where(value > threshold, value - threshold, np.where(value < -threshold, value + threshold, 0.0))
@@ -125,6 +137,25 @@ def DWT_denoising(df, wavelet = 'haar', level = 5, threshold = 0.7):
         df_denoised = df_denoised[:-1]
 
     return pd.DataFrame(df_denoised, columns=df.columns)
+
+def create_tensor(df, winsize = 200, overlap =100):
+    ''' Create a tensor of images dividing the sequence (dataframe) in windows that overlaps
+        according to the parameters
+    '''
+    num_images = (len(df) - overlap) // (winsize - overlap)  # Calculate the number of images
+    # Initialize aan empty NumPy array to store the image data
+    image_data = np.empty((num_images, winsize, df.shape[1]))
+    # Create overlapping slices and populate the image data
+    for i in range(num_images):
+        start = i * (winsize - overlap)
+        end = start + winsize
+        image_slice = df.iloc[start:end, :]
+         # Store the slice data in the image_data 3D array
+        image_data[i, :, :] = image_slice.values
+    # image_data now contains your images as a 3D NumPy array (num_images, window_size, num_columns)
+    return image_data
+
+# IMPORTAN!!! From now on these functions are NOT used at all in the wi-fi person ID project, they were tested and refused
 
 from scipy.stats import skew
 def add_statistics(input_df):
@@ -152,23 +183,6 @@ def add_statistics(input_df):
     result_df['Skewness'] = skewness_col
 
     return result_df
-
-def create_tensor(df, winsize = 200, overlap =100):
-    num_images = (len(df) - overlap) // (winsize - overlap)  # Calculate the number of images
-    # Initialize aan empty NumPy array to store the image data
-    image_data = np.empty((num_images, winsize, df.shape[1]))
-    # Create overlapping slices and populate the image data
-    for i in range(num_images):
-        start = i * (winsize - overlap)
-        end = start + winsize
-        image_slice = df.iloc[start:end, :]
-         # Store the slice data in the image_data 3D array
-        image_data[i, :, :] = image_slice.values
-    # image_data now contains your images as a 3D NumPy array (num_images, window_size, num_columns)
-    return image_data
-
-
-
 
 def replace_outliers_std(df, std_threshold=3, inplace=False):
     if not inplace:

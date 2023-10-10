@@ -24,9 +24,16 @@
 \begin{document}
 \frontmatter
 \maketitle
-
 \begin{abstract}
-    This thesis deals with myself.
+    In the modern era, Wi-Fi devices have permeated virtually every facet of our daily lives, from homes to workplaces, and public spaces. This ubiquitous presence of Wi-Fi technology has paved the way for innovative applications beyond traditional internet connectivity.
+    Wi-Fi sensing refers to a collection of systems that exploit wireless signals measurements to achieve task usually addressed by vision-based methods, such as gesture recognition, room occupation or objects localization.
+    This study presents a first-of-a-kind approach to leverage the pervasive nature of Wi-Fi technology to develop a robust and non-intrusive person identification system.
+    To accomplish so, a unique dataset is created, capturing Channel State Information (CSI) data as a total of 6 individuals stand between two communicating antennas. CSI data are based on Orthogonal Frequency Division Multiplexing methodology,
+    that allows the gathering of amplitude and phase information of numerous subcarriers waves, resulting in a feature-rich data space. In recognition of the challenges posed by real-world environments,
+    a rigorous preprocessing pipeline is employed to detect and remove outliers and smooth out noise, ensuring the reliability of the novel dataset.
+    The heart of the system resides in the application of Convolutional Neural Networks (CNNs) for the subsequent classification task. CNNs, known for their prowess in computer vision, are adapted to exploit the spatial and temporal patterns inherent to CSI data.
+    The experimental results underscore the efficacy of this approach, showcasing high levels of accuracy (92.4\% - 94.2\%) in a controlled environment, opening the doors to new research topics and technological deployments.
+    The non-intrusive and privacy-conscious nature of the presented WiFi-based person ID system positions it as a versatile solution for a wide range of applications, encompassing security, access control, and smart home automation.
 \end{abstract}
 
 \tableofcontents
@@ -577,7 +584,7 @@ where $TP, TN, FP, FN$ stand for the number of true positive, true negative, fal
         3         & 93.9     & 0.931     & 0.91   \\
         4         & 93.3     & 0.925     & 0.931  \\
         5         & 92.9     & 0.922     & 0.928  \\
-        6         & 92.7     & 0.926     & 0.912
+        6         & 92.4     & 0.921     & 0.912
     \end{tblr}
 \end{table}
 
