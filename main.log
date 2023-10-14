@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.7.3)  10 OCT 2023 12:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.7.3)  11 OCT 2023 17:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/devin/Desktop/Università/Tesi/Thesis/main.tex
-(c:/Users/devin/Desktop/Università/Tesi/Thesis/main.tex
+**c:/Users/devin/Desktop/Università/Bachelor/Tesi/Thesis/main.tex
+(c:/Users/devin/Desktop/Università/Bachelor/Tesi/Thesis/main.tex
 LaTeX2e <2022-06-01> patch level 3
 L3 programming layer <2022-06-16> (C:\Program Files\MiKTeX\tex/latex/sapthesis\sapthesis.cls
 Document Class: sapthesis 2022/07/04 Sapienza University of Rome thesis class
@@ -829,15 +829,15 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 62C94AD80561870ACA26D27BAE8F9A90;3123.
  ) 
 Here is how much of TeX's memory you used:
- 17243 strings out of 478351
- 301422 string characters out of 2846868
- 644000 words of memory out of 3000000
+ 17249 strings out of 478351
+ 301589 string characters out of 2846868
+ 643999 words of memory out of 3000000
  34996 multiletter control sequences out of 15000+600000
- 570095 words of font info for 223 fonts, out of 8000000 for 9000
+ 570355 words of font info for 226 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,13n,131p,1048b,677s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 84i,13n,131p,1057b,677s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}<C:/Program Files/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmib10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmss17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (33 pages, 3453303 bytes).
+Output written on main.pdf (33 pages, 3453329 bytes).
 PDF statistics:
  550 PDF objects out of 1000 (max. 8388607)
  121 named destinations out of 1000 (max. 500000)
