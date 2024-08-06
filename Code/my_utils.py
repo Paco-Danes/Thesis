@@ -47,7 +47,7 @@ def phase_sanitization_inRange(row):
     a = (row[-1] - row[0]) / 52
     b = row.mean()
     mi_values = np.concatenate((np.arange(-26, 0),np.arange(1,27)))
-    row = row - (a * mi_values) - b #stop here if you want no bounds
+    row = row - (a * mi_values) - b # stop here if you want no bounds
     # Use modulo to wrap angles into the [0, 2π) range
     bounded_angles = row % (2 * np.pi)
     # Ensure the result is positive
@@ -241,38 +241,27 @@ def replace_outliers_iqr(df):
                     cleaned_df.at[i, column] = (df.at[prev_non_outlier, column] + df.at[next_non_outlier, column]) / 2
     return cleaned_df
 
-from scipy.signal import butter, lfilter, lfilter_zi
-def butterworth_filter(df, order, cutoff_frequency, sampling_rate):
+from scipy.signal import butter, filtfilt
+def butterworth_filter(data, order=5, cutoff_frequency=10, sampling_rate=100):
     """
-    Apply a Butterworth filter to each column of a DataFrame.
-
+    Apply a Butterworth filter to each column of the input DataFrame.
+    
     Parameters:
-        df (pandas.DataFrame): Input DataFrame with time series data.
-        order (int): Filter order.
-        cutoff_frequency (float): Cutoff frequency (in Hertz).
-        sampling_rate (float): Sampling rate (in Hertz).
-
+    - data (pd.DataFrame): Input DataFrame where each column is a time series.
+    - order (int): Order of the Butterworth filter. Default is 5.
+    - cutoff_frequency (float): Cutoff frequency of the filter in Hz. Default is 10 Hz.
+    - sampling_rate (float): Sampling rate of the time series in Hz. Default is 100 Hz.
+    
     Returns:
-        pandas.DataFrame: Filtered DataFrame with the same column names.
+    - pd.DataFrame: DataFrame with filtered time series.
     """
-    # Calculate Nyquist frequency
-    nyquist_frequency = sampling_rate / 2
     
-    # Create an empty DataFrame to store the filtered data
-    filtered_data = pd.DataFrame()
+    # Define the Butterworth filter
+    nyquist_freq = 0.5 * sampling_rate
+    normal_cutoff = cutoff_frequency / nyquist_freq
+    b, a = butter(order, normal_cutoff, btype='low', analog=False)
     
-    # Loop through each column and apply the filter
-    for column in df.columns:
-        # Get the column data
-        column_data = df[column].values
-        
-        # Design the Butterworth filter
-        b, a = butter(order, cutoff_frequency / nyquist_frequency, btype='low')
-        initial_correction = lfilter_zi(b, a)
-        # Apply the filter to the column data
-        filtered_column_data = lfilter(b, a, column_data, zi = initial_correction*column_data[0])[0]
-        
-        # Store the filtered data in the new DataFrame with the same column name
-        filtered_data[column] = filtered_column_data
+    # Apply the filter to each column
+    filtered_data = data.apply(lambda col: filtfilt(b, a, col), axis=0)
     
     return filtered_data
