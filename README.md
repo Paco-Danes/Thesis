@@ -31,7 +31,9 @@ Traditional person identification relies heavily on vision-based systems like ca
 
 - **Amplitude Outlier Removal:** Hampel Filter + Wavelet Denoising  
 - **Phase Sanitization:** Linear transformation to correct time offset and noise  
-- **Image Construction:** Combination of amplitude and phase into 200×104 matrix per sample  
+- **Image Construction:** Combination of amplitude and phase into 200×104 matrix per sample
+
+![Input_Amplitude_Heatmaps](images/heatmap_3.png)
 
 ### 🧠 Model
 
