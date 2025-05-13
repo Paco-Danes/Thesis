@@ -1,9 +1,5 @@
 # 📡 A Robust Person Identification Method Through Wi-Fi Signals
 
-![Wi-Fi Person ID Diagram](https://img.shields.io/badge/WiFi-Sensing-blue)
-![Deep Learning](https://img.shields.io/badge/DeepLearning-CNN-brightgreen)
-![License](https://img.shields.io/badge/License-Academic-lightgrey)
-
 ## 📖 Overview
 
 This repository contains the code, dataset structure, and documentation for my master's thesis project, developed at **Sapienza University of Rome**. The thesis proposes a novel, non-intrusive person identification system that leverages **Wi-Fi Channel State Information (CSI)** and deep learning—specifically, **Convolutional Neural Networks (CNNs)**—to recognize individuals based on the unique disturbances their body causes to wireless signals.
