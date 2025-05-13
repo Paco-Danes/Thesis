@@ -33,7 +33,7 @@ Traditional person identification relies heavily on vision-based systems like ca
 - **Phase Sanitization:** Linear transformation to correct time offset and noise  
 - **Image Construction:** Combination of amplitude and phase into 200×104 matrix per sample
 
-![Input_Amplitude_Heatmaps](images/heatmap_3.png)
+![Input_Amplitude_Heatmaps](images/HEATMAP3W.png)
 
 ### 🧠 Model
 
