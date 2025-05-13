@@ -40,7 +40,10 @@ A custom **CNN** model processes the CSI-derived images with the following featu
 - Strided convolutions aligned to alternating amplitude/phase input  
 - Spatial dropout for regularization  
 - Max-pooling and ReLU activations  
-- Fully connected layers with softmax output  
+- Fully connected layers with softmax output
+
+![CNN_Architecture](images/convNet.png)
+
 
 📈 **Accuracy** achieved:
 
